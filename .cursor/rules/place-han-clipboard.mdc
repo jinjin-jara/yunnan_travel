@@ -1,0 +1,12 @@
+---
+description: 일정표 장소명 한자 괄호에는 클립보드 복사 버튼 필수
+globs: "**/index.html"
+alwaysApply: false
+---
+
+# 장소명 한자 · 클립보드
+
+- `이름(한자…)` 형태의 장소·식당 표기가 있으면 **괄호 안 한자만 복사**하는 클립보드 버튼을 넣는다.
+- `initPlaceHanCopyButtons()`는 `.place`와 `.place-popover`에 대해 돈다. **새로 만드는 장소용 클래스**(모달·팝오버 등)에도 한자가 있으면 이 선택자에 **반드시 포함**하거나, 동일 로직을 호출하도록 한다.
+- 한자 복사 버튼 스타일은 `.place .han-copy-btn` / `.place-popover .han-copy-btn`와 맞춘다. 복사 클릭은 `stopPropagation`으로 부모(모달·팝오버 열기)와 겹치지 않게 한다.
+- 모달/팝오버 제목은 `data-place-title`(초기 원문)을 우선 사용한다.
