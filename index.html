@@ -1,1074 +1,3083 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko" data-theme="light">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>운남 여행 일정표</title>
-  <meta name="description" content="쿤밍-샤시-리장 여행 일정표 2026.05.02–05.10" />
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
-  <style>
-    :root, [data-theme="light"] {
-      --text-xs: 0.75rem;
-      --text-sm: 0.875rem;
-      --text-base: 0.9375rem;
-      --text-lg: 1.125rem;
-      --text-xl: 1.375rem;
-      --text-2xl: 1.75rem;
-      --text-3xl: 2.25rem;
-
-      --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
-      --space-5: 20px; --space-6: 24px; --space-8: 32px; --space-10: 40px;
-      --space-12: 48px; --space-16: 64px;
-
-      /* Google-inspired palette */
-      --color-bg: #ffffff;
-      --color-surface: #ffffff;
-      --color-surface-2: #f8f9fa;
-      --color-surface-container: #f1f3f4;
-      --color-border: #dadce0;
-      --color-border-light: #e8eaed;
-      --color-text: #202124;
-      --color-text-secondary: #5f6368;
-      --color-text-tertiary: #80868b;
-      --color-primary: #1a73e8;
-      --color-primary-hover: #1557b0;
-      --color-primary-container: #d2e3fc;
-      --color-primary-on-container: #174ea6;
-      --color-error: #d93025;
-      --color-success: #188038;
-      --color-warning: #e37400;
-      --color-on-primary: #fff;
-
-      --shadow-1: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
-      --shadow-2: 0 1px 2px 0 rgba(60,64,67,.3), 0 2px 6px 2px rgba(60,64,67,.15);
-      --shadow-3: 0 4px 8px 3px rgba(60,64,67,.15), 0 1px 3px rgba(60,64,67,.3);
-
-      --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
-      --radius-xl: 28px;
-      --radius-full: 9999px;
-
-      --font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-    }
-
-    [data-theme="dark"] {
-      --color-bg: #1f1f1f;
-      --color-surface: #2d2d2d;
-      --color-surface-2: #333333;
-      --color-surface-container: #3c3c3c;
-      --color-border: #5f5f5f;
-      --color-border-light: #4a4a4a;
-      --color-text: #e8eaed;
-      --color-text-secondary: #bdc1c6;
-      --color-text-tertiary: #9aa0a6;
-      --color-primary: #8ab4f8;
-      --color-primary-hover: #aecbfa;
-      --color-primary-container: #394457;
-      --color-primary-on-container: #8ab4f8;
-      --color-on-primary: #202124;
-      --shadow-1: 0 1px 3px 1px rgba(0,0,0,.5), 0 1px 2px 0 rgba(0,0,0,.6);
-      --shadow-2: 0 2px 6px 2px rgba(0,0,0,.5), 0 1px 2px 0 rgba(0,0,0,.6);
-      --shadow-3: 0 4px 8px 3px rgba(0,0,0,.4), 0 1px 3px rgba(0,0,0,.5);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 80px; -webkit-text-size-adjust: none; text-size-adjust: none; }
-
-    body {
-      min-height: 100dvh;
-      font-family: var(--font-family);
-      font-size: var(--text-base);
-      line-height: 1.6;
-      color: var(--color-text);
-      background: var(--color-bg);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: var(--color-primary); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    img, svg { display: block; max-width: 100%; height: auto; }
-    button { font: inherit; border: 0; background: none; cursor: pointer; }
-
-    .skip { position: absolute; left: -9999px; top: auto; }
-    .skip:focus { left: 16px; top: 16px; background: var(--color-surface); padding: 12px 16px; border-radius: var(--radius-sm); z-index: 20; border: 1px solid var(--color-border); }
-
-    .shell { width: min(960px, calc(100% - 32px)); margin: 0 auto; }
-
-    /* ─── Top bar ─── */
-    .topbar {
-      position: sticky; top: 0; z-index: 10;
-      background: var(--color-surface);
-      border-bottom: 1px solid var(--color-border-light);
-    }
-    .topbar-inner {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 12px 0; gap: 16px;
-    }
-    .brand { display: flex; align-items: center; gap: 12px; }
-    .logo {
-      width: 40px; height: 40px; border-radius: 50%;
-      background: var(--color-primary);
-      display: grid; place-items: center;
-      color: var(--color-on-primary);
-      flex-shrink: 0;
-    }
-    .brand h1 { font-size: var(--text-lg); font-weight: 600; letter-spacing: -0.01em; }
-    .brand p { font-size: var(--text-xs); color: var(--color-text-tertiary); }
-
-    .theme-toggle {
-      width: 40px; height: 40px; border-radius: 50%;
-      display: grid; place-items: center;
-      color: var(--color-text-secondary);
-      transition: background .15s;
-    }
-    .theme-toggle:hover { background: var(--color-surface-container); }
-
-    /* ─── Hero ─── */
-    .hero { padding: var(--space-10) 0 var(--space-8); }
-    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); }
-
-    .hero-card {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border-light);
-      border-radius: var(--radius-lg);
-      padding: var(--space-8);
-    }
-
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 4px 12px;
-      border-radius: var(--radius-full);
-      background: var(--color-primary-container);
-      color: var(--color-primary-on-container);
-      font-size: var(--text-xs);
-      font-weight: 600;
-      margin-bottom: var(--space-5);
-    }
-
-    .hero h2 {
-      font-size: var(--text-3xl);
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      margin-bottom: var(--space-4);
-    }
-    .hero p { color: var(--color-text-secondary); line-height: 1.7; max-width: 50ch; }
-
-    .facts { display: grid; gap: 8px; padding: var(--space-6); }
-    .fact {
-      padding: 12px 16px;
-      border-radius: var(--radius-sm);
-      background: var(--color-surface-2);
-    }
-    .fact .k {
-      font-size: 11px; font-weight: 500;
-      text-transform: uppercase; letter-spacing: 0.06em;
-      color: var(--color-text-tertiary);
-      margin-bottom: 2px;
-    }
-    .fact .v { font-weight: 500; font-size: var(--text-sm); }
-    .fact .v a { font-weight: 500; }
-
-    /* ─── TOC ─── */
-    .toc {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border-light);
-      border-radius: var(--radius-lg);
-      padding: var(--space-6);
-      margin-bottom: var(--space-8);
-    }
-    .toc h2, .section-title {
-      font-size: var(--text-lg); font-weight: 600;
-      margin-bottom: var(--space-4);
-    }
-    .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
-    .toc a {
-      display: block; padding: 14px 16px;
-      border-radius: var(--radius-sm);
-      background: var(--color-surface-2);
-      font-weight: 600; font-size: var(--text-sm);
-      color: var(--color-text);
-      transition: background .15s, box-shadow .15s;
-    }
-    .toc a:hover { background: var(--color-primary-container); color: var(--color-primary-on-container); text-decoration: none; box-shadow: var(--shadow-1); }
-    .toc a small { display: block; color: var(--color-text-tertiary); font-weight: 400; margin-top: 2px; font-size: var(--text-xs); }
-
-    /* ─── Main ─── */
-    main { padding-bottom: var(--space-16); }
-    .days { display: grid; gap: var(--space-5); }
-
-    /* ─── Day cards ─── */
-    .day, .note, .info-section {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border-light);
-      border-radius: var(--radius-lg);
-      padding: var(--space-6);
-    }
-    .day::before, .info-section::before { display: none; }
-
-    .day-head {
-      display: flex; justify-content: space-between; align-items: flex-start;
-      gap: var(--space-4);
-      margin-bottom: var(--space-5);
-      padding-bottom: var(--space-4);
-      border-bottom: 1px solid var(--color-border-light);
-    }
-    .day-title {
-      font-size: var(--text-xl);
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      line-height: 1.3;
-    }
-    .day-sub { color: var(--color-text-secondary); margin-top: 4px; font-size: var(--text-sm); }
-
-    .pill {
-      padding: 4px 12px;
-      border-radius: var(--radius-full);
-      background: var(--color-primary-container);
-      color: var(--color-primary-on-container);
-      font-size: var(--text-xs);
-      font-weight: 600;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: var(--space-5); }
-
-    .card {
-      background: var(--color-surface-2);
-      border-radius: var(--radius-md);
-      padding: var(--space-5);
-    }
-    .card h4 { font-size: var(--text-sm); font-weight: 600; margin-bottom: var(--space-3); color: var(--color-text); }
-
-    .steps { display: grid; gap: 14px; }
-    .step { display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: flex-start; }
-
-    .num {
-      width: 28px; height: 28px; border-radius: 50%;
-      background: var(--color-primary);
-      color: var(--color-on-primary);
-      display: grid; place-items: center;
-      font-weight: 600; font-size: 12px;
-    }
-
-    .step > div { font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6; }
-    .step strong { color: var(--color-text); font-weight: 600; }
-    .card p, .card li { color: var(--color-text-secondary); font-size: var(--text-sm); }
-
-    .meta { display: grid; gap: 8px; margin-top: 8px; }
-    .meta div { font-size: var(--text-sm); color: var(--color-text-secondary); }
-    .meta strong { color: var(--color-text); font-weight: 600; }
-
-    ul.clean { list-style: none; display: grid; gap: 8px; }
-    .price { font-weight: 600; color: var(--color-text); }
-
-    .note, .info-section { margin-top: var(--space-5); }
-    .note strong, .info-section strong { color: var(--color-text); }
-    .info-section h3 { font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); }
-    .info-section p, .info-section li { color: var(--color-text-secondary); line-height: 1.7; font-size: var(--text-sm); }
-    .info-section ul { list-style: none; display: grid; gap: 6px; }
-    .info-section ul li::before { content: '\2022\00a0'; color: var(--color-primary); font-weight: 700; }
-
-    .footer {
-      padding: var(--space-8) 0 var(--space-12);
-      color: var(--color-text-tertiary);
-      font-size: var(--text-xs);
-      text-align: center;
-      border-top: 1px solid var(--color-border-light);
-      margin-top: var(--space-8);
-    }
-
-    .backtop {
-      position: fixed; right: 16px; bottom: 16px;
-      width: 48px; height: 48px; border-radius: 50%;
-      background: var(--color-primary);
-      color: var(--color-on-primary);
-      display: grid; place-items: center;
-      box-shadow: var(--shadow-3);
-      transition: transform .15s, box-shadow .15s;
-      font-size: 1.2rem;
-    }
-    .backtop:hover { transform: translateY(-2px); box-shadow: var(--shadow-3); color: var(--color-on-primary); text-decoration: none; }
-
-    /* ─── Tip ─── */
-    .tip {
-      margin-top: var(--space-4);
-      padding: 12px 16px;
-      border-radius: var(--radius-sm);
-      background: #fef7e0;
-      color: #3c3000;
-      font-size: var(--text-sm);
-      line-height: 1.6;
-      border-left: 3px solid var(--color-warning);
-    }
-    [data-theme="dark"] .tip { background: #3c3520; color: #e8d5a0; }
-    .tip::before { content: ''; }
-    .tip a { color: var(--color-primary); }
-
-    /* ─── Place tooltip ─── */
-    .place {
-      border-bottom: 1.5px dashed var(--color-primary);
-      cursor: pointer; position: relative;
-      color: inherit; font-weight: inherit;
-      transition: color .1s;
-    }
-    .place:hover { color: var(--color-primary); }
-    .place-tooltip {
-      position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%);
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-3);
-      padding: 8px 12px;
-      display: none; z-index: 100;
-      white-space: nowrap; min-width: 170px;
-    }
-    .place-tooltip.active { display: block; }
-    .place-tooltip::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 6px solid transparent; border-top-color: var(--color-border); }
-    .place-tooltip::before { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-top-color: var(--color-surface); z-index: 1; margin-top: -1px; }
-    .place-tooltip a { display: flex; align-items: center; gap: 8px; padding: 6px 0; font-size: var(--text-sm); font-weight: 500; color: var(--color-primary); white-space: nowrap; }
-    .place-tooltip a:hover { color: var(--color-primary-hover); text-decoration: none; }
-    .place-tooltip a + a { border-top: 1px solid var(--color-border-light); margin-top: 4px; padding-top: 6px; }
-
-    /* ─── Train tables ─── */
-    .train-section { margin-top: var(--space-5); }
-    .train-section h3 { font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); }
-    .train-table-wrap { overflow-x: auto; margin-bottom: var(--space-4); border-radius: var(--radius-sm); border: 1px solid var(--color-border-light); }
-    .train-table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
-    .train-table th {
-      text-align: left; padding: 10px 16px;
-      background: var(--color-surface-2);
-      color: var(--color-text-secondary);
-      font-weight: 600; font-size: var(--text-xs);
-      letter-spacing: 0.03em;
-      border-bottom: 1px solid var(--color-border-light);
-    }
-    .train-table td { padding: 10px 16px; border-bottom: 1px solid var(--color-border-light); }
-    .train-table tr:last-child td { border-bottom: none; }
-    .train-table tr:hover td { background: var(--color-surface-2); }
-    .train-table .highlight td { background: var(--color-primary-container); font-weight: 600; }
-    .train-notice {
-      font-size: var(--text-sm); color: var(--color-text-secondary);
-      margin-top: var(--space-3); padding: 12px 16px;
-      background: #fef7e0; border-radius: var(--radius-sm);
-      border-left: 3px solid var(--color-warning);
-    }
-    [data-theme="dark"] .train-notice { background: #3c3520; color: #e8d5a0; }
-
-    /* ─── Checklist ─── */
-    .checklist { list-style: none; display: grid; gap: 6px; }
-    .checklist li {
-      display: flex; align-items: flex-start; gap: 12px;
-      color: var(--color-text-secondary); font-size: var(--text-sm); line-height: 1.6;
-    }
-    .checklist li::before { content: '☐'; color: var(--color-primary); font-size: 1.1em; flex-shrink: 0; margin-top: 1px; }
-
-    /* ─── Blog links ─── */
-    .blog-links { list-style: none; display: grid; gap: 8px; }
-    .blog-links li {
-      padding: 12px 16px;
-      background: var(--color-surface-2);
-      border-radius: var(--radius-sm);
-      transition: background .15s;
-    }
-    .blog-links li:hover { background: var(--color-surface-container); }
-    .blog-links li::before { display: none; }
-    .blog-links li a { font-weight: 500; font-size: var(--text-sm); word-break: break-all; }
-    .blog-links li span { display: block; font-size: var(--text-xs); color: var(--color-text-tertiary); margin-top: 2px; }
-
-    /* ─── Info grid ─── */
-    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); margin-top: var(--space-5); }
-
-    /* ─── Responsive ─── */
-    @media (max-width: 768px) {
-      .shell { width: calc(100% - 24px); }
-      .hero-grid, .grid, .info-grid { grid-template-columns: 1fr; }
-      .hero-card { padding: var(--space-5); }
-      .hero h2 { font-size: var(--text-2xl); }
-      .day { padding: var(--space-4); }
-      .day-head { flex-direction: column; }
-      .toc-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
-      .place-tooltip { left: 0; transform: none; }
-    }
-  </style>
-</head>
-<body>
-  <a class="skip" href="#content">본문으로 건너뛰기</a>
-  <header class="topbar">
-    <div class="shell topbar-inner">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="운남 여행">
-            <path d="M12 2L2 22h20L12 2z" fill="currentColor" opacity=".15"/>
-            <path d="M12 2L2 22h20L12 2z"/>
-          </svg>
-        </div>
-        <div>
-          <h1>운남 여행 일정표</h1>
-          <p>쿤밍 · 샤시고진 · 리장 / 2026.05.02–05.10</p>
-        </div>
-      </div>
-      <button class="theme-toggle" data-theme-toggle aria-label="다크 모드 전환">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      </button>
-    </div>
-  </header>
-
-  <main id="content" class="shell">
-    <section class="hero">
-      <div class="hero-grid">
-        <article class="hero-card">
-          <div class="eyebrow">✈️ 노션 일정 반영 · 최종 확정판</div>
-          <h2>쿤밍, 샤시, 리장 8박 여행 일정표</h2>
-          <p>중국동방항공 직항편으로 쿤밍 도착 후, 고속열차와 차량을 이용해 샤시고진·리장을 순환합니다. 장소명을 클릭하면 구글 맵 / 바이두 맵 링크를 선택할 수 있습니다.</p>
-        </article>
-        <aside class="hero-card facts">
-          <div class="fact"><div class="k">가는 편 (5/2)</div><div class="v">중국동방항공 MU-2004 · ICN 07:45 → KMG 11:15 (직항)</div></div>
-          <div class="fact"><div class="k">오는 편 (5/9→5/10)</div><div class="v">KMG 22:25 → 난징 01:25 (MU2766)<br>난징 08:15 → ICN 11:15 (MU579)</div></div>
-          <div class="fact"><div class="k">항공료</div><div class="v">₩416,300</div></div>
-          <div class="fact"><div class="k">쿤밍 숙소 (5/2~3 · 2박)</div><div class="v">Kunming Upland International Youth Hostel</div></div>
-          <div class="fact"><div class="k">샤시 숙소 (5/4~5 · 2박)</div><div class="v">Liaoshe Garden Hotel</div></div>
-          <div class="fact"><div class="k">리장 숙소 (5/6~8 · 3박)</div><div class="v">Another Residence · island and coffee garden vacation B&amp;B</div></div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="toc" aria-labelledby="toc-title">
-      <h2 id="toc-title" class="section-title">목차</h2>
-      <div class="toc-grid">
-        <a href="#day1">Day 1<small>5/2 · 쿤밍 도착</small></a>
-        <a href="#day2">Day 2<small>5/3 · 쿤밍 시내</small></a>
-        <a href="#day3">Day 3<small>5/4 · 쿤밍 → 샤시</small></a>
-        <a href="#day4">Day 4<small>5/5 · 샤시고진</small></a>
-        <a href="#day5">Day 5<small>5/6 · 샤시 → 리장</small></a>
-        <a href="#day6">Day 6<small>5/7 · 옥룡설산 · 인상여강</small></a>
-        <a href="#day7">Day 7<small>5/8 · 리장 (백사고진 · 고성)</small></a>
-        <a href="#day8">Day 8<small>5/9 · 리장→쿤밍 → 귀국</small></a>
-      </div>
-    </section>
-
-    <section class="days">
-
-      <!-- ==================== DAY 1 ==================== -->
-      <article class="day" id="day1">
-        <div class="day-head">
-          <div>
-            <div class="day-title">Day 1 · 5월 2일 토요일 · 쿤밍 도착</div>
-            <div class="day-sub">ICN 07:45 출발 → KMG 11:15 도착 → 픽업 서비스 → 다관공원 · 디엔치 호수 → 저녁</div>
-          </div>
-          <div class="pill">직항 4시간 30분</div>
-        </div>
-        <div class="grid">
-          <section class="card">
-            <h4>시간대별 동선</h4>
-            <div class="steps">
-              <div class="step"><div class="num">1</div><div><strong>07:45</strong> 인천공항 출발 (중국동방항공 MU-2004, 직항).</div></div>
-              <div class="step"><div class="num">2</div><div><strong>11:15</strong> 쿤밍 창수이공항 도착. 입국심사 및 수화물 수령 (약 30~40분).</div></div>
-              <div class="step"><div class="num">3</div><div><strong>11:55</strong> 공항 픽업 서비스 탑승. 시내까지 약 40~50분 소요.</div></div>
-              <div class="step"><div class="num">4</div><div><strong>12:40–13:00</strong> 숙소(Kunming Upland YH) 도착 — 체크인 및 짐 정리.</div></div>
-              <div class="step"><div class="num">5</div><div><strong>13:00–14:00</strong> 점심 식사 — <span class="place" data-google="https://www.google.com/maps/search/滇池1887+昆明" data-baidu="https://map.baidu.com/search/滇池1887全日餐厅" data-search="https://www.google.com/search?q=%EB%94%94%EC%97%94%EC%B9%981887%20%EC%BF%A4%EB%B0%8D%20%E6%BB%87%E6%B1%A01887">디엔치1887(滇池1887)</span> 또는 숙소 인근에서 윈난 가정식.</div></div>
-              <div class="step"><div class="num">6</div><div><strong>14:30–16:00</strong> <span class="place" data-google="https://www.google.com/maps/place/Daguan+Park/@25.017287,102.6722897,17z" data-baidu="https://map.baidu.com/?shareurl=1&poiShareUid=f9be5a36379349c045e274dc" data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EB%8B%A4%EA%B4%80%EA%B3%B5%EC%9B%90%20%E5%A4%A7%E8%A7%82%E5%85%AC%E5%9B%AD&udm=2">다관공원(大观公园)</span> 산책 — 다관루에서 디엔치 호수 조망, 연꽃 정원, 보이차 한 잔.</div></div>
-              <div class="step"><div class="num">7</div><div><strong>16:30–18:30</strong> <span class="place" data-google="https://www.google.com/maps/search/Dianchi+Lake+Kunming" data-baidu="https://map.baidu.com/search/滇池" data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EB%94%94%EC%97%94%EC%B9%98%20%ED%98%B8%EC%88%98%20%E6%BB%87%E6%B1%A0&udm=2">디엔치 호수(滇池)</span> 산책 — 호수변 산책로, 석양 감상.</div></div>
-              <div class="step"><div class="num">8</div><div><strong>19:00–20:00</strong> 저녁 식사 — 숙소 인근 과교미선 맛집 <span class="place" data-google="https://www.google.com/maps/search/新世界云牵一线+昆明" data-baidu="https://map.baidu.com/search/新世界·云牵一线" data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%9A%B4%EA%B2%AC%EC%9D%BC%EC%84%A0%20%EA%B3%BC%EA%B5%90%EB%AF%B8%EC%84%A0%20%E6%96%B0%E4%B8%96%E7%95%8C%E4%BA%91%E7%89%B5%E4%B8%80%E7%BA%BF">신세계·운견일선(新世界·云牵一线)</span> — 30년 역사 과교미선 전문점, 현지인 맛집 (40위안~).</div></div>
-              <div class="step"><div class="num">9</div><div><strong>20:00–20:30</strong> 숙소 복귀 및 휴식.</div></div>
-            </div>
-            <div class="tip">첫날이므로 해발 1,890m 적응 위해 무리하지 않기. 디엔치 호수에서 전기자전거 대여도 가능.</div>
-          </section>
-          <aside class="card">
-            <h4>숙소 · 교통 · 참고</h4>
-            <div class="meta">
-              <div><strong>숙소</strong> Kunming Upland International Youth Hostel</div>
-              <div><strong>이동</strong> 공항 픽업 서비스 11:55 (사전 예약, 숙소까지 약 40~50분)</div>
-              <div><strong>참고 블로그</strong> <a href="https://blog.naver.com/giguin79/223609483748" target="_blank" rel="noopener noreferrer">쿤밍 가볼만한 곳</a></div>
-              <div><strong>디엔치 자전거</strong> <a href="https://blog.naver.com/giguin79/223852170873" target="_blank" rel="noopener noreferrer">전기자전거 후기</a></div>
-            </div>
-          </aside>
-        </div>
-      </article>
-
-      <!-- ==================== DAY 2 ==================== -->
-      <article class="day" id="day2">
-        <div class="day-head">
-          <div>
-            <div class="day-title">Day 2 · 5월 3일 일요일 · 쿤밍</div>
-            <div class="day-sub">녹호공원 · 윈난대학 · 원통사 · 쿤밍 노가 · 금마벽계방</div>
-          </div>
-          <div class="pill">도보 + 택시 혼합</div>
-        </div>
-        <div class="grid">
-          <section class="card">
-            <h4>시간대별 동선</h4>
-            <div class="steps">
-              <div class="step"><div class="num">1</div><div><strong>08:30–09:30</strong> 숙소 조식 또는 근처 카페에서 아침 (미선 또는 얼쿠아이바바 추천, 15–30위안).</div></div>
-              <div class="step"><div class="num">2</div><div><strong>09:30–11:00</strong> <span class="place" data-google="https://www.google.com/maps/search/Cuihu+Park+Kunming" data-baidu="https://map.baidu.com/search/翠湖公园+昆明" data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%B7%A8%ED%98%B8%EA%B3%B5%EC%9B%90%20%E7%BF%A0%E6%B9%96%E5%85%AC%E5%9B%AD&udm=2">녹호공원(翠湖公园)</span> 도보 이동 (숙소에서 약 15분) — 호수 한 바퀴 산책 (약 40분). 사진 포인트: 연꽃 연못.</div></div>
-              <div class="step"><div class="num">3</div><div><strong>11:00–12:30</strong> <span class="place" data-google="https://www.google.com/maps/search/Yunnan+University+Kunming" data-baidu="https://map.baidu.com/search/云南大学+昆明" data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%9C%88%EB%82%9C%EB%8C%80%ED%95%99%20%E4%BA%91%E5%8D%97%E5%A4%A7%E5%AD%A6&udm=2">윈난대학(云南大学)</span> 본캠퍼스 산책 — 은행나무 길(银杏大道)을 걸으며 역사적 건물 감상. 교내 카페에서 커피 한 잔.</div></div>
-              <div class="step"><div class="num">4</div><div><strong>12:30–14:00</strong> 점심 — <span class="place" data-google="https://www.google.com/maps/search/晨曦豆花米线+翠湖+昆明" data-baidu="https://map.baidu.com/search/晨曦豆花米线+翠湖+昆明" data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%B2%9C%EC%8B%9C%EB%8D%94%EC%9A%B0%ED%99%94%EB%AF%B8%EC%84%A0%20%E6%99%A8%E6%9B%A6%E8%B1%86%E8%8A%B1%E7%B1%B3%E7%BA%BF">천시더우화미선(晨曦豆花米线, 취호점)</span> — 대중디엔핑 필수맛집 선정, 두부+쌀국수 조합이 인기. 15–30위안.</div></div>
-              <div class="step"><div class="num">5</div><div><strong>14:00–15:30</strong> <span class="place" data-google="https://www.google.com/maps/search/Yuantong+Temple+Kunming" data-baidu="https://map.baidu.com/search/圆通寺+昆明" data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%9B%90%ED%86%B5%EC%82%AC%20%E5%9C%86%E9%80%9A%E5%AF%BA&udm=2">원통사(圆通寺)</span> 방문 — 쿤밍에서 가장 오래된 불교 사찰, 입장료 6위안. 독특한 '아래로 내려가는' 구조 (약 1시간).</div></div>
-              <div class="step"><div class="num">6</div><div><strong>15:30–17:30</strong> <span class="place" data-google="https://www.google.com/maps/search/Kunming+Old+Street" data-baidu="https://map.baidu.com/search/昆明老街" data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EB%85%B8%EA%B0%80%20%E6%98%86%E6%98%8E%E8%80%81%E8%A1%97&udm=2">쿤밍 노가(昆明老街)</span> & <span class="place" data-google="https://www.google.com/maps/search/Golden+Horse+Jade+Rooster+Kunming" data-baidu="https://map.baidu.com/search/金马碧鸡坊+昆明" data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EA%B8%88%EB%A7%88%EB%B2%BD%EA%B3%84%EB%B0%A9%20%E9%87%91%E9%A9%AC%E7%A2%A7%E9%B8%A1%E5%9D%8A&udm=2">금마벽계방(金马碧鸡坊)</span> 산책 — 전통 공예품 구경, 난창미식가에서 간식 (로즈떡, 얼쿠아이 등).</div></div>
-              <div class="step"><div class="num">7</div><div><strong>17:30–18:00</strong> 금마벽계방 도착 — 해질 무렵 조명이 켜지기 시작하는 시간대가 사진 포인트.</div></div>
-              <div class="step"><div class="num">8</div><div><strong>18:00–19:30</strong> 저녁 식사 — <span class="place" data-google="https://www.google.com/maps/search/云平风味园+护国路+昆明" data-baidu="https://map.baidu.com/search/云平风味园+护国路+昆明" data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%9C%88%ED%95%91%ED%8E%91%EC%9B%A8%EC%9D%B4%EC%9C%84%EC%95%88%20%E4%BA%91%E5%B9%B3%E9%A3%8E%E5%91%B3%E5%9B%AD">윈핑펑웨이위안(云平风味园, 후궈루점)</span> — 현지인 필수 맛집, 기화계(汽锅鸡)·볶음요리 추천. 1인 50–80위안.</div></div>
-              <div class="step"><div class="num">9</div><div><strong>20:00–21:00</strong> 발마사지 1시간 — 시내 체인형 족욕/마사지숍 (80–120위안).</div></div>
-            </div>
-          </section>
-          <aside class="card">
-            <h4>예상 비용</h4>
-            <ul class="clean">
-              <li><span class="price">조식 15–30위안</span> · 숙소 또는 카페</li>
-              <li><span class="price">점심 15–30위안</span> · 천시더우화미선</li>
-              <li><span class="price">원통사 6위안</span></li>
-              <li><span class="price">저녁 50–80위안</span> · 기화계, 윈난 가정식</li>
-              <li><span class="price">마사지 80–120위안</span> · 발마사지 60분</li>
-              <li><span class="price">시내 교통 10–30위안</span> · 대부분 도보</li>
-            </ul>
-          </aside>
-        </div>
-      </article>
-
-      <!-- ==================== DAY 3 ==================== -->
-      <article class="day" id="day3">
-        <div class="day-head">
-          <div>
-            <div class="day-title">Day 3 · 5월 4일 월요일 · 쿤밍 → 샤시고진</div>
-            <div class="day-sub">고속열차 쿤밍→따리 + 셔틀버스/DiDi로 샤시 이동</div>
-          </div>
-          <div class="pill">핵심 이동일</div>
-        </div>
-        <div class="grid">
-          <section class="card">
-            <h4>시간대별 동선</h4>
-            <div class="steps">
-              <div class="step"><div class="num">1</div><div><strong>07:30–08:30</strong> 기상 및 체크아웃 준비.</div></div>
-              <div class="step"><div class="num">2</div><div><strong>08:30–09:15</strong> 간단한 아침 (커피·빵).</div></div>
-              <div class="step"><div class="num">3</div><div><strong>09:30–10:30</strong> 숙소→기차역 택시 이동.</div></div>
-              <div class="step"><div class="num">4</div><div><strong>11:44–14:12</strong> 고속열차: 쿤밍→따리 (약 2시간 28분). 열차 내 간식 준비 추천.</div></div>
-              <div class="step"><div class="num">5</div><div><strong>14:12–</strong> 따리역 도착 → <span class="place" data-google="https://www.google.com/maps/search/Sideng+Square+Shaxi" data-baidu="https://map.baidu.com/search/沙溪古戏台" data-search="https://www.google.com/search?q=%EC%83%A4%EC%8B%9C%EA%B3%A0%EC%A7%84%20%E6%B2%99%E6%BA%AA%E5%8F%A4%E9%95%87&udm=2">샤시고진</span>까지 셔틀버스 혹은 DiDi 이동.</div></div>
-              <div class="step"><div class="num">6</div><div><strong>도착 후</strong> Liaoshe Garden Hotel 체크인 및 짐 정리.</div></div>
-              <div class="step"><div class="num">7</div><div><strong>오후</strong> 샤시 고성 가벼운 첫 산책 — <span class="place" data-google="https://www.google.com/maps/search/Sideng+Square+Shaxi" data-baidu="https://map.baidu.com/search/沙溪古戏台" data-search="https://www.google.com/search?q=%EC%83%A4%EC%8B%9C%20%EC%82%AC%EB%93%B1%EA%B0%80%20%E5%9B%9B%E6%96%B9%E8%A1%97%20%E6%B2%99%E6%BA%AA&udm=2">사등가(四方街)</span>에서 고희대 구경, 골목길 탐방.</div></div>
-              <div class="step"><div class="num">8</div><div><strong>석양</strong> <span class="place" data-google="https://www.google.com/maps/search/Yujin+Bridge+Shaxi" data-baidu="https://map.baidu.com/search/玉津桥+沙溪" data-search="https://www.google.com/search?q=%EC%83%A4%EC%8B%9C%20%EC%98%A5%EC%A7%84%EA%B5%90%20%E7%8E%89%E6%B4%A5%E6%A1%A5&udm=2">옥진교(玉津桥)</span> — 석양 시간대에 옛 돌다리에서 사진 촬영.</div></div>
-              <div class="step"><div class="num">9</div><div><strong>저녁</strong> 고성 내 식당에서 저녁 — 사등가 주변 로컬 식당에서 바이족 전통 요리 (채소볶음, 두부요리 중심, 30–50위안).</div></div>
-            </div>
-            <div class="tip">샤시는 밤이 매우 조용하고 별이 잘 보임 — 숙소 마당에서 차 한 잔 하며 별 감상.</div>
-          </section>
-          <aside class="card">
-            <h4>숙소 · 교통</h4>
-            <div class="meta">
-              <div><strong>숙소</strong> Liaoshe Garden Hotel</div>
-              <div><strong>열차</strong> 쿤밍→따리 11:44–14:12 (약 32,700원)</div>
-              <div><strong>따리→샤시</strong> 셔틀버스 또는 DiDi</div>
-              <div><strong>참고</strong> <a href="https://kr.trip.com/travel-guide/attraction/jianchuan/ancient-town-shaxi-93610/" target="_blank" rel="noopener noreferrer">샤시고진 가이드 (Trip.com)</a></div>
-              <div><strong>교통 정보</strong> <a href="http://yunnanexploration.com/destinations/dali/shaxi-ancient-town/transportation/" target="_blank" rel="noopener noreferrer">셔틀버스 정보</a></div>
-            </div>
-          </aside>
-        </div>
-      </article>
-
-      <!-- ==================== DAY 4 ==================== -->
-      <article class="day" id="day4">
-        <div class="day-head">
-          <div>
-            <div class="day-title">Day 4 · 5월 5일 화요일 · 샤시고진</div>
-            <div class="day-sub">고성 골목 산책 · 옥진교 · 카페 · 오봉산 전망</div>
-          </div>
-          <div class="pill">도보 위주</div>
-        </div>
-        <div class="grid">
-          <section class="card">
-            <h4>시간대별 동선</h4>
-            <div class="steps">
-              <div class="step"><div class="num">1</div><div><strong>07:30–09:00</strong> 숙소 조식 (Liaoshe 조식 약 50위안).</div></div>
-              <div class="step"><div class="num">2</div><div><strong>09:00–10:30</strong> 아침 산책 — <span class="place" data-google="https://www.google.com/maps/search/Sideng+Square+Shaxi" data-baidu="https://map.baidu.com/search/沙溪古戏台" data-search="https://www.google.com/search?q=%EC%83%A4%EC%8B%9C%EA%B3%A0%EC%A7%84%20%EC%82%AC%EB%93%B1%EA%B0%80%20%EA%B3%A8%EB%AA%A9&udm=2">사등가 & 고성 골목</span> 천천히 둘러보기. 아침에는 현지 주민들의 일상을 볼 수 있어 분위기가 다름.</div></div>
-              <div class="step"><div class="num">3</div><div><strong>10:30–12:00</strong> <span class="place" data-google="https://www.google.com/maps/search/Yujin+Bridge+Shaxi" data-baidu="https://map.baidu.com/search/玉津桥+沙溪" data-search="https://www.google.com/search?q=%EC%83%A4%EC%8B%9C%20%EC%98%A5%EC%A7%84%EA%B5%90%20%E7%8E%89%E6%B4%A5%E6%A1%A5&udm=2">옥진교(玉津桥)</span> 재방문 후 흑혜강(黑惠江) 강변 산책, 차마고도 옛길 일부 구간 걷기.</div></div>
-              <div class="step"><div class="num">4</div><div><strong>12:00–13:30</strong> 점심 — <span class="place" data-google="https://www.google.com/maps/search/春12+沙溪古镇" data-baidu="https://map.baidu.com/search/春12+沙溪古镇" data-search="https://www.google.com/search?q=%EC%83%A4%EC%8B%9C%EA%B3%A0%EC%A7%84%20%EC%B6%9812%20%E6%98%A512%20%EB%A7%9B%EC%A7%91">춘12(春12)</span> — 샤시 인기 맛집, 더블비프 피자·소갈비 추천. 영업 11:30–14:30, 주 2일 휴무 (사전 확인 필요). 1인 40–60위안.</div></div>
-              <div class="step"><div class="num">5</div><div><strong>13:30–16:00</strong> 카페 타임 & 휴식 — 사등가 주변 2층 테라스 카페에서 책 읽기 또는 멍때리기 (25–45위안).</div></div>
-              <div class="step"><div class="num">6</div><div><strong>16:00–17:30</strong> 오봉산(鳌峰山) 가벼운 등산 — 고진 전경 전망 포인트. 왕복 약 1시간.</div></div>
-              <div class="step"><div class="num">7</div><div><strong>18:00–19:30</strong> 저녁 식사 — <span class="place" data-google="https://www.google.com/maps/search/滇西云厨+沙溪" data-baidu="https://map.baidu.com/search/滇西云厨+沙溪" data-search="https://www.google.com/search?q=%EC%83%A4%EC%8B%9C%20%EB%94%94%EC%97%94%EC%8B%9C%EC%9C%88%EC%B6%94%20%E6%BB%87%E8%A5%BF%E4%BA%91%E5%8E%A8">디엔시윈추(滇西云厨, 샤시점)</span> — 돌솥 산채두부, 볶음새우, 윈난 가정식이 맛있는 곳. 1인 약 60위안.</div></div>
-              <div class="step"><div class="num">8</div><div><strong>19:30–20:30</strong> 고성 야경 산책 또는 숙소에서 휴식.</div></div>
-            </div>
-            <div class="tip">내일 리장으로 이동하므로 짐 미리 정리</div>
-          </section>
-          <aside class="card">
-            <h4>예상 비용</h4>
-            <ul class="clean">
-              <li><span class="price">조식 50위안</span> · 숙소 조식 기준</li>
-              <li><span class="price">점심 40–60위안</span> · 춘12</li>
-              <li><span class="price">카페 25–45위안</span></li>
-              <li><span class="price">저녁 50–70위안</span> · 윈난 가정식</li>
-              <li><span class="price">현지 이동 0–20위안</span> · 대부분 도보</li>
-            </ul>
-            <div class="meta" style="margin-top:var(--space-4)">
-              <div><strong>참고 블로그</strong> <a href="https://blog.naver.com/beautyune/223002502102" target="_blank" rel="noopener noreferrer">샤시고진 맛집 및 카페</a></div>
-            </div>
-          </aside>
-        </div>
-      </article>
-
-      <!-- ==================== DAY 5 ==================== -->
-      <article class="day" id="day5">
-        <div class="day-head">
-          <div>
-            <div class="day-title">Day 5 · 5월 6일 수요일 · 샤시 → 리장</div>
-            <div class="day-sub">차량 이동 → Another Residence 체크인 → 수허고성 산책</div>
-          </div>
-          <div class="pill">차량 이동 + 산책</div>
-        </div>
-        <div class="grid">
-          <section class="card">
-            <h4>시간대별 동선</h4>
-            <div class="steps">
-              <div class="step"><div class="num">1</div><div><strong>07:30–08:30</strong> 아침 산책 (샤시, 한산한 아침 분위기).</div></div>
-              <div class="step"><div class="num">2</div><div><strong>10:00–13:00</strong> 샤시→리장 차량 이동 (약 3시간). 경치가 좋은 구간이 많으니 차창 밖 감상.</div></div>
-              <div class="step"><div class="num">3</div><div><strong>13:00–14:00</strong> 점심 식사 — <span class="place" data-google="https://www.google.com/maps/search/DIANCHU+丽江+振兴巷" data-baidu="https://map.baidu.com/search/DIANCHU+丽江+振兴巷" data-search="https://www.google.com/search?q=%EB%A6%AC%EC%9E%A5%20%EB%94%94%EC%97%94%EC%B6%94%20DIANCHU%20%EB%A7%9B%EC%A7%91">디엔추(DIAN CHU)</span> — 리장고성 내 인기 맛집, 메이퇀 고평점. 생선요리·채소볶음·볶음밥 추천. 1인 50–80위안.</div></div>
-              <div class="step"><div class="num">4</div><div><strong>14:30–17:00</strong> Another Residence · island and coffee garden vacation B&B 체크인 및 휴식. 숙소 정원과 카페 공간 둘러보기.</div></div>
-              <div class="step"><div class="num">5</div><div><strong>17:30–19:30</strong> <span class="place" data-google="https://www.google.com/maps/search/Shuhe+Ancient+Town+Lijiang" data-baidu="https://map.baidu.com/search/束河古镇" data-search="https://www.google.com/search?q=%EB%A6%AC%EC%9E%A5%20%EC%88%98%ED%97%88%EA%B3%A0%EC%84%B1%20%E6%9D%9F%E6%B2%B3%E5%8F%A4%E9%95%87&udm=2">수허고성(束河古镇)</span> 산책 — 조용한 저녁 시간, 나시족 전통 건축 감상.</div></div>
-              <div class="step"><div class="num">6</div><div><strong>19:30 이후</strong> 저녁 식사 — 수허고성 내 <span class="place" data-google="https://www.google.com/maps/search/不含糊果饭+束河古镇" data-baidu="https://map.baidu.com/search/不含糊果饭+束河古镇" data-search="https://www.google.com/search?q=%EB%A6%AC%EC%9E%A5%20%EC%88%98%ED%97%88%20%EB%B6%80%ED%95%9C%EC%86%8C%EA%B3%BC%EB%B0%98%20%E4%B8%8D%E5%90%AB%E7%B3%8A%E6%9E%9C%E9%A5%AD">부한소과반(不含糊果饭)</span> — 수허고성 인기 솥밥집, 감자솥밥·닭고기솥밥이 별미. 1인 40–60위안.</div></div>
-            </div>
-            <div class="tip">리장 해발 약 2,400m, 자외선이 강하니 선크림 필수. 건조하니 물 많이 마시기.</div>
-          </section>
-          <aside class="card">
-            <h4>숙소 · 교통</h4>
-            <div class="meta">
-              <div><strong>숙소</strong> Another Residence · island and coffee garden vacation B&B</div>
-              <div><strong>이동</strong> 샤시→리장 차량 (약 3시간)</div>
-              <div><strong>참고 블로그</strong> <a href="https://blog.naver.com/vcolor98/223750230341" target="_blank" rel="noopener noreferrer">샤시→리장 이동 방법</a></div>
-            </div>
-          </aside>
-        </div>
-      </article>
-
-      <!-- ==================== DAY 6 ==================== -->
-      <article class="day" id="day6">
-        <div class="day-head">
-          <div>
-            <div class="day-title">Day 6 · 5월 7일 목요일 · 옥룡설산 · 인상여강</div>
-            <div class="day-sub">옥룡설산 케이블카 → 람월곡(블루문밸리) → 인상여강쇼</div>
-          </div>
-          <div class="pill">★ 하이라이트</div>
-        </div>
-        <div class="grid">
-          <section class="card">
-            <h4>시간대별 동선</h4>
-            <div class="steps">
-              <div class="step"><div class="num">1</div><div><strong>07:00–08:30</strong> 이동 (리장 → <span class="place" data-google="https://www.google.com/maps/search/Jade+Dragon+Snow+Mountain" data-baidu="https://map.baidu.com/search/玉龙雪山" data-search="https://www.google.com/search?q=%EC%98%A5%EB%A3%A1%EC%84%A4%EC%82%B0%20%E7%8E%89%E9%BE%99%E9%9B%AA%E5%B1%B1&udm=2">옥룡설산(玉龙雪山)</span>).</div></div>
-              <div class="step"><div class="num">2</div><div><strong>08:30–10:30</strong> 대형 케이블카 탑승 & 옥룡설산 정상부 감상 (해발 약 4,506m). 고산 지역이므로 천천히 이동.</div></div>
-              <div class="step"><div class="num">3</div><div><strong>10:30–12:00</strong> 하산 및 이동.</div></div>
-              <div class="step"><div class="num">4</div><div><strong>12:00–13:30</strong> <span class="place" data-google="https://www.google.com/maps/search/Blue+Moon+Valley+Lijiang" data-baidu="https://map.baidu.com/search/蓝月谷" data-search="https://www.google.com/search?q=%EC%98%A5%EB%A3%A1%EC%84%A4%EC%82%B0%20%EB%9E%8C%EC%9B%94%EA%B3%A1%20%E8%93%9D%E6%9C%88%E8%B0%B7%20%EB%B8%94%EB%A3%A8%EB%AC%B8%EB%B0%B8%EB%A6%AC&udm=2">람월곡(蓝月谷, 블루문밸리)</span> 계곡 산책 — 에메랄드빛 호수와 설산 배경의 절경.</div></div>
-              <div class="step"><div class="num">5</div><div><strong>13:30–14:40</strong> 점심 및 휴식 — 경구 내 식당 또는 미리 준비한 도시락.</div></div>
-              <div class="step"><div class="num">6</div><div><strong>14:50–16:00</strong> <span class="place" data-google="https://www.google.com/maps/search/Impression+Lijiang+Show+Ganhaizi" data-baidu="https://map.baidu.com/search/印象丽江+甘海子" data-search="https://www.google.com/search?q=%EC%9D%B8%EC%83%81%EC%97%AC%EA%B0%95%20%E5%8D%B0%E8%B1%A1%E4%B8%BD%E6%B1%9F%20%EA%B3%B5%EC%97%B0&udm=2">인상여강쇼(印象丽江)</span> 공연 관람 — 옥룡설산 감해자(甘海子) 야외극장, 장예모 감독의 대규모 야외 공연 (약 70분). 2회차 14:50 추천.</div></div>
-              <div class="step"><div class="num">7</div><div><strong>16:30–18:00</strong> 리장 복귀 및 휴식.</div></div>
-              <div class="step"><div class="num">8</div><div><strong>18:30–19:30</strong> 저녁 식사 — 숙소 근처 식당에서 윈난 가정식.</div></div>
-            </div>
-            <div class="tip">고산병 주의! 산소통(O2 캔) 미리 준비 추천. 방한 겉옷 필수 (산 위는 영하 가능). 케이블카는 사전 예약 필수.</div>
-            <div class="tip">🎫 <strong>인상여강쇼 예매 방법:</strong> ① <a href="https://www.klook.com/ko/activity/7257-lijiang-impression-show-yunnan/" target="_blank" rel="noopener noreferrer">Klook에서 예매</a> (한국어 지원, 즉시 확정) ② <a href="https://www.trip.com/travel-guide/attraction/yulong/impressions-of-lijiang-performance-10758688/" target="_blank" rel="noopener noreferrer">Trip.com에서 예매</a> ③ 위챗 미니프로그램 「丽江旅游集团」에서 직접 구매 (현지 가격, 여권 필요). 일반성 약 190위안, VIP석 약 280위안. 경구 입장료(100위안) 별도.</div>
-          </section>
-          <aside class="card">
-            <h4>예상 비용</h4>
-            <ul class="clean">
-              <li><span class="price">입장료 100위안</span> · 옥룡설산 입장</li>
-              <li><span class="price">케이블카 120위안</span> · 대형 왕복</li>
-              <li><span class="price">셔틀버스 등 약 80위안</span></li>
-              <li><span class="price">인상여강쇼 190–280위안</span> · 일반/VIP</li>
-              <li><span class="price">교통 왕복 100–200위안</span></li>
-              <li><span class="price">식사 60–100위안</span> · 경구 내 식당 또는 도시락</li>
-            </ul>
-          </aside>
-        </div>
-      </article>
-
-      <!-- ==================== DAY 7 ==================== -->
-      <article class="day" id="day7">
-        <div class="day-head">
-          <div>
-            <div class="day-title">Day 7 · 5월 8일 금요일 · 리장 (백사고진 · 고성)</div>
-            <div class="day-sub">백사고진 오전 → 리장고성 오후 → 저녁 산책</div>
-          </div>
-          <div class="pill">리장 마지막 밤</div>
-        </div>
-        <div class="grid">
-          <section class="card">
-            <h4>시간대별 동선</h4>
-            <div class="steps">
-              <div class="step"><div class="num">1</div><div><strong>08:00–09:00</strong> 숙소 조식 및 여유로운 아침.</div></div>
-              <div class="step"><div class="num">2</div><div><strong>09:30–11:30</strong> <span class="place" data-google="https://www.google.com/maps/search/Baisha+Old+Town+Lijiang" data-baidu="https://map.baidu.com/search/白沙古镇" data-search="https://www.google.com/search?q=%EB%A6%AC%EC%9E%A5%20%EB%B0%B1%EC%82%AC%EA%B3%A0%EC%A7%84%20%E7%99%BD%E6%B2%99%E5%8F%A4%E9%95%87&udm=2">백사고진(白沙古镇)</span> 방문 — 나시족 원래 마을, 리장고성보다 훨씬 조용. 백사벽화(白沙壁画) 감상, 옥룡설산 조망 포인트에서 사진. 마을 카페에서 커피 한 잔.</div></div>
-              <div class="step"><div class="num">3</div><div><strong>12:00–13:00</strong> 점심 — 백사고진 마을 내 로컬 식당에서 나시족 가정식 (국수·볶음밥류, 25–40위안).</div></div>
-              <div class="step"><div class="num">4</div><div><strong>14:00–17:00</strong> <span class="place" data-google="https://www.google.com/maps/search/Lijiang+Old+Town" data-baidu="https://map.baidu.com/search/丽江古城" data-search="https://www.google.com/search?q=%EB%A6%AC%EC%9E%A5%EA%B3%A0%EC%84%B1%20%E4%B8%BD%E6%B1%9F%E5%8F%A4%E5%9F%8E&udm=2">리장고성(丽江古城)</span> 산책 — 사방거(四方街) 광장, 목부토사(木府土司) 근처 골목 탐방, 나시족 전통 공예품 구경.</div></div>
-              <div class="step"><div class="num">5</div><div><strong>17:00–18:00</strong> 리장고성 내 카페에서 석양 감상 — 옥룡설산이 보이는 2층 테라스 카페 추천.</div></div>
-              <div class="step"><div class="num">6</div><div><strong>18:30–20:00</strong> 저녁 식사 — <span class="place" data-google="https://www.google.com/maps/search/阿婆腊排骨+丽江古城" data-baidu="https://map.baidu.com/search/阿婆腊排骨+丽江古城" data-search="https://www.google.com/search?q=%EB%A6%AC%EC%9E%A5%20%EC%95%84%ED%8F%AC%EB%9D%BC%ED%8C%8C%EC%9D%B4%EA%B5%AC%20%E9%98%BF%E5%A9%86%E8%85%8A%E6%8E%92%E9%AA%A8%20%EB%A7%90%EB%A6%B0%EA%B0%88%EB%B9%84">아포라파이구(阿婆腊排骨)</span> — 리장 대표 말린갈비 훠궈 맛집, 한국인 후기 다수. 2인 기준 68위안부터.</div></div>
-              <div class="step"><div class="num">7</div><div><strong>20:00–21:30</strong> 리장고성 야경 산책 — 조명 켜진 고성 분위기 감상.</div></div>
-            </div>
-            <div class="tip">내일 오전에 리장→쿤밍 기차 이동이므로 짐 미리 정리. 아침 체크아웃 후 바로 역으로 이동 예정.</div>
-          </section>
-          <aside class="card">
-            <h4>예상 비용</h4>
-            <ul class="clean">
-              <li><span class="price">조식 포함</span> · 숙소 또는 카페</li>
-              <li><span class="price">백사고진 교통 20–40위안</span> · 택시/DiDi</li>
-              <li><span class="price">점심 30–50위안</span></li>
-              <li><span class="price">카페 25–45위안</span></li>
-              <li><span class="price">저녁 68–100위안</span> · 말린갈비 훠궈</li>
-            </ul>
-            <div class="meta" style="margin-top:var(--space-4)">
-              <div><strong>숙소</strong> Another Residence (마지막 밤)</div>
-            </div>
-          </aside>
-        </div>
-      </article>
-
-      <!-- ==================== DAY 8 ==================== -->
-      <article class="day" id="day8">
-        <div class="day-head">
-          <div>
-            <div class="day-title">Day 8 · 5월 9일 토요일 · 리장→쿤밍 → 귀국</div>
-            <div class="day-sub">오전 기차 이동 → 쿤밍 시내 (취호공원) → 22:25 야간 출국</div>
-          </div>
-          <div class="pill">이동 + 귀국</div>
-        </div>
-        <div class="grid">
-          <section class="card">
-            <h4>시간대별 동선</h4>
-            <div class="steps">
-              <div class="step"><div class="num">1</div><div><strong>07:00–07:30</strong> 기상, 간단한 아침, Another Residence 체크아웃.</div></div>
-              <div class="step"><div class="num">2</div><div><strong>08:00–08:30</strong> 리장역 이동 (택시/DiDi).</div></div>
-              <div class="step"><div class="num">3</div><div><strong>08:40–12:52</strong> 고속열차 리장→쿤밍 (약 4시간, 08:40 출발 기준). 열차 내 간식 및 휴식.</div></div>
-              <div class="step"><div class="num">4</div><div><strong>13:00–14:00</strong> 쿤밍 도착. 쿤밍역 짐 보관소에 캐리어 맡긴 후 점심 — <span class="place" data-google="https://www.google.com/maps/search/圆山下线鸡+翠湖+昆明" data-baidu="https://map.baidu.com/search/圆山下线鸡+翠湖+昆明" data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%9C%84%EC%95%88%EC%82%B0%ED%95%98%EC%84%A0%EA%B1%B0%20%E5%9C%86%E5%B1%B1%E4%B8%8B%E7%BA%BF%E9%B8%A1">위안산하선거(圆山下线鸡)</span> — 취호공원 남문 근처, 닭고기 쌀국수 전문점. 부담없는 아침/점심 가격 (15–25위안).</div></div>
-              <div class="step"><div class="num">5</div><div><strong>14:30–16:00</strong> <span class="place" data-google="https://www.google.com/maps/search/Cuihu+Park+Kunming" data-baidu="https://map.baidu.com/search/翠湖公园+昆明" data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%B7%A8%ED%98%B8%EA%B3%B5%EC%9B%90%20%E7%BF%A0%E6%B9%96%E5%85%AC%E5%9B%AD&udm=2">취호공원(翠湖公园)</span> 산책 — 도심 대표 공원, 여유로운 마지막 오후.</div></div>
-              <div class="step"><div class="num">6</div><div><strong>16:00–17:30</strong> 카페 타임 또는 기념품 구매 — 취호 주변 또는 <span class="place" data-google="https://www.google.com/maps/search/Nanping+Street+Kunming" data-baidu="https://map.baidu.com/search/南屏街+昆明" data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EB%82%9C%ED%95%91%EC%A0%9C%20%E5%8D%97%E5%B1%8F%E8%A1%97&udm=2">난핑제(南屏街)</span>.</div></div>
-              <div class="step"><div class="num">7</div><div><strong>17:30–18:30</strong> 저녁 식사 — 쿤밍 마지막 식사 — <span class="place" data-google="https://www.google.com/maps/search/半坡小锅米线+昆明" data-baidu="https://map.baidu.com/search/半坡小锅米线+昆明" data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EB%B0%98%ED%8F%AC%EC%86%8C%EA%B6%88%EB%AF%B8%EC%84%A0%20%E5%8D%8A%E5%9D%A1%E5%B0%8F%E9%94%85%E7%B1%B3%E7%BA%BF">반포소궈미선(半坡小锅米线)</span> 또는 과교미선 전문점. 1인 25–50위안.</div></div>
-              <div class="step"><div class="num">8</div><div><strong>19:00–19:30</strong> 쿤밍역 짐 보관소에서 짐 회수 후 공항으로 이동 (택시, 약 40분).</div></div>
-              <div class="step"><div class="num">9</div><div><strong>19:30–22:25</strong> 쿤밍 창수이공항 도착, 체크인 및 출국 준비.</div></div>
-              <div class="step"><div class="num">10</div><div><strong>22:25</strong> 출발 — 쿤밍(KMG) → 난징(NKG) 01:25 도착 (MU2766).</div></div>
-              <div class="step"><div class="num">11</div><div><strong>5/10 08:15</strong> 난징 → 인천(ICN) 11:15 도착 (MU579).</div></div>
-            </div>
-            <div class="tip">항공편 3시간 전 공항 도착 권장. 난징 대기 약 6시간 50분 — B 카운터 뒤편이 누워서 대기하기 좋음.</div>
-          </section>
-          <aside class="card">
-            <h4>귀국편 정보</h4>
-            <div class="meta">
-              <div><strong>열차</strong> 리장→쿤밍 08:40–12:52 (~40,782원)</div>
-              <div><strong>짐 보관</strong> 쿤밍역 짐 보관소 이용</div>
-              <div><strong>1구간</strong> KMG 22:25 → NKG 01:25 (MU2766)</div>
-              <div><strong>대기</strong> 난징공항 약 6시간 50분</div>
-              <div><strong>2구간</strong> NKG 08:15 → ICN 11:15 (MU579)</div>
-              <div><strong>5/10(토)</strong> 인천 11:15 도착</div>
-            </div>
-          </aside>
-        </div>
-      </article>
-
-    </section>
-
-    <!-- ==================== 고속열차 시간표 ==================== -->
-    <section class="info-section train-section" id="train-schedule">
-      <h3>🚄 고속열차 시간표</h3>
-      <p style="color:var(--color-text-muted);margin-bottom:var(--space-6)">아래 시간표는 참고용이며, 실제 운행 시간은 예매 시 확인하세요.</p>
-
-      <h4 style="font-family:var(--font-display);margin-bottom:var(--space-3)">쿤밍 → 따리</h4>
-      <div class="train-table-wrap">
-        <table class="train-table">
-          <thead><tr><th>출발</th><th>도착</th><th>소요시간</th><th>가격(약)</th></tr></thead>
-          <tbody>
-            <tr><td>06:00</td><td>08:31</td><td>2시간 30분</td><td>32,700원</td></tr>
-            <tr><td>07:02</td><td>09:33</td><td>2시간 31분</td><td>32,700원</td></tr>
-            <tr><td>08:23</td><td>10:51</td><td>2시간 28분</td><td>34,000원</td></tr>
-            <tr><td>09:01</td><td>11:29</td><td>2시간 28분</td><td>34,000원</td></tr>
-            <tr><td>10:36</td><td>13:07</td><td>2시간 31분</td><td>34,000원</td></tr>
-            <tr class="highlight"><td>11:44</td><td>14:12</td><td>2시간 28분</td><td>32,700원</td></tr>
-            <tr><td>13:51</td><td>16:18</td><td>2시간 27분</td><td>34,000원</td></tr>
-            <tr><td>15:53</td><td>18:20</td><td>2시간 27분</td><td>32,700원</td></tr>
-            <tr><td>17:48</td><td>20:16</td><td>2시간 28분</td><td>35,000원</td></tr>
-            <tr><td>18:49</td><td>21:17</td><td>2시간 28분</td><td>35,000원</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p style="font-size:var(--text-sm);color:var(--color-text-muted)">
-        <strong style="color:var(--color-primary)">★ 11:44 출발 = Day 3 이용 예정 시간</strong>
-      </p>
-      <p style="margin-top:var(--space-2)">
-        <a href="https://kr.trip.com/trains/china/list?departureStationName=%EC%BF%A4%EB%B0%8D&arrivalStationName=%EB%8B%A4%EB%A6%AC%EC%8B%9C&departureCityId=34&arrivalCityId=669326&departureCountryCode=CN&arrivalCountryCode=CN&departDate=2026-01-31&departureStationCode=CN530100&arrivalStationCode=CN532901" target="_blank" rel="noopener noreferrer">🔗 트립닷컴에서 예매하기 (쿤밍→따리)</a>
-      </p>
-
-      <h4 style="font-family:var(--font-display);margin:var(--space-8) 0 var(--space-3)">리장 → 쿤밍</h4>
-      <p style="color:var(--color-text-muted);margin-bottom:var(--space-3);font-size:var(--text-sm)">평균 소요시간: 3.5~4.5시간</p>
-      <div class="train-table-wrap">
-        <table class="train-table">
-          <thead><tr><th>출발</th><th>도착</th><th>소요시간</th><th>가격(약)</th></tr></thead>
-          <tbody>
-            <tr><td>08:10</td><td>12:02</td><td>3시간 52분</td><td>40,782원</td></tr>
-            <tr class="highlight"><td>08:40</td><td>12:52</td><td>4시간 12분</td><td>40,782원</td></tr>
-            <tr><td>09:10</td><td>13:44</td><td>4시간 34분</td><td>40,782원</td></tr>
-            <tr><td>11:33</td><td>16:04</td><td>4시간 31분</td><td>40,782원</td></tr>
-            <tr><td>13:01</td><td>17:01</td><td>4시간</td><td>40,782원</td></tr>
-            <tr><td>17:07</td><td>21:01</td><td>3시간 54분</td><td>40,782원</td></tr>
-            <tr><td>18:41</td><td>22:03</td><td>3시간 22분</td><td>40,782원</td></tr>
-            <tr><td>19:08</td><td>23:11</td><td>4시간 3분</td><td>40,782원</td></tr>
-            <tr><td>19:35</td><td>23:47</td><td>4시간 12분</td><td>39,065원</td></tr>
-            <tr><td>20:10</td><td>23:57</td><td>3시간 47분</td><td>37,348원</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p style="font-size:var(--text-sm);color:var(--color-text-muted)">
-        <strong style="color:var(--color-primary)">★ 08:40 출발 추천 = Day 8 이용 시 쿤밍 12:52 도착</strong>
-      </p>
-      <p style="margin-top:var(--space-2)">
-        <a href="https://kr.trip.com/trains/china/list?departureStationName=%EB%A6%AC%EC%9E%A5&arrivalStationName=%EC%BF%A4%EB%B0%8D&departureCountryCode=CN&arrivalCountryCode=CN&departDate=2026-04-24&returnDate=2026-04-24&departureStationCode=CN001LHM&arrivalStationCode=CN001KMM" target="_blank" rel="noopener noreferrer">🔗 트립닷컴에서 예매하기 (리장→쿤밍)</a>
-      </p>
-
-      <div class="train-notice">
-        ⚠️ 기차표는 출발 약 <strong>2주 전 15:00</strong>부터 판매 시작됩니다. 날짜에 맞춰 미리 예매하세요.
-      </div>
-    </section>
-
-    <!-- ==================== 준비사항 체크리스트 ==================== -->
-    <section class="info-section" id="checklist">
-      <h3>✅ 준비사항 체크리스트</h3>
-      <div class="info-grid">
-        <div>
-          <h4 style="margin-bottom:var(--space-3);font-weight:700">필수 서류</h4>
-          <ul class="checklist">
-            <li>여권 (유효기간 6개월 이상)</li>
-            <li>여행자 보험</li>
-            <li>항공권 e-티켓 출력 또는 저장</li>
-            <li>숙소 예약 확인서</li>
-          </ul>
-        </div>
-        <div>
-          <h4 style="margin-bottom:var(--space-3);font-weight:700">짐 챙기기</h4>
-          <ul class="checklist">
-            <li>편한 운동화 (트레킹용)</li>
-            <li>방한 겉옷 (고산·일교차 대비)</li>
-            <li>선크림 (고산지역 자외선 강함)</li>
-            <li>선글라스</li>
-            <li>상비약</li>
-          </ul>
-        </div>
-        <div>
-          <h4 style="margin-bottom:var(--space-3);font-weight:700">교통</h4>
-          <ul class="checklist">
-            <li>쿤밍 창수이 국제공항 입국</li>
-            <li>도시 간 이동: 기차/버스</li>
-            <li>현지 교통: 택시, DiDi 앱 설치</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== 필독사항 ==================== -->
-    <section class="info-section" id="must-read">
-      <h3>⚠️ 필독사항</h3>
-      <ul class="info-section" style="border:none;padding:0;box-shadow:none;margin:0">
-        <li><strong>여권 항상 소지</strong> — 주요 명소 입장 및 기차 탑승 시 여권 검사 필수</li>
-        <li><strong>중국 기차역/지하철 보안 검사</strong> — 짐 검사가 엄격하니 여유 시간 확보</li>
-        <li><strong>고산병 주의</strong> — 리장(2,400m), 옥룡설산(4,500m+). 무리하지 말고 천천히 적응</li>
-        <li>참고: <a href="https://blog.naver.com/books4973/223726958069" target="_blank" rel="noopener noreferrer">윈난성 여행 후기 블로그</a></li>
-      </ul>
-    </section>
-
-    <!-- ==================== 기타 여행 정보 ==================== -->
-    <section class="info-section" id="travel-info">
-      <h3>ℹ️ 기타 여행 정보</h3>
-      <div class="info-grid">
-        <div>
-          <ul style="list-style:none;display:grid;gap:.7rem">
-            <li><strong>언어</strong> — 중국어 (소수민족 언어 병행)</li>
-            <li><strong>화폐</strong> — 위안화(CNY)</li>
-            <li><strong>시차</strong> — 한국보다 1시간 느림</li>
-            <li><strong>고도</strong> — 쿤밍 1,890m / 리장 2,400m</li>
-          </ul>
-        </div>
-        <div>
-          <ul style="list-style:none;display:grid;gap:.7rem">
-            <li><strong>추천 음식</strong> — 과교미선, 기화계(汽锅鸡), 라파이구(말린갈비 훠궈), 얼쿠아이(饵块), 바이족 전통 음식, 푸얼차</li>
-            <li><strong>여행 팁</strong> — 고산병 대비, 일교차 큼, 현금 준비</li>
-            <li><strong>짐 보관소</strong> — <a href="https://blog.naver.com/jjj125/224003866909" target="_blank" rel="noopener noreferrer">짐 보관 정보 블로그</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== 남경 공항 대기 팁 ==================== -->
-    <section class="info-section" id="nanjing-airport">
-      <h3>🛫 남경(난징) 공항 대기 팁</h3>
-      <p>귀국편 경유 시 난징공항에서 약 6시간 50분 대기합니다.</p>
-      <ul style="list-style:none;display:grid;gap:.5rem;margin-top:var(--space-4)">
-        <li>• <strong>B 카운터 뒤편 추천</strong> — 의자 많음, 화장실·식수대·콘센트 접근성 좋음, 누워서 수면 가능</li>
-        <li>• 공항 내 커피 체인(디코스 등) 이용 가능</li>
-        <li>• 라운지는 새벽 시간 운영 제한 가능성 있음 → 공항 대기 전략이 현실적</li>
-        <li>• 참고: <a href="https://blog.naver.com/pnu_simsea/220870048394" target="_blank" rel="noopener noreferrer">난징공항 대기 후기</a></li>
-      </ul>
-    </section>
-
-    <!-- ==================== 참고 블로그 링크 ==================== -->
-    <section class="info-section" id="blog-links">
-      <h3>📚 참고 블로그 링크</h3>
-      <ul class="blog-links">
-        <li><a href="https://m.blog.naver.com/aksgek7/223906729120" target="_blank" rel="noopener noreferrer">운남 여행 종합 가이드</a><span>m.blog.naver.com/aksgek7</span></li>
-        <li><a href="https://naver.me/x4GKFGrV" target="_blank" rel="noopener noreferrer">운남 여행 정보 ①</a><span>naver.me</span></li>
-        <li><a href="https://naver.me/GWise1Qx" target="_blank" rel="noopener noreferrer">운남 여행 정보 ②</a><span>naver.me</span></li>
-        <li><a href="https://naver.me/5DD4DIb3" target="_blank" rel="noopener noreferrer">운남 여행 정보 ③</a><span>naver.me</span></li>
-        <li><a href="https://naver.me/xJGZGZSF" target="_blank" rel="noopener noreferrer">운남 여행 정보 ④</a><span>naver.me</span></li>
-        <li><a href="https://blog.naver.com/nihaosubin/223845645975" target="_blank" rel="noopener noreferrer">샹그릴라·백수대 후기</a><span>blog.naver.com/nihaosubin</span></li>
-        <li><a href="https://blog.naver.com/newyoonbb/224033588438" target="_blank" rel="noopener noreferrer">쿤밍 마사지 추천</a><span>blog.naver.com/newyoonbb</span></li>
-        <li><a href="https://blog.naver.com/giguin79/223609483748" target="_blank" rel="noopener noreferrer">쿤밍 가볼만한 곳</a><span>blog.naver.com/giguin79</span></li>
-        <li><a href="https://blog.naver.com/beautyune/223002502102" target="_blank" rel="noopener noreferrer">샤시고진 맛집 및 카페</a><span>blog.naver.com/beautyune</span></li>
-        <li><a href="https://blog.naver.com/vcolor98/223750230341" target="_blank" rel="noopener noreferrer">샤시→리장 이동 방법</a><span>blog.naver.com/vcolor98</span></li>
-      </ul>
-    </section>
-
-    <section class="note">
-      <p><strong>메모</strong> 장소명을 클릭하면 구글 맵 / 바이두 맵 링크를 선택할 수 있습니다. 일부 식당과 마사지숍은 개별 상호가 자주 바뀌므로, 숙소와 핵심 관광지 위주로 지도 링크를 넣었습니다.</p>
-    </section>
-
-    <footer class="footer">
-      최종 업데이트: 2026년 3월 · 노션 일정 반영 · 중국동방항공 ICN↔KMG · 쿤밍 2박 + 샤시 2박 + 리장 3박 · MU-2004 ICN 07:45→KMG 11:15
-    </footer>
-  </main>
-
-  <a class="backtop" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" aria-label="맨 위로">↑</a>
-
-  <script>
-    // Dark mode toggle
-    (function(){
-      const btn=document.querySelector('[data-theme-toggle]');
-      const root=document.documentElement;
-      let mode=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
-      root.setAttribute('data-theme',mode);
-      function render(){
-        btn.innerHTML = mode==='dark'
-          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
-          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>운남 여행 일정표</title>
+    <meta
+      name="description"
+      content="쿤밍-샤시-리장 여행 일정표 2026.05.02–05.10"
+    />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root,
+      [data-theme="light"] {
+        --text-xs: 0.75rem;
+        --text-sm: 0.875rem;
+        --text-base: 0.9375rem;
+        --text-lg: 1.125rem;
+        --text-xl: 1.375rem;
+        --text-2xl: 1.75rem;
+        --text-3xl: 2.25rem;
+
+        --space-1: 4px;
+        --space-2: 8px;
+        --space-3: 12px;
+        --space-4: 16px;
+        --space-5: 20px;
+        --space-6: 24px;
+        --space-8: 32px;
+        --space-10: 40px;
+        --space-12: 48px;
+        --space-16: 64px;
+
+        /* Google-inspired palette */
+        --color-bg: #ffffff;
+        --color-surface: #ffffff;
+        --color-surface-2: #f8f9fa;
+        --color-surface-container: #f1f3f4;
+        --color-border: #dadce0;
+        --color-border-light: #e8eaed;
+        --color-text: #202124;
+        --color-text-secondary: #5f6368;
+        --color-text-tertiary: #80868b;
+        --color-primary: #1a73e8;
+        --color-primary-hover: #1557b0;
+        --color-primary-container: #d2e3fc;
+        --color-primary-on-container: #174ea6;
+        --color-error: #d93025;
+        --color-success: #188038;
+        --color-warning: #e37400;
+        --color-on-primary: #fff;
+
+        --shadow-1: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+          0 1px 3px 1px rgba(60, 64, 67, 0.15);
+        --shadow-2: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+          0 2px 6px 2px rgba(60, 64, 67, 0.15);
+        --shadow-3: 0 4px 8px 3px rgba(60, 64, 67, 0.15),
+          0 1px 3px rgba(60, 64, 67, 0.3);
+
+        --radius-sm: 8px;
+        --radius-md: 12px;
+        --radius-lg: 16px;
+        --radius-xl: 28px;
+        --radius-full: 9999px;
+
+        --font-family: "Pretendard Variable", Pretendard, -apple-system,
+          BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+          "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
       }
-      render();
-      btn.addEventListener('click',()=>{mode=mode==='dark'?'light':'dark';root.setAttribute('data-theme',mode);render();});
-    })();
 
-    // Place tooltip functionality
-    (function(){
-      let activeTooltip = null;
+      [data-theme="dark"] {
+        --color-bg: #1f1f1f;
+        --color-surface: #2d2d2d;
+        --color-surface-2: #333333;
+        --color-surface-container: #3c3c3c;
+        --color-border: #5f5f5f;
+        --color-border-light: #4a4a4a;
+        --color-text: #e8eaed;
+        --color-text-secondary: #bdc1c6;
+        --color-text-tertiary: #9aa0a6;
+        --color-primary: #8ab4f8;
+        --color-primary-hover: #aecbfa;
+        --color-primary-container: #394457;
+        --color-primary-on-container: #8ab4f8;
+        --color-on-primary: #202124;
+        --shadow-1: 0 1px 3px 1px rgba(0, 0, 0, 0.5),
+          0 1px 2px 0 rgba(0, 0, 0, 0.6);
+        --shadow-2: 0 2px 6px 2px rgba(0, 0, 0, 0.5),
+          0 1px 2px 0 rgba(0, 0, 0, 0.6);
+        --shadow-3: 0 4px 8px 3px rgba(0, 0, 0, 0.4),
+          0 1px 3px rgba(0, 0, 0, 0.5);
+      }
 
-      document.querySelectorAll('.place').forEach(function(el){
-        el.addEventListener('click', function(e){
-          e.stopPropagation();
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+      }
 
-          // Close any existing tooltip
-          if(activeTooltip){
-            activeTooltip.remove();
-            if(activeTooltip._owner === el){
-              activeTooltip = null;
-              return;
+      body {
+        min-height: 100dvh;
+        font-family: var(--font-family);
+        font-size: var(--text-base);
+        line-height: 1.6;
+        color: var(--color-text);
+        background: var(--color-bg);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: var(--color-primary);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      img,
+      svg {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      button {
+        font: inherit;
+        border: 0;
+        background: none;
+        cursor: pointer;
+      }
+
+      .skip {
+        position: absolute;
+        left: -9999px;
+        top: auto;
+      }
+      .skip:focus {
+        left: 16px;
+        top: 16px;
+        background: var(--color-surface);
+        padding: 12px 16px;
+        border-radius: var(--radius-sm);
+        z-index: 20;
+        border: 1px solid var(--color-border);
+      }
+
+      .shell {
+        width: min(960px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      /* ─── Top bar ─── */
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: var(--color-surface);
+        border-bottom: 1px solid var(--color-border-light);
+      }
+      .topbar-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+        gap: 16px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--color-primary);
+        display: grid;
+        place-items: center;
+        color: var(--color-on-primary);
+        flex-shrink: 0;
+      }
+      .brand h1 {
+        font-size: var(--text-lg);
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+      .brand p {
+        font-size: var(--text-xs);
+        color: var(--color-text-tertiary);
+      }
+
+      .theme-toggle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: var(--color-text-secondary);
+        transition: background 0.15s;
+      }
+      .theme-toggle:hover {
+        background: var(--color-surface-container);
+      }
+
+      /* ─── Hero ─── */
+      .hero {
+        padding: var(--space-10) 0 var(--space-8);
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-6);
+      }
+
+      .hero-card {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border-light);
+        border-radius: var(--radius-lg);
+        padding: var(--space-8);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 12px;
+        border-radius: var(--radius-full);
+        background: var(--color-primary-container);
+        color: var(--color-primary-on-container);
+        font-size: var(--text-xs);
+        font-weight: 600;
+        margin-bottom: var(--space-5);
+      }
+
+      .hero h2 {
+        font-size: var(--text-3xl);
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        margin-bottom: var(--space-4);
+      }
+      .hero p {
+        color: var(--color-text-secondary);
+        line-height: 1.7;
+        max-width: 50ch;
+      }
+
+      .facts {
+        display: grid;
+        gap: 8px;
+        padding: var(--space-6);
+      }
+      .fact {
+        padding: 12px 16px;
+        border-radius: var(--radius-sm);
+        background: var(--color-surface-2);
+      }
+      .fact .k {
+        font-size: 11px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--color-text-tertiary);
+        margin-bottom: 2px;
+      }
+      .fact .v {
+        font-weight: 500;
+        font-size: var(--text-sm);
+      }
+      .fact .v a {
+        font-weight: 500;
+      }
+
+      /* ─── TOC ─── */
+      .toc {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border-light);
+        border-radius: var(--radius-lg);
+        padding: var(--space-6);
+        margin-bottom: var(--space-8);
+      }
+      .toc h2,
+      .section-title {
+        font-size: var(--text-lg);
+        font-weight: 600;
+        margin-bottom: var(--space-4);
+      }
+      .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 8px;
+      }
+      .toc a {
+        display: block;
+        padding: 14px 16px;
+        border-radius: var(--radius-sm);
+        background: var(--color-surface-2);
+        font-weight: 600;
+        font-size: var(--text-sm);
+        color: var(--color-text);
+        transition: background 0.15s, box-shadow 0.15s;
+      }
+      .toc a:hover {
+        background: var(--color-primary-container);
+        color: var(--color-primary-on-container);
+        text-decoration: none;
+        box-shadow: var(--shadow-1);
+      }
+      .toc a small {
+        display: block;
+        color: var(--color-text-tertiary);
+        font-weight: 400;
+        margin-top: 2px;
+        font-size: var(--text-xs);
+      }
+
+      /* ─── Main ─── */
+      main {
+        padding-bottom: var(--space-16);
+      }
+      .days {
+        display: grid;
+        gap: var(--space-5);
+      }
+
+      /* ─── Day cards ─── */
+      .day,
+      .note,
+      .info-section {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border-light);
+        border-radius: var(--radius-lg);
+        padding: var(--space-6);
+      }
+      .day::before,
+      .info-section::before {
+        display: none;
+      }
+
+      .day-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: var(--space-4);
+        margin-bottom: var(--space-5);
+        padding-bottom: var(--space-4);
+        border-bottom: 1px solid var(--color-border-light);
+      }
+      .day-title {
+        font-size: var(--text-xl);
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        line-height: 1.3;
+      }
+      .day-sub {
+        color: var(--color-text-secondary);
+        margin-top: 4px;
+        font-size: var(--text-sm);
+      }
+
+      .pill {
+        padding: 4px 12px;
+        border-radius: var(--radius-full);
+        background: var(--color-primary-container);
+        color: var(--color-primary-on-container);
+        font-size: var(--text-xs);
+        font-weight: 600;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: var(--space-5);
+      }
+
+      .card {
+        background: var(--color-surface-2);
+        border-radius: var(--radius-md);
+        padding: var(--space-5);
+      }
+      .card h4 {
+        font-size: var(--text-sm);
+        font-weight: 600;
+        margin-bottom: var(--space-3);
+        color: var(--color-text);
+      }
+
+      .steps {
+        display: grid;
+        gap: 14px;
+      }
+      .step {
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        gap: 12px;
+        align-items: flex-start;
+      }
+
+      .num {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--color-primary);
+        color: #ffffff !important;
+        display: grid;
+        place-items: center;
+        font-weight: 600;
+        font-size: 12px;
+      }
+
+      .step > div {
+        font-size: var(--text-sm);
+        color: var(--color-text-secondary);
+        line-height: 1.6;
+      }
+      .step strong {
+        color: var(--color-text);
+        font-weight: 600;
+      }
+      .card p,
+      .card li {
+        color: var(--color-text-secondary);
+        font-size: var(--text-sm);
+      }
+
+      .meta {
+        display: grid;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      .meta div {
+        font-size: var(--text-sm);
+        color: var(--color-text-secondary);
+      }
+      .meta strong {
+        color: var(--color-text);
+        font-weight: 600;
+      }
+
+      ul.clean {
+        list-style: none;
+        display: grid;
+        gap: 8px;
+      }
+      .price {
+        font-weight: 600;
+        color: var(--color-text);
+      }
+
+      .note,
+      .info-section {
+        margin-top: var(--space-5);
+      }
+      .note strong,
+      .info-section strong {
+        color: var(--color-text);
+      }
+      .info-section h3 {
+        font-size: var(--text-lg);
+        font-weight: 600;
+        margin-bottom: var(--space-4);
+      }
+      .info-section p,
+      .info-section li {
+        color: var(--color-text-secondary);
+        line-height: 1.7;
+        font-size: var(--text-sm);
+      }
+      .info-section ul {
+        list-style: none;
+        display: grid;
+        gap: 6px;
+      }
+      .info-section ul li::before {
+        content: "\2022\00a0";
+        color: var(--color-primary);
+        font-weight: 700;
+      }
+
+      .footer {
+        padding: var(--space-8) 0 var(--space-12);
+        color: var(--color-text-tertiary);
+        font-size: var(--text-xs);
+        text-align: center;
+        border-top: 1px solid var(--color-border-light);
+        margin-top: var(--space-8);
+      }
+
+      .backtop {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--color-primary);
+        color: var(--color-on-primary);
+        display: grid;
+        place-items: center;
+        box-shadow: var(--shadow-3);
+        transition: transform 0.15s, box-shadow 0.15s;
+        font-size: 1.2rem;
+      }
+      .backtop:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-3);
+        color: var(--color-on-primary);
+        text-decoration: none;
+      }
+
+      /* ─── Tip ─── */
+      .tip {
+        margin-top: var(--space-4);
+        padding: 12px 16px;
+        border-radius: var(--radius-sm);
+        background: #fef7e0;
+        color: #3c3000;
+        font-size: var(--text-sm);
+        line-height: 1.6;
+        border-left: 3px solid var(--color-warning);
+      }
+      [data-theme="dark"] .tip {
+        background: #3c3520;
+        color: #e8d5a0;
+      }
+      .tip::before {
+        content: "";
+      }
+      .tip a {
+        color: var(--color-primary);
+      }
+
+      /* ─── Place tooltip ─── */
+      .place {
+        border-bottom: 1.5px dashed var(--color-primary);
+        cursor: pointer;
+        position: relative;
+        color: inherit;
+        font-weight: inherit;
+        transition: color 0.1s;
+      }
+      .place:hover {
+        color: var(--color-primary);
+      }
+      .place-tooltip {
+        position: absolute;
+        bottom: calc(100% + 8px);
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-3);
+        padding: 8px 12px;
+        display: none;
+        z-index: 100;
+        white-space: nowrap;
+        min-width: 170px;
+      }
+      .place-tooltip.active {
+        display: block;
+      }
+      .place-tooltip::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 6px solid transparent;
+        border-top-color: var(--color-border);
+      }
+      .place-tooltip::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 5px solid transparent;
+        border-top-color: var(--color-surface);
+        z-index: 1;
+        margin-top: -1px;
+      }
+      .place-tooltip a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 0;
+        font-size: var(--text-sm);
+        font-weight: 500;
+        color: var(--color-primary);
+        white-space: nowrap;
+      }
+      .place-tooltip a:hover {
+        color: var(--color-primary-hover);
+        text-decoration: none;
+      }
+      .place-tooltip a + a {
+        border-top: 1px solid var(--color-border-light);
+        margin-top: 4px;
+        padding-top: 6px;
+      }
+
+      /* ─── Train tables ─── */
+      .train-section {
+        margin-top: var(--space-5);
+      }
+      .train-section h3 {
+        font-size: var(--text-lg);
+        font-weight: 600;
+        margin-bottom: var(--space-4);
+      }
+      .train-table-wrap {
+        overflow-x: auto;
+        margin-bottom: var(--space-4);
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--color-border-light);
+      }
+      .train-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: var(--text-sm);
+      }
+      .train-table th {
+        text-align: left;
+        padding: 10px 16px;
+        background: var(--color-surface-2);
+        color: var(--color-text-secondary);
+        font-weight: 600;
+        font-size: var(--text-xs);
+        letter-spacing: 0.03em;
+        border-bottom: 1px solid var(--color-border-light);
+      }
+      .train-table td {
+        padding: 10px 16px;
+        border-bottom: 1px solid var(--color-border-light);
+      }
+      .train-table tr:last-child td {
+        border-bottom: none;
+      }
+      .train-table tr:hover td {
+        background: var(--color-surface-2);
+      }
+      .train-table .highlight td {
+        background: var(--color-primary-container);
+        font-weight: 600;
+      }
+      .train-notice {
+        font-size: var(--text-sm);
+        color: var(--color-text-secondary);
+        margin-top: var(--space-3);
+        padding: 12px 16px;
+        background: #fef7e0;
+        border-radius: var(--radius-sm);
+        border-left: 3px solid var(--color-warning);
+      }
+      [data-theme="dark"] .train-notice {
+        background: #3c3520;
+        color: #e8d5a0;
+      }
+
+      /* ─── Checklist ─── */
+      .checklist {
+        list-style: none;
+        display: grid;
+        gap: 6px;
+      }
+      .checklist li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        color: var(--color-text-secondary);
+        font-size: var(--text-sm);
+        line-height: 1.6;
+      }
+      .checklist li::before {
+        content: "☐";
+        color: var(--color-primary);
+        font-size: 1.1em;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+
+      /* ─── Blog links ─── */
+      .blog-links {
+        list-style: none;
+        display: grid;
+        gap: 8px;
+      }
+      .blog-links li {
+        padding: 12px 16px;
+        background: var(--color-surface-2);
+        border-radius: var(--radius-sm);
+        transition: background 0.15s;
+      }
+      .blog-links li:hover {
+        background: var(--color-surface-container);
+      }
+      .blog-links li::before {
+        display: none;
+      }
+      .blog-links li a {
+        font-weight: 500;
+        font-size: var(--text-sm);
+        word-break: break-all;
+      }
+      .blog-links li span {
+        display: block;
+        font-size: var(--text-xs);
+        color: var(--color-text-tertiary);
+        margin-top: 2px;
+      }
+
+      /* ─── Info grid ─── */
+      .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-6);
+        margin-top: var(--space-5);
+      }
+
+      /* ─── Train link ─── */
+      .train-link {
+        color: var(--color-primary);
+        text-decoration: none;
+        border-bottom: 1.5px dashed var(--color-primary);
+        padding-bottom: 1px;
+        transition: color 0.15s, border-color 0.15s;
+        cursor: pointer;
+      }
+      .train-link:hover {
+        color: var(--color-primary-darker, #1558b0);
+        border-bottom-style: solid;
+      }
+
+      /* ─── Mobile sidebar ─── */
+      .hamburger {
+        display: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        color: var(--color-text-secondary);
+        align-items: center;
+        justify-content: center;
+        transition: background 0.15s;
+        flex-shrink: 0;
+      }
+      .hamburger:hover {
+        background: var(--color-surface-container);
+      }
+      .sidebar-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 99;
+        background: rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        transition: opacity 0.25s ease;
+      }
+      .sidebar-overlay.open {
+        display: block;
+        opacity: 1;
+      }
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 280px;
+        max-width: 80vw;
+        z-index: 100;
+        background: var(--color-surface);
+        box-shadow: var(--shadow-3);
+        transform: translateX(-100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .sidebar.open {
+        transform: translateX(0);
+      }
+      .sidebar-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 20px;
+        border-bottom: 1px solid var(--color-border-light);
+      }
+      .sidebar-header h2 {
+        font-size: var(--text-base);
+        font-weight: 600;
+        margin: 0;
+      }
+      .sidebar-close {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        color: var(--color-text-secondary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        transition: background 0.15s;
+      }
+      .sidebar-close:hover {
+        background: var(--color-surface-container);
+      }
+      .sidebar-nav {
+        list-style: none;
+        padding: 12px 0;
+        margin: 0;
+      }
+      .sidebar-nav li a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 20px;
+        text-decoration: none;
+        color: var(--color-text);
+        font-size: var(--text-sm);
+        transition: background 0.12s;
+      }
+      .sidebar-nav li a:hover,
+      .sidebar-nav li a:focus {
+        background: var(--color-surface-2);
+      }
+      .sidebar-nav .nav-day {
+        font-weight: 600;
+        color: var(--color-primary);
+        min-width: 48px;
+      }
+      .sidebar-nav .nav-desc {
+        color: var(--color-text-secondary);
+        font-size: var(--text-xs);
+      }
+      .sidebar-nav .nav-divider {
+        height: 1px;
+        background: var(--color-border-light);
+        margin: 8px 20px;
+      }
+      .sidebar-nav .nav-section a {
+        font-weight: 500;
+        color: var(--color-text-secondary);
+        font-size: var(--text-xs);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      /* ─── Responsive ─── */
+      @media (max-width: 768px) {
+        .hamburger {
+          display: flex;
+        }
+        .shell {
+          width: calc(100% - 24px);
+        }
+        .hero-grid,
+        .grid,
+        .info-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-card {
+          padding: var(--space-5);
+        }
+        .hero h2 {
+          font-size: var(--text-2xl);
+        }
+        .day {
+          padding: var(--space-4);
+        }
+        .day-head {
+          flex-direction: column;
+        }
+        .toc-grid {
+          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+        .place-tooltip {
+          left: 0;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#content">본문으로 건너뛰기</a>
+    <header class="topbar">
+      <div class="shell topbar-inner">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-label="운남 여행"
+            >
+              <path d="M12 2L2 22h20L12 2z" fill="currentColor" opacity=".15" />
+              <path d="M12 2L2 22h20L12 2z" />
+            </svg>
+          </div>
+          <div>
+            <h1>운남 여행 일정표</h1>
+            <p>쿤밍 · 샤시고진 · 리장 / 2026.05.02–05.10</p>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:4px;">
+          <button
+            class="theme-toggle"
+            data-theme-toggle
+            aria-label="다크 모드 전환"
+          >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          </button>
+          <button class="hamburger" id="hamburger-btn" aria-label="메뉴 열기">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile sidebar -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <nav class="sidebar" id="sidebar" aria-label="일정 네비게이션">
+      <div class="sidebar-header">
+        <h2>일정 목록</h2>
+        <button class="sidebar-close" id="sidebar-close" aria-label="메뉴 닫기">✕</button>
+      </div>
+      <ul class="sidebar-nav">
+        <li><a href="#day1"><span class="nav-day">Day 1</span> <span>5/2 · 쿤밍 도착</span></a></li>
+        <li><a href="#day2"><span class="nav-day">Day 2</span> <span>5/3 · 쿤밍 시내</span></a></li>
+        <li><a href="#day3"><span class="nav-day">Day 3</span> <span>5/4 · 쿤밍 → 샤시</span></a></li>
+        <li><a href="#day4"><span class="nav-day">Day 4</span> <span>5/5 · 샤시고진</span></a></li>
+        <li><a href="#day5"><span class="nav-day">Day 5</span> <span>5/6 · 샤시 → 리장</span></a></li>
+        <li><a href="#day6"><span class="nav-day">Day 6</span> <span>5/7 · 옥룡설산 · 인상여강</span></a></li>
+        <li><a href="#day7"><span class="nav-day">Day 7</span> <span>5/8 · 리장 (백사고진 · 고성)</span></a></li>
+        <li><a href="#day8"><span class="nav-day">Day 8</span> <span>5/9 · 리장→쿤밍 → 귀국</span></a></li>
+        <li class="nav-divider"></li>
+        <li class="nav-section"><a href="#train-schedule">🚄 고속열차 시간표</a></li>
+        <li class="nav-section"><a href="#checklist">✅ 준비사항 체크리스트</a></li>
+        <li class="nav-section"><a href="#must-read">⚠️ 필독사항</a></li>
+        <li class="nav-section"><a href="#travel-info">ℹ️ 기타 여행 정보</a></li>
+        <li class="nav-section"><a href="#nanjing-airport">🛫 난징 공항 대기 팁</a></li>
+        <li class="nav-section"><a href="#blog-links">📚 참고 블로그 링크</a></li>
+      </ul>
+    </nav>
+
+    <main id="content" class="shell">
+      <section class="hero">
+        <div class="hero-grid">
+          <article class="hero-card">
+            <div class="eyebrow">✈️ 노션 일정 반영 · 최종 확정판</div>
+            <h2>쿤밍, 샤시, 리장 8박 여행 일정표</h2>
+            <p>
+              중국동방항공 직항편으로 쿤밍 도착 후, 고속열차와 차량을 이용해
+              샤시고진·리장을 순환합니다. 장소명을 클릭하면 구글 맵 / 바이두 맵
+              링크를 선택할 수 있습니다.
+            </p>
+          </article>
+          <aside class="hero-card facts">
+            <div class="fact">
+              <div class="k">가는 편 (5/2)</div>
+              <div class="v">
+                중국동방항공 MU-2004 · ICN 07:45 → KMG 11:15 (직항)
+              </div>
+            </div>
+            <div class="fact">
+              <div class="k">오는 편 (5/9→5/10)</div>
+              <div class="v">
+                KMG 22:25 → 난징 01:25 (MU2766)<br />난징 08:15 → ICN 11:15
+                (MU579)
+              </div>
+            </div>
+            <div class="fact">
+              <div class="k">항공료</div>
+              <div class="v">₩416,300</div>
+            </div>
+            <div class="fact">
+              <div class="k">쿤밍 숙소 (5/2~3 · 2박)</div>
+              <div class="v"><a href="https://www.trip.com/hotels/kunming-hotel-detail-746347/kunming-upland-international-youth-hostel/" target="_blank" rel="noopener">Kunming Upland International Youth Hostel</a></div>
+            </div>
+            <div class="fact">
+              <div class="k">샤시 숙소 (5/4~5 · 2박)</div>
+              <div class="v"><a href="https://www.trip.com/hotels/jianchuan-hotel-detail-19521180/liao-house/" target="_blank" rel="noopener">Liaoshe Garden Hotel</a></div>
+            </div>
+            <div class="fact">
+              <div class="k">리장 숙소 (5/6~8 · 3박)</div>
+              <div class="v">
+                <a href="https://www.trip.com/hotels/lijiang-hotel-detail-2057686/another-residence-island-and-coffee-garden-vacation-b-and-b/" target="_blank" rel="noopener">Another Residence · island and coffee garden vacation B&amp;B</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="toc" aria-labelledby="toc-title">
+        <h2 id="toc-title" class="section-title">목차</h2>
+        <div class="toc-grid">
+          <a href="#day1">Day 1<small>5/2 · 쿤밍 도착</small></a>
+          <a href="#day2">Day 2<small>5/3 · 쿤밍 시내</small></a>
+          <a href="#day3">Day 3<small>5/4 · 쿤밍 → 샤시</small></a>
+          <a href="#day4">Day 4<small>5/5 · 샤시고진</small></a>
+          <a href="#day5">Day 5<small>5/6 · 샤시 → 리장</small></a>
+          <a href="#day6">Day 6<small>5/7 · 옥룡설산 · 인상여강</small></a>
+          <a href="#day7">Day 7<small>5/8 · 리장 (백사고진 · 고성)</small></a>
+          <a href="#day8">Day 8<small>5/9 · 리장→쿤밍 → 귀국</small></a>
+        </div>
+      </section>
+
+      <section class="days">
+        <!-- ==================== DAY 1 ==================== -->
+        <article class="day" id="day1">
+          <div class="day-head">
+            <div>
+              <div class="day-title">Day 1 · 5월 2일 토요일 · 쿤밍 도착</div>
+              <div class="day-sub">
+                ICN 07:45 출발 → KMG 11:15 도착 → 픽업 서비스 → 다관공원 ·
+                디엔치 호수 → 저녁
+              </div>
+            </div>
+            <div class="pill">직항 4시간 30분</div>
+          </div>
+          <div class="grid">
+            <section class="card">
+              <h4>시간대별 동선</h4>
+              <div class="steps">
+                <div class="step">
+                  <div class="num">1</div>
+                  <div>
+                    <strong>07:45</strong> 인천공항 출발 (중국동방항공 MU-2004,
+                    직항).
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">2</div>
+                  <div>
+                    <strong>11:15</strong> 쿤밍 창수이공항 도착. 입국심사 및
+                    수화물 수령 (약 30~40분).
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">3</div>
+                  <div>
+                    <strong>11:55</strong> 공항 픽업 서비스 탑승. 시내까지 약
+                    40~50분 소요.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">4</div>
+                  <div>
+                    <strong>12:40–13:00</strong> 숙소(Kunming Upland YH) 도착 —
+                    체크인 및 짐 정리.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">5</div>
+                  <div>
+                    <strong>13:00–14:00</strong> 점심 식사 — 숙소 인근 추천 3곳
+                    (따종디엔핑 기준): ①
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/彩食边境小吃+翠湖+昆明"
+                      data-baidu="https://map.baidu.com/search/彩食边境小吃+翠湖+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%B1%84%EC%8B%9D%EB%B3%80%EA%B2%BD%EC%86%8C%EC%B9%98%20%E5%BD%A9%E9%A3%9F%E8%BE%B9%E5%A2%83%E5%B0%8F%E5%90%83"
+                      >채식변경소치(彩食边境小吃, 취호점)</span
+                    >
+                    필吃榜 선정, 소수민족 간식 모음. 15–30위안 ②
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/半坡小锅米线+昆明"
+                      data-baidu="https://map.baidu.com/search/半坡小锅米线+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EB%B0%98%ED%8C%8C%EC%86%8C%EA%B6%88%EB%AF%B8%EC%84%A0%20%E5%8D%8A%E5%9D%A1%E5%B0%8F%E9%94%85%E7%B1%B3%E7%BA%BF"
+                      >반포소궈미선(半坡小锅米线)</span
+                    >
+                    필吃榜 선정, 쿤밍 대표 소궈미선 전문점. 15–25위안 ③
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/晨曦豆花米线+翠湖+昆明"
+                      data-baidu="https://map.baidu.com/search/晨曦豆花米线+翠湖+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%B2%9C%EC%8B%9C%EB%8D%94%EC%9A%B0%ED%99%94%EB%AF%B8%EC%84%A0%20%E6%99%A8%E6%9B%A6%E8%B1%86%E8%8A%B1%E7%B1%B3%E7%BA%BF"
+                      >천시더우화미선(晨曦豆花米线, 취호점)</span
+                    >
+                    필吃榜 선정, 두부+쌀국수 조합. 15–30위안.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">6</div>
+                  <div>
+                    <strong>14:30–16:00</strong>
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/place/Daguan+Park/@25.017287,102.6722897,17z"
+                      data-baidu="https://map.baidu.com/?shareurl=1&poiShareUid=f9be5a36379349c045e274dc"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EB%8B%A4%EA%B4%80%EA%B3%B5%EC%9B%90%20%E5%A4%A7%E8%A7%82%E5%85%AC%E5%9B%AD&udm=2"
+                      >다관공원(大观公园)</span
+                    >
+                    산책 — 다관루에서 디엔치 호수 조망, 연꽃 정원, 보이차 한 잔.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">7</div>
+                  <div>
+                    <strong>16:30–18:30</strong>
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/Dianchi+Lake+Kunming"
+                      data-baidu="https://map.baidu.com/search/滇池"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EB%94%94%EC%97%94%EC%B9%98%20%ED%98%B8%EC%88%98%20%E6%BB%87%E6%B1%A0&udm=2"
+                      >디엔치 호수(滇池)</span
+                    >
+                    산책 — 호수변 산책로, 석양 감상.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">8</div>
+                  <div>
+                    <strong>19:00–20:00</strong> 저녁 식사 — 추천 3곳: ①
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/茴香熙楼+翠湖+昆明"
+                      data-baidu="https://map.baidu.com/search/茴香熙楼+翠湖+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%ED%9A%8C%ED%96%A5%ED%9D%AC%EB%A3%A8%20%E8%8C%B4%E9%A6%99%E7%86%99%E6%A5%BC"
+                      >회향희루(茴香熙楼, 취호점)</span
+                    >
+                    필吃榜 선정, 윈난 전통 가정식. 1인 50–80위안 ②
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/云平风味园+护国路+昆明"
+                      data-baidu="https://map.baidu.com/search/云平风味园+护国路+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%9C%88%ED%95%91%ED%8E%91%EC%9B%A8%EC%9D%B4%EC%9C%84%EC%95%88%20%E4%BA%91%E5%B9%B3%E9%A3%8E%E5%91%B3%E5%9B%AD"
+                      >윈핑펑웨이위안(云平风味园, 후궈루점)</span
+                    >
+                    필吃榜 선정, 기화계(汽锅鸡)·볶음요리 추천. 1인 50–80위안 ③
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/四方小炒+云南菜小当家+昆明"
+                      data-baidu="https://map.baidu.com/search/四方小炒+云南菜小当家+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%82%AC%EB%B0%A9%EC%86%8C%EC%B4%88%20%E5%9B%9B%E6%96%B9%E5%B0%8F%E7%82%92"
+                      >사방소초(四方小炒·云南菜小当家)</span
+                    >
+                    필吃榜 선정, 윈난 볶음요리 전문. 1인 40–60위안.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">9</div>
+                  <div><strong>20:00–20:30</strong> 숙소 복귀 및 휴식.</div>
+                </div>
+              </div>
+              <div class="tip">
+                첫날이므로 해발 1,890m 적응 위해 무리하지 않기. 디엔치 호수에서
+                전기자전거 대여도 가능.
+              </div>
+            </section>
+            <aside class="card">
+              <h4>숙소 · 교통 · 참고</h4>
+              <div class="meta">
+                <div>
+                  <strong>숙소</strong> <a href="https://www.trip.com/hotels/kunming-hotel-detail-746347/kunming-upland-international-youth-hostel/" target="_blank" rel="noopener">Kunming Upland International Youth Hostel</a>
+                </div>
+                <div>
+                  <strong>이동</strong> 공항 픽업 서비스 11:55 (사전 예약,
+                  숙소까지 약 40~50분)
+                </div>
+                <div>
+                  <strong>참고 블로그</strong>
+                  <a
+                    href="https://blog.naver.com/giguin79/223609483748"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >쿤밍 가볼만한 곳</a
+                  >
+                </div>
+                <div>
+                  <strong>디엔치 자전거</strong>
+                  <a
+                    href="https://blog.naver.com/giguin79/223852170873"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >전기자전거 후기</a
+                  >
+                </div>
+              </div>
+            </aside>
+          </div>
+        </article>
+
+        <!-- ==================== DAY 2 ==================== -->
+        <article class="day" id="day2">
+          <div class="day-head">
+            <div>
+              <div class="day-title">Day 2 · 5월 3일 일요일 · 쿤밍</div>
+              <div class="day-sub">
+                녹호공원 · 윈난대학 · 원통사 · 쿤밍 노가 · 금마벽계방
+              </div>
+            </div>
+            <div class="pill">도보 + 택시 혼합</div>
+          </div>
+          <div class="grid">
+            <section class="card">
+              <h4>시간대별 동선</h4>
+              <div class="steps">
+                <div class="step">
+                  <div class="num">1</div>
+                  <div>
+                    <strong>08:30–09:30</strong> 숙소 조식 또는 근처 카페에서
+                    아침 (미선 또는 얼쿠아이바바 추천, 15–30위안).
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">2</div>
+                  <div>
+                    <strong>09:30–11:00</strong>
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/Cuihu+Park+Kunming"
+                      data-baidu="https://map.baidu.com/search/翠湖公园+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%B7%A8%ED%98%B8%EA%B3%B5%EC%9B%90%20%E7%BF%A0%E6%B9%96%E5%85%AC%E5%9B%AD&udm=2"
+                      >녹호공원(翠湖公园)</span
+                    >
+                    도보 이동 (숙소에서 약 15분) — 호수 한 바퀴 산책 (약 40분).
+                    사진 포인트: 연꽃 연못.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">3</div>
+                  <div>
+                    <strong>11:00–12:30</strong>
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/Yunnan+University+Kunming"
+                      data-baidu="https://map.baidu.com/search/云南大学+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%9C%88%EB%82%9C%EB%8C%80%ED%95%99%20%E4%BA%91%E5%8D%97%E5%A4%A7%E5%AD%A6&udm=2"
+                      >윈난대학(云南大学)</span
+                    >
+                    본캠퍼스 산책 — 은행나무 길(银杏大道)을 걸으며 역사적 건물
+                    감상. 교내 카페에서 커피 한 잔.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">4</div>
+                  <div>
+                    <strong>12:30–14:00</strong> 점심 — 추천 3곳: ①
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/文山荷鲜居+翠湖+昆明"
+                      data-baidu="https://map.baidu.com/search/文山荷鲜居+翠湖+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EB%AC%B8%EC%82%B0%ED%97%88%EC%84%A0%EC%A5%90%20%E6%96%87%E5%B1%B1%E8%8D%B7%E9%B2%9C%E5%B1%85"
+                      >문산허셴쥐(文山荷鲜居, 취호점)</span
+                    >
+                    필吃榜 선정, 문산(文山) 지역 특색 요리. 1인 40–60위안 ②
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/小吉坡8号+文林街+昆明"
+                      data-baidu="https://map.baidu.com/search/小吉坡8号+文林街+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%86%8C%EA%B8%B8%ED%8C%8C8%ED%98%B8%20%E5%B0%8F%E5%90%89%E5%9D%A18%E5%8F%B7"
+                      >소길파8호(小吉坡8号, 원린제점)</span
+                    >
+                    필吃榜 선정, 윈난 소수민족 풍미 캐주얼 식당. 1인 30–50위안 ③
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/刀敬小锅米线+永善路+昆明"
+                      data-baidu="https://map.baidu.com/search/刀敬小锅米线+永善路+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EB%8F%84%EA%B2%BD%EC%86%8C%EA%B6%88%EB%AF%B8%EC%84%A0%20%E5%88%80%E6%95%AC%E5%B0%8F%E9%94%85%E7%B1%B3%E7%BA%BF"
+                      >도경소궈미선(刀敬小锅米线, 융산루점)</span
+                    >
+                    필吃榜 선정, 정통 소궈미선. 15–25위안.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">5</div>
+                  <div>
+                    <strong>14:00–15:30</strong>
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/Yuantong+Temple+Kunming"
+                      data-baidu="https://map.baidu.com/search/圆通寺+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%9B%90%ED%86%B5%EC%82%AC%20%E5%9C%86%E9%80%9A%E5%AF%BA&udm=2"
+                      >원통사(圆通寺)</span
+                    >
+                    방문 — 쿤밍에서 가장 오래된 불교 사찰, 입장료 6위안. 독특한
+                    '아래로 내려가는' 구조 (약 1시간).
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">6</div>
+                  <div>
+                    <strong>15:30–17:30</strong>
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/Kunming+Old+Street"
+                      data-baidu="https://map.baidu.com/search/昆明老街"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EB%85%B8%EA%B0%80%20%E6%98%86%E6%98%8E%E8%80%81%E8%A1%97&udm=2"
+                      >쿤밍 노가(昆明老街)</span
+                    >
+                    &
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/Golden+Horse+Jade+Rooster+Kunming"
+                      data-baidu="https://map.baidu.com/search/金马碧鸡坊+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EA%B8%88%EB%A7%88%EB%B2%BD%EA%B3%84%EB%B0%A9%20%E9%87%91%E9%A9%AC%E7%A2%A7%E9%B8%A1%E5%9D%8A&udm=2"
+                      >금마벽계방(金马碧鸡坊)</span
+                    >
+                    산책 — 전통 공예품 구경, 난창미식가에서 간식 (로즈떡,
+                    얼쿠아이 등).
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">7</div>
+                  <div>
+                    <strong>17:30–18:00</strong> 금마벽계방 도착 — 해질 무렵
+                    조명이 켜지기 시작하는 시간대가 사진 포인트.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">8</div>
+                  <div>
+                    <strong>18:00–19:30</strong> 저녁 식사 — 추천 3곳: ①
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/福照楼汽锅鸡+昆明"
+                      data-baidu="https://map.baidu.com/search/福照楼汽锅鸡+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%ED%91%B8%EC%A0%80%EB%A3%A8%EA%B8%B0%ED%99%94%EA%B3%84%20%E7%A6%8F%E7%85%A7%E6%A5%BC%E6%B1%BD%E9%94%85%E9%B8%A1"
+                      >푸저루 기화계(福照楼汽锅鸡)</span
+                    >
+                    따종디엔핑 4.7점, 쿤밍 대표 기화계(蒸気鍋鶏) 명가. 1인
+                    60–90위안 ②
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/滇食记+云南家常菜+昆明"
+                      data-baidu="https://map.baidu.com/search/滇食记+云南家常菜+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EB%94%94%EC%97%94%EC%8B%9D%EA%B8%B0%20%E6%BB%87%E9%A3%9F%E8%AE%B0"
+                      >디엔식기(滇食记·云南家常菜)</span
+                    >
+                    필吃榜 선정, 윈난 가정식 전문. 1인 40–60위안 ③
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/甜竹林思茅野菜馆+昆明"
+                      data-baidu="https://map.baidu.com/search/甜竹林思茅野菜馆+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%ED%8B%B0%EC%97%94%EC%A3%BC%EB%A6%B0%20%E7%94%9C%E7%AB%B9%E6%9E%97%E6%80%9D%E8%8C%85%E9%87%8E%E8%8F%9C%E9%A6%86"
+                      >티엔주린(甜竹林思茅野菜馆)</span
+                    >
+                    필吃榜 선정, 쓰마오 야채 요리 전문. 1인 40–60위안.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">9</div>
+                  <div>
+                    <strong>20:00–21:00</strong> 발마사지 1시간 — 시내 체인형
+                    족욕/마사지숍 (80–120위안).
+                  </div>
+                </div>
+              </div>
+            </section>
+            <aside class="card">
+              <h4>예상 비용</h4>
+              <ul class="clean">
+                <li>
+                  <span class="price">조식 15–30위안</span> · 숙소 또는 카페
+                </li>
+                <li>
+                  <span class="price">점심 15–30위안</span> · 천시더우화미선
+                </li>
+                <li><span class="price">원통사 6위안</span></li>
+                <li>
+                  <span class="price">저녁 50–80위안</span> · 기화계, 윈난
+                  가정식
+                </li>
+                <li>
+                  <span class="price">마사지 80–120위안</span> · 발마사지 60분
+                </li>
+                <li>
+                  <span class="price">시내 교통 10–30위안</span> · 대부분 도보
+                </li>
+              </ul>
+            </aside>
+          </div>
+        </article>
+
+        <!-- ==================== DAY 3 ==================== -->
+        <article class="day" id="day3">
+          <div class="day-head">
+            <div>
+              <div class="day-title">
+                Day 3 · 5월 4일 월요일 · 쿤밍 → 샤시고진
+              </div>
+              <div class="day-sub">
+                고속열차 쿤밍→따리 + 셔틀버스/DiDi로 샤시 이동
+              </div>
+            </div>
+            <div class="pill">핵심 이동일</div>
+          </div>
+          <div class="grid">
+            <section class="card">
+              <h4>시간대별 동선</h4>
+              <div class="steps">
+                <div class="step">
+                  <div class="num">1</div>
+                  <div><strong>07:30–08:30</strong> 기상 및 체크아웃 준비.</div>
+                </div>
+                <div class="step">
+                  <div class="num">2</div>
+                  <div><strong>08:30–09:15</strong> 간단한 아침 (커피·빵).</div>
+                </div>
+                <div class="step">
+                  <div class="num">3</div>
+                  <div><strong>09:30–10:30</strong> 숙소→기차역 택시 이동.</div>
+                </div>
+                <div class="step">
+                  <div class="num">4</div>
+                  <div>
+                    <strong>11:44–14:12</strong> <a href="#train-schedule" class="train-link">🚄 고속열차: 쿤밍→따리</a> (약 2시간
+                    28분). 열차 내 간식 준비 추천.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">5</div>
+                  <div>
+                    <strong>14:12–</strong> 따리역 도착 →
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/Sideng+Square+Shaxi"
+                      data-baidu="https://map.baidu.com/search/沙溪古戏台"
+                      data-search="https://www.google.com/search?q=%EC%83%A4%EC%8B%9C%EA%B3%A0%EC%A7%84%20%E6%B2%99%E6%BA%AA%E5%8F%A4%E9%95%87&udm=2"
+                      >샤시고진</span
+                    >까지 셔틀버스 혹은 DiDi 이동.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">6</div>
+                  <div>
+                    <strong>도착 후</strong> Liaoshe Garden Hotel 체크인 및 짐
+                    정리.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">7</div>
+                  <div>
+                    <strong>오후</strong> 샤시 고성 가벼운 첫 산책 —
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/Sideng+Square+Shaxi"
+                      data-baidu="https://map.baidu.com/search/沙溪古戏台"
+                      data-search="https://www.google.com/search?q=%EC%83%A4%EC%8B%9C%20%EC%82%AC%EB%93%B1%EA%B0%80%20%E5%9B%9B%E6%96%B9%E8%A1%97%20%E6%B2%99%E6%BA%AA&udm=2"
+                      >사등가(四方街)</span
+                    >에서 고희대 구경, 골목길 탐방.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">8</div>
+                  <div>
+                    <strong>석양</strong>
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/Yujin+Bridge+Shaxi"
+                      data-baidu="https://map.baidu.com/search/玉津桥+沙溪"
+                      data-search="https://www.google.com/search?q=%EC%83%A4%EC%8B%9C%20%EC%98%A5%EC%A7%84%EA%B5%90%20%E7%8E%89%E6%B4%A5%E6%A1%A5&udm=2"
+                      >옥진교(玉津桥)</span
+                    >
+                    — 석양 시간대에 옛 돌다리에서 사진 촬영.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">9</div>
+                  <div>
+                    <strong>저녁</strong> 고성 내 저녁 — 추천 3곳: ①
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/一麓有山+沙溪古镇"
+                      data-baidu="https://map.baidu.com/search/一麓有山+沙溪古镇"
+                      data-search="https://www.google.com/search?q=%EC%83%A4%EC%8B%9C%EA%B3%A0%EC%A7%84%20%EC%9D%BC%EB%A3%A8%EC%9C%A0%EC%82%B0%20%E4%B8%80%E9%BA%93%E6%9C%89%E5%B1%B1"
+                      >일루유산(一麓有山)</span
+                    >
+                    따종디엔핑 고평점, 산야 식재료 윈난 요리 비스트로. 1인
+                    60–80위안 ②
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/茶马古道饭店+沙溪古镇"
+                      data-baidu="https://map.baidu.com/search/茶马古道饭店+沙溪"
+                      data-search="https://www.google.com/search?q=%EC%83%A4%EC%8B%9C%20%EC%B0%A8%EB%A7%88%EA%B3%A0%EB%8F%84%EB%B0%A5%EC%A0%90%20%E8%8C%B6%E9%A9%AC%E5%8F%A4%E9%81%93%E9%A5%AD%E5%BA%97"
+                      >차마고도반점(茶马古道饭店)</span
+                    >
+                    사등가 위치, 바이족 전통 요리. 1인 30–50위안 ③
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/桔子餐厅+沙溪古镇"
+                      data-baidu="https://map.baidu.com/search/桔子餐厅+沙溪"
+                      data-search="https://www.google.com/search?q=%EC%83%A4%EC%8B%9C%20%EA%B7%A4%EC%9E%90%EC%B0%A8%ED%8B%B0%EC%97%94%20%E6%A1%94%E5%AD%90%E9%A4%90%E5%8E%85"
+                      >귤자찬팅(桔子餐厅)</span
+                    >
+                    Tripadvisor 고평점, 윈난 현지 요리. 1인 40–60위안.
+                  </div>
+                </div>
+              </div>
+              <div class="tip">
+                샤시는 밤이 매우 조용하고 별이 잘 보임 — 숙소 마당에서 차 한 잔
+                하며 별 감상.
+              </div>
+            </section>
+            <aside class="card">
+              <h4>숙소 · 교통</h4>
+              <div class="meta">
+                <div><strong>숙소</strong> <a href="https://www.trip.com/hotels/jianchuan-hotel-detail-19521180/liao-house/" target="_blank" rel="noopener">Liaoshe Garden Hotel</a></div>
+                <div>
+                  <strong>열차</strong> <a href="#train-schedule" class="train-link">쿤밍→따리 11:44–14:12</a> (약 32,700원)
+                </div>
+                <div><strong>따리→샤시</strong> 셔틀버스 또는 DiDi</div>
+                <div>
+                  <strong>참고</strong>
+                  <a
+                    href="https://kr.trip.com/travel-guide/attraction/jianchuan/ancient-town-shaxi-93610/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >샤시고진 가이드 (Trip.com)</a
+                  >
+                </div>
+                <div>
+                  <strong>교통 정보</strong>
+                  <a
+                    href="http://yunnanexploration.com/destinations/dali/shaxi-ancient-town/transportation/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >셔틀버스 정보</a
+                  >
+                </div>
+              </div>
+            </aside>
+          </div>
+        </article>
+
+        <!-- ==================== DAY 4 ==================== -->
+        <article class="day" id="day4">
+          <div class="day-head">
+            <div>
+              <div class="day-title">Day 4 · 5월 5일 화요일 · 샤시고진</div>
+              <div class="day-sub">
+                고성 골목 산책 · 옥진교 · 카페 · 오봉산 전망
+              </div>
+            </div>
+            <div class="pill">도보 위주</div>
+          </div>
+          <div class="grid">
+            <section class="card">
+              <h4>시간대별 동선</h4>
+              <div class="steps">
+                <div class="step">
+                  <div class="num">1</div>
+                  <div>
+                    <strong>07:30–09:00</strong> 숙소 조식 (Liaoshe 조식 약
+                    50위안).
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">2</div>
+                  <div>
+                    <strong>09:00–10:30</strong> 아침 산책 —
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/Sideng+Square+Shaxi"
+                      data-baidu="https://map.baidu.com/search/沙溪古戏台"
+                      data-search="https://www.google.com/search?q=%EC%83%A4%EC%8B%9C%EA%B3%A0%EC%A7%84%20%EC%82%AC%EB%93%B1%EA%B0%80%20%EA%B3%A8%EB%AA%A9&udm=2"
+                      >사등가 & 고성 골목</span
+                    >
+                    천천히 둘러보기. 아침에는 현지 주민들의 일상을 볼 수 있어
+                    분위기가 다름.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">3</div>
+                  <div>
+                    <strong>10:30–12:00</strong>
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/Yujin+Bridge+Shaxi"
+                      data-baidu="https://map.baidu.com/search/玉津桥+沙溪"
+                      data-search="https://www.google.com/search?q=%EC%83%A4%EC%8B%9C%20%EC%98%A5%EC%A7%84%EA%B5%90%20%E7%8E%89%E6%B4%A5%E6%A1%A5&udm=2"
+                      >옥진교(玉津桥)</span
+                    >
+                    재방문 후 흑혜강(黑惠江) 강변 산책, 차마고도 옛길 일부 구간
+                    걷기.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">4</div>
+                  <div>
+                    <strong>12:00–13:30</strong> 점심 — 추천 3곳: ①
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/春12+沙溪古镇"
+                      data-baidu="https://map.baidu.com/search/春12+沙溪古镇"
+                      data-search="https://www.google.com/search?q=%EC%83%A4%EC%8B%9C%EA%B3%A0%EC%A7%84%20%EC%B6%9812%20%E6%98%A512"
+                      >춘12(春12)</span
+                    >
+                    따종디엔핑 인기, 더블비프 피자·소갈비. 11:30–14:30 영업,
+                    주2일 휴무. 1인 40–60위안 ②
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/彼得的小馆+沙溪古镇"
+                      data-baidu="https://map.baidu.com/search/彼得的小馆+沙溪"
+                      data-search="https://www.google.com/search?q=%EC%83%A4%EC%8B%9C%20%ED%94%BC%ED%84%B0%EC%9D%98%EC%86%8C%EA%B4%80%20%E5%BD%BC%E5%BE%97%E7%9A%84%E5%B0%8F%E9%A6%86"
+                      >피터의소관(彼得的小馆)</span
+                    >
+                    Tripadvisor 4.8, 서양+윈난 퓨전 요리. 1인 50–80위안 ③
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/一麓有山+沙溪古镇"
+                      data-baidu="https://map.baidu.com/search/一麓有山+沙溪古镇"
+                      data-search="https://www.google.com/search?q=%EC%83%A4%EC%8B%9C%20%EC%9D%BC%EB%A3%A8%EC%9C%A0%EC%82%B0%20%E4%B8%80%E9%BA%93%E6%9C%89%E5%B1%B1"
+                      >일루유산(一麓有山)</span
+                    >
+                    따종디엔핑 인기, 감자니 유먼지(土豆泥油焖鸡) 추천. 1인
+                    60–80위안.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">5</div>
+                  <div>
+                    <strong>13:30–16:00</strong> 카페 타임 & 휴식 — 사등가 주변
+                    2층 테라스 카페에서 책 읽기 또는 멍때리기 (25–45위안).
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">6</div>
+                  <div>
+                    <strong>16:00–17:30</strong> 오봉산(鳌峰山) 가벼운 등산 —
+                    고진 전경 전망 포인트. 왕복 약 1시간.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">7</div>
+                  <div>
+                    <strong>18:00–19:30</strong> 저녁 식사 — 추천 3곳: ①
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/滇西云厨+沙溪"
+                      data-baidu="https://map.baidu.com/search/滇西云厨+沙溪"
+                      data-search="https://www.google.com/search?q=%EC%83%A4%EC%8B%9C%20%EB%94%94%EC%97%94%EC%8B%9C%EC%9C%88%EC%B6%94%20%E6%BB%87%E8%A5%BF%E4%BA%91%E5%8E%A8"
+                      >디엔시윈추(滇西云厨)</span
+                    >
+                    따종디엔핑 인기, 돌솥 산채두부·볶음새우. 1인 약 60위안 ②
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/茶马古道饭店+沙溪"
+                      data-baidu="https://map.baidu.com/search/茶马古道饭店+沙溪"
+                      data-search="https://www.google.com/search?q=%EC%83%A4%EC%8B%9C%20%EC%B0%A8%EB%A7%88%EA%B3%A0%EB%8F%84%EB%B0%A5%EC%A0%90%20%E8%8C%B6%E9%A9%AC%E5%8F%A4%E9%81%93%E9%A5%AD%E5%BA%97"
+                      >차마고도반점(茶马古道饭店)</span
+                    >
+                    고성 중심가, 바이족 두부·채소요리. 1인 30–50위안 ③
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/喜农舍+沙溪古镇"
+                      data-baidu="https://map.baidu.com/search/喜农舍+沙溪"
+                      data-search="https://www.google.com/search?q=%EC%83%A4%EC%8B%9C%20%EC%8B%9C%EB%86%8D%EC%83%A4%20%E5%96%9C%E5%86%9C%E8%88%8D"
+                      >시농셔(喜农舍)</span
+                    >
+                    현지 농가 레스토랑, 자연 식재료 요리. 1인 40–60위안.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">8</div>
+                  <div>
+                    <strong>19:30–20:30</strong> 고성 야경 산책 또는 숙소에서
+                    휴식.
+                  </div>
+                </div>
+              </div>
+              <div class="tip">내일 리장으로 이동하므로 짐 미리 정리</div>
+            </section>
+            <aside class="card">
+              <h4>예상 비용</h4>
+              <ul class="clean">
+                <li><span class="price">조식 50위안</span> · 숙소 조식 기준</li>
+                <li><span class="price">점심 40–60위안</span> · 춘12</li>
+                <li><span class="price">카페 25–45위안</span></li>
+                <li><span class="price">저녁 50–70위안</span> · 윈난 가정식</li>
+                <li>
+                  <span class="price">현지 이동 0–20위안</span> · 대부분 도보
+                </li>
+              </ul>
+              <div class="meta" style="margin-top: var(--space-4)">
+                <div>
+                  <strong>참고 블로그</strong>
+                  <a
+                    href="https://blog.naver.com/beautyune/223002502102"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >샤시고진 맛집 및 카페</a
+                  >
+                </div>
+              </div>
+            </aside>
+          </div>
+        </article>
+
+        <!-- ==================== DAY 5 ==================== -->
+        <article class="day" id="day5">
+          <div class="day-head">
+            <div>
+              <div class="day-title">Day 5 · 5월 6일 수요일 · 샤시 → 리장</div>
+              <div class="day-sub">
+                차량 이동 → Another Residence 체크인 → 수허고성 산책
+              </div>
+            </div>
+            <div class="pill">차량 이동 + 산책</div>
+          </div>
+          <div class="grid">
+            <section class="card">
+              <h4>시간대별 동선</h4>
+              <div class="steps">
+                <div class="step">
+                  <div class="num">1</div>
+                  <div>
+                    <strong>07:30–08:30</strong> 아침 산책 (샤시, 한산한 아침
+                    분위기).
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">2</div>
+                  <div>
+                    <strong>10:00–13:00</strong> 샤시→리장 차량 이동 (약 3시간).
+                    경치가 좋은 구간이 많으니 차창 밖 감상.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">3</div>
+                  <div>
+                    <strong>13:00–14:00</strong> 점심 식사 — 추천 3곳: ①
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/食全酒美+野生菌腊排骨+木府+丽江"
+                      data-baidu="https://map.baidu.com/search/食全酒美+丽江古城"
+                      data-search="https://www.google.com/search?q=%EB%A6%AC%EC%9E%A5%20%EC%8B%9D%EC%A0%84%EC%A3%BC%EB%AF%B8%20%E9%A3%9F%E5%85%A8%E9%85%92%E7%BE%8E%20%EB%A7%90%EB%A6%B0%EA%B0%88%EB%B9%84"
+                      >식전주미(食全酒美, 목부점)</span
+                    >
+                    필吃榜 선정, 말린갈비(腊排骨) 전문. 1인 50–80위안 ②
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/朵颐菜园+云南菜+丽江"
+                      data-baidu="https://map.baidu.com/search/朵颐菜园+丽江"
+                      data-search="https://www.google.com/search?q=%EB%A6%AC%EC%9E%A5%20%EB%8F%84%EC%9D%B4%EC%B1%84%EC%9B%90%20%E6%9C%B5%E9%A2%90%E8%8F%9C%E5%9B%AD"
+                      >도이채원(朵颐菜园)</span
+                    >
+                    필吃榜 선정, 전원 풍경 윈난 요리. 1인 50–80위안 ③
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/雨晨石锅鱼+丽江"
+                      data-baidu="https://map.baidu.com/search/雨晨石锅鱼+丽江"
+                      data-search="https://www.google.com/search?q=%EB%A6%AC%EC%9E%A5%20%EC%9C%84%EC%B2%B8%EC%84%9D%EA%B6%88%EC%96%B4%20%E9%9B%A8%E6%99%A8%E7%9F%B3%E9%94%85%E9%B1%BC"
+                      >위천석궈위(雨晨石锅鱼)</span
+                    >
+                    필吃榜 선정, 돌솥 생선요리 전문. 1인 50–70위안.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">4</div>
+                  <div>
+                    <strong>14:30–17:00</strong> Another Residence · island and
+                    coffee garden vacation B&B 체크인 및 휴식. 숙소 정원과 카페
+                    공간 둘러보기.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">5</div>
+                  <div>
+                    <strong>17:30–19:30</strong>
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/Shuhe+Ancient+Town+Lijiang"
+                      data-baidu="https://map.baidu.com/search/束河古镇"
+                      data-search="https://www.google.com/search?q=%EB%A6%AC%EC%9E%A5%20%EC%88%98%ED%97%88%EA%B3%A0%EC%84%B1%20%E6%9D%9F%E6%B2%B3%E5%8F%A4%E9%95%87&udm=2"
+                      >수허고성(束河古镇)</span
+                    >
+                    산책 — 조용한 저녁 시간, 나시족 전통 건축 감상.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">6</div>
+                  <div>
+                    <strong>19:30 이후</strong> 저녁 식사 — 수허고성 추천 3곳: ①
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/正宗李家土鸡米线店+束河"
+                      data-baidu="https://map.baidu.com/search/正宗李家土鸡米线店+束河"
+                      data-search="https://www.google.com/search?q=%EB%A6%AC%EC%9E%A5%20%EC%A0%95%EC%A2%85%EB%A6%AC%EA%B0%80%ED%86%A0%EA%B3%84%EB%AF%B8%EC%84%A0%20%E6%AD%A3%E5%AE%97%E6%9D%8E%E5%AE%B6%E5%9C%9F%E9%B8%A1%E7%B1%B3%E7%BA%BF"
+                      >정종리가토계미선점(正宗李家土鸡米线店)</span
+                    >
+                    필吃榜 선정, 토종닭 육수 쌀국수. 1인 18–30위안 ②
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/不含糊果饭+束河古镇"
+                      data-baidu="https://map.baidu.com/search/不含糊果饭+束河古镇"
+                      data-search="https://www.google.com/search?q=%EB%A6%AC%EC%9E%A5%20%EC%88%98%ED%97%88%20%EB%B6%80%ED%95%9C%EC%86%8C%EA%B3%BC%EB%B0%98%20%E4%B8%8D%E5%90%AB%E7%B3%8A%E6%9E%9C%E9%A5%AD"
+                      >부한소과반(不含糊果饭)</span
+                    >
+                    수허고성 인기 솥밥집, 감자솥밥·닭고기솥밥 별미. 1인
+                    40–60위안 ③
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/蘇四哥+云南酸汤牛肉+丽江"
+                      data-baidu="https://map.baidu.com/search/蘇四哥+丽江"
+                      data-search="https://www.google.com/search?q=%EB%A6%AC%EC%9E%A5%20%EC%88%98%EC%82%AC%EA%B2%8C%20%E8%98%87%E5%9B%9B%E5%93%A5%20%EC%82%B0%ED%83%95%EC%9A%B0%EB%A1%9C%EC%9A%B0"
+                      >수사게(蘇四哥·酸汤牛肉火锅)</span
+                    >
+                    따종디엔핑 4.7, 산탕(酸汤) 소고기 훠궈. 1인 60–90위안.
+                  </div>
+                </div>
+              </div>
+              <div class="tip">
+                리장 해발 약 2,400m, 자외선이 강하니 선크림 필수. 건조하니 물
+                많이 마시기.
+              </div>
+            </section>
+            <aside class="card">
+              <h4>숙소 · 교통</h4>
+              <div class="meta">
+                <div>
+                  <strong>숙소</strong> <a href="https://www.trip.com/hotels/lijiang-hotel-detail-2057686/another-residence-island-and-coffee-garden-vacation-b-and-b/" target="_blank" rel="noopener">Another Residence · island and coffee garden vacation B&amp;B</a>
+                </div>
+                <div><strong>이동</strong> 샤시→리장 차량 (약 3시간)</div>
+                <div>
+                  <strong>참고 블로그</strong>
+                  <a
+                    href="https://blog.naver.com/vcolor98/223750230341"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >샤시→리장 이동 방법</a
+                  >
+                </div>
+              </div>
+            </aside>
+          </div>
+        </article>
+
+        <!-- ==================== DAY 6 ==================== -->
+        <article class="day" id="day6">
+          <div class="day-head">
+            <div>
+              <div class="day-title">
+                Day 6 · 5월 7일 목요일 · 옥룡설산 · 인상여강
+              </div>
+              <div class="day-sub">
+                옥룡설산 케이블카 → 람월곡(블루문밸리) → 인상여강쇼
+              </div>
+            </div>
+            <div class="pill">★ 하이라이트</div>
+          </div>
+          <div class="grid">
+            <section class="card">
+              <h4>시간대별 동선</h4>
+              <div class="steps">
+                <div class="step">
+                  <div class="num">1</div>
+                  <div>
+                    <strong>07:00–08:30</strong> 이동 (리장 →
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/Jade+Dragon+Snow+Mountain"
+                      data-baidu="https://map.baidu.com/search/玉龙雪山"
+                      data-search="https://www.google.com/search?q=%EC%98%A5%EB%A3%A1%EC%84%A4%EC%82%B0%20%E7%8E%89%E9%BE%99%E9%9B%AA%E5%B1%B1&udm=2"
+                      >옥룡설산(玉龙雪山)</span
+                    >).
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">2</div>
+                  <div>
+                    <strong>08:30–10:30</strong> 대형 케이블카 탑승 & 옥룡설산
+                    정상부 감상 (해발 약 4,506m). 고산 지역이므로 천천히 이동.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">3</div>
+                  <div><strong>10:30–12:00</strong> 하산 및 이동.</div>
+                </div>
+                <div class="step">
+                  <div class="num">4</div>
+                  <div>
+                    <strong>12:00–13:30</strong>
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/Blue+Moon+Valley+Lijiang"
+                      data-baidu="https://map.baidu.com/search/蓝月谷"
+                      data-search="https://www.google.com/search?q=%EC%98%A5%EB%A3%A1%EC%84%A4%EC%82%B0%20%EB%9E%8C%EC%9B%94%EA%B3%A1%20%E8%93%9D%E6%9C%88%E8%B0%B7%20%EB%B8%94%EB%A3%A8%EB%AC%B8%EB%B0%B8%EB%A6%AC&udm=2"
+                      >람월곡(蓝月谷, 블루문밸리)</span
+                    >
+                    계곡 산책 — 에메랄드빛 호수와 설산 배경의 절경.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">5</div>
+                  <div>
+                    <strong>13:30–14:40</strong> 점심 및 휴식 — 경구 내 식당
+                    또는 미리 준비한 도시락.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">6</div>
+                  <div>
+                    <strong>14:50–16:00</strong>
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/Impression+Lijiang+Show+Ganhaizi"
+                      data-baidu="https://map.baidu.com/search/印象丽江+甘海子"
+                      data-search="https://www.google.com/search?q=%EC%9D%B8%EC%83%81%EC%97%AC%EA%B0%95%20%E5%8D%B0%E8%B1%A1%E4%B8%BD%E6%B1%9F%20%EA%B3%B5%EC%97%B0&udm=2"
+                      >인상여강쇼(印象丽江)</span
+                    >
+                    공연 관람 — 옥룡설산 감해자(甘海子) 야외극장, 장예모 감독의
+                    대규모 야외 공연 (약 70분). 2회차 14:50 추천.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">7</div>
+                  <div><strong>16:30–18:00</strong> 리장 복귀 및 휴식.</div>
+                </div>
+                <div class="step">
+                  <div class="num">8</div>
+                  <div>
+                    <strong>18:30–19:30</strong> 저녁 식사 — 추천 3곳: ①
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/滇西王子+山风云南菜+丽江"
+                      data-baidu="https://map.baidu.com/search/滇西王子+丽江"
+                      data-search="https://www.google.com/search?q=%EB%A6%AC%EC%9E%A5%20%EB%94%94%EC%97%94%EC%8B%9C%EC%99%95%EC%9E%90%20%E6%BB%87%E8%A5%BF%E7%8E%8B%E5%AD%90%20%E5%B1%B1%E9%A3%8E%E4%BA%91%E5%8D%97%E8%8F%9C"
+                      >디엔시왕자(滇西王子·山风云南菜)</span
+                    >
+                    따종디엔핑 인기, 리장 지표 윈난 요리. 1인 60–90위안 ②
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/云雪丽+木府+丽江"
+                      data-baidu="https://map.baidu.com/search/云雪丽+丽江古城"
+                      data-search="https://www.google.com/search?q=%EB%A6%AC%EC%9E%A5%20%EC%9C%88%EC%84%A4%EB%A6%AC%20%E4%BA%91%E9%9B%AA%E4%B8%BD"
+                      >윈셜리(云雪丽, 목부 토사 문화식당)</span
+                    >
+                    따종디엔핑 인기, 오채계사미선·수절반(手抓饭) 추천. 1인
+                    50–80위안 ③
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/食全酒美+木府+丽江"
+                      data-baidu="https://map.baidu.com/search/食全酒美+丽江古城"
+                      data-search="https://www.google.com/search?q=%EB%A6%AC%EC%9E%A5%20%EC%8B%9D%EC%A0%84%EC%A3%BC%EB%AF%B8%20%E9%A3%9F%E5%85%A8%E9%85%92%E7%BE%8E"
+                      >식전주미(食全酒美, 목부점)</span
+                    >
+                    필吃榜 선정, 말린갈비 전문. 1인 50–80위안.
+                  </div>
+                </div>
+              </div>
+              <div class="tip">
+                고산병 주의! 산소통(O2 캔) 미리 준비 추천. 방한 겉옷 필수 (산
+                위는 영하 가능). 케이블카는 사전 예약 필수.
+              </div>
+              <div class="tip">
+                🎫 <strong>인상여강쇼 예매 방법:</strong> ①
+                <a
+                  href="https://www.klook.com/ko/activity/7257-lijiang-impression-show-yunnan/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Klook에서 예매</a
+                >
+                (한국어 지원, 즉시 확정) ②
+                <a
+                  href="https://www.trip.com/travel-guide/attraction/yulong/impressions-of-lijiang-performance-10758688/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Trip.com에서 예매</a
+                >
+                ③ 위챗 미니프로그램 「丽江旅游集团」에서 직접 구매 (현지 가격,
+                여권 필요). 일반성 약 190위안, VIP석 약 280위안. 경구
+                입장료(100위안) 별도.
+              </div>
+            </section>
+            <aside class="card">
+              <h4>예상 비용</h4>
+              <ul class="clean">
+                <li>
+                  <span class="price">입장료 100위안</span> · 옥룡설산 입장
+                </li>
+                <li><span class="price">케이블카 120위안</span> · 대형 왕복</li>
+                <li><span class="price">셔틀버스 등 약 80위안</span></li>
+                <li>
+                  <span class="price">인상여강쇼 190–280위안</span> · 일반/VIP
+                </li>
+                <li><span class="price">교통 왕복 100–200위안</span></li>
+                <li>
+                  <span class="price">식사 60–100위안</span> · 경구 내 식당 또는
+                  도시락
+                </li>
+              </ul>
+            </aside>
+          </div>
+        </article>
+
+        <!-- ==================== DAY 7 ==================== -->
+        <article class="day" id="day7">
+          <div class="day-head">
+            <div>
+              <div class="day-title">
+                Day 7 · 5월 8일 금요일 · 리장 (백사고진 · 고성)
+              </div>
+              <div class="day-sub">
+                백사고진 오전 → 리장고성 오후 → 저녁 산책
+              </div>
+            </div>
+            <div class="pill">리장 마지막 밤</div>
+          </div>
+          <div class="grid">
+            <section class="card">
+              <h4>시간대별 동선</h4>
+              <div class="steps">
+                <div class="step">
+                  <div class="num">1</div>
+                  <div>
+                    <strong>08:00–09:00</strong> 숙소 조식 및 여유로운 아침.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">2</div>
+                  <div>
+                    <strong>09:30–11:30</strong>
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/Baisha+Old+Town+Lijiang"
+                      data-baidu="https://map.baidu.com/search/白沙古镇"
+                      data-search="https://www.google.com/search?q=%EB%A6%AC%EC%9E%A5%20%EB%B0%B1%EC%82%AC%EA%B3%A0%EC%A7%84%20%E7%99%BD%E6%B2%99%E5%8F%A4%E9%95%87&udm=2"
+                      >백사고진(白沙古镇)</span
+                    >
+                    방문 — 나시족 원래 마을, 리장고성보다 훨씬 조용.
+                    백사벽화(白沙壁画) 감상, 옥룡설산 조망 포인트에서 사진. 마을
+                    카페에서 커피 한 잔.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">3</div>
+                  <div>
+                    <strong>12:00–13:00</strong> 점심 — 백사고진 마을 내 로컬
+                    식당에서 나시족 가정식 (국수·볶음밥류, 25–40위안).
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">4</div>
+                  <div>
+                    <strong>14:00–17:00</strong>
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/Lijiang+Old+Town"
+                      data-baidu="https://map.baidu.com/search/丽江古城"
+                      data-search="https://www.google.com/search?q=%EB%A6%AC%EC%9E%A5%EA%B3%A0%EC%84%B1%20%E4%B8%BD%E6%B1%9F%E5%8F%A4%E5%9F%8E&udm=2"
+                      >리장고성(丽江古城)</span
+                    >
+                    산책 — 사방거(四方街) 광장, 목부토사(木府土司) 근처 골목
+                    탐방, 나시족 전통 공예품 구경.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">5</div>
+                  <div>
+                    <strong>17:00–18:00</strong> 리장고성 내 카페에서 석양 감상
+                    — 옥룡설산이 보이는 2층 테라스 카페 추천.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">6</div>
+                  <div>
+                    <strong>18:30–20:00</strong> 저녁 식사 — 추천 3곳: ①
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/阿婆情腊排骨火锅+丽江古城"
+                      data-baidu="https://map.baidu.com/search/阿婆情腊排骨火锅+丽江古城"
+                      data-search="https://www.google.com/search?q=%EB%A6%AC%EC%9E%A5%20%EC%95%84%ED%8F%AC%EC%A0%95%EB%9D%BC%ED%8C%8C%EC%9D%B4%EA%B5%AC%20%E9%98%BF%E5%A9%86%E6%83%85%E8%85%8A%E6%8E%92%E9%AA%A8%E7%81%AB%E9%94%85"
+                      >아포칭라파이구훠궈(阿婆情腊排骨火锅, 고성
+                      플래그십점)</span
+                    >
+                    따종디엔핑 4.3, 리장 대표 말린갈비 훠궈. 2인 68위안~ ②
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/朵颐菜园+丽江"
+                      data-baidu="https://map.baidu.com/search/朵颐菜园+丽江"
+                      data-search="https://www.google.com/search?q=%EB%A6%AC%EC%9E%A5%20%EB%8F%84%EC%9D%B4%EC%B1%84%EC%9B%90%20%E6%9C%B5%E9%A2%90%E8%8F%9C%E5%9B%AD"
+                      >도이채원(朵颐菜园)</span
+                    >
+                    필吃榜 선정, 전원 풍경 속 윈난 요리. 1인 50–80위안 ③
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/菌自由+丽江古城"
+                      data-baidu="https://map.baidu.com/search/菌自由+丽江古城"
+                      data-search="https://www.google.com/search?q=%EB%A6%AC%EC%9E%A5%20%EA%B7%A0%EC%9E%90%EC%9C%A0%20%E8%8F%8C%E8%87%AA%E7%94%B1"
+                      >균자유(菌自由, 고성점)</span
+                    >
+                    따종디엔핑 4.7, 정원식 훠궈. 1인 70–100위안 (참고: 야생균
+                    훠궈 전문이지만 소고기·닭고기 메뉴도 다양).
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">7</div>
+                  <div>
+                    <strong>20:00–21:30</strong> 리장고성 야경 산책 — 조명 켜진
+                    고성 분위기 감상.
+                  </div>
+                </div>
+              </div>
+              <div class="tip">
+                내일 오전에 리장→쿤밍 기차 이동이므로 짐 미리 정리. 아침
+                체크아웃 후 바로 역으로 이동 예정.
+              </div>
+            </section>
+            <aside class="card">
+              <h4>예상 비용</h4>
+              <ul class="clean">
+                <li><span class="price">조식 포함</span> · 숙소 또는 카페</li>
+                <li>
+                  <span class="price">백사고진 교통 20–40위안</span> · 택시/DiDi
+                </li>
+                <li><span class="price">점심 30–50위안</span></li>
+                <li><span class="price">카페 25–45위안</span></li>
+                <li>
+                  <span class="price">저녁 68–100위안</span> · 말린갈비 훠궈
+                </li>
+              </ul>
+              <div class="meta" style="margin-top: var(--space-4)">
+                <div><strong>숙소</strong> <a href="https://www.trip.com/hotels/lijiang-hotel-detail-2057686/another-residence-island-and-coffee-garden-vacation-b-and-b/" target="_blank" rel="noopener">Another Residence</a> (마지막 밤)</div>
+              </div>
+            </aside>
+          </div>
+        </article>
+
+        <!-- ==================== DAY 8 ==================== -->
+        <article class="day" id="day8">
+          <div class="day-head">
+            <div>
+              <div class="day-title">
+                Day 8 · 5월 9일 토요일 · 리장→쿤밍 → 귀국
+              </div>
+              <div class="day-sub">
+                오전 기차 이동 → 쿤밍 시내 (취호공원) → 22:25 야간 출국
+              </div>
+            </div>
+            <div class="pill">이동 + 귀국</div>
+          </div>
+          <div class="grid">
+            <section class="card">
+              <h4>시간대별 동선</h4>
+              <div class="steps">
+                <div class="step">
+                  <div class="num">1</div>
+                  <div>
+                    <strong>07:00–07:30</strong> 기상, 간단한 아침, Another
+                    Residence 체크아웃.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">2</div>
+                  <div>
+                    <strong>08:00–08:30</strong> 리장역 이동 (택시/DiDi).
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">3</div>
+                  <div>
+                    <strong>08:40–12:52</strong> <a href="#train-schedule" class="train-link">🚄 고속열차 리장→쿤밍</a> (약 4시간,
+                    08:40 출발 기준). 열차 내 간식 및 휴식.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">4</div>
+                  <div>
+                    <strong>13:00–14:00</strong> 쿤밍 도착. 쿤밍역 짐 보관소에
+                    캐리어 맡긴 후 점심 — 추천 3곳: ①
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/晨曦豆花米线+翠湖+昆明"
+                      data-baidu="https://map.baidu.com/search/晨曦豆花米线+翠湖+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%B2%9C%EC%8B%9C%EB%8D%94%EC%9A%B0%ED%99%94%EB%AF%B8%EC%84%A0%20%E6%99%A8%E6%9B%A6%E8%B1%86%E8%8A%B1%E7%B1%B3%E7%BA%BF"
+                      >천시더우화미선(晨曦豆花米线)</span
+                    >
+                    필吃榜, 두부+쌀국수. 15–30위안 ②
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/半坡小锅米线+昆明"
+                      data-baidu="https://map.baidu.com/search/半坡小锅米线+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EB%B0%98%ED%8C%8C%EC%86%8C%EA%B6%88%EB%AF%B8%EC%84%A0%20%E5%8D%8A%E5%9D%A1%E5%B0%8F%E9%94%85%E7%B1%B3%E7%BA%BF"
+                      >반포소궈미선(半坡小锅米线)</span
+                    >
+                    필吃榜, 정통 소궈미선. 15–25위안 ③
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/小石锅鱼餐厅+昆明"
+                      data-baidu="https://map.baidu.com/search/小石锅鱼餐厅+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%86%8C%EC%84%9D%EA%B6%88%EC%96%B4%20%E5%B0%8F%E7%9F%B3%E9%94%85%E9%B1%BC%E9%A4%90%E5%8E%85"
+                      >소석궈위찬팅(小石锅鱼餐厅)</span
+                    >
+                    필吃榜 선정, 돌솥 생선요리. 1인 40–60위안.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">5</div>
+                  <div>
+                    <strong>14:30–16:00</strong>
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/Cuihu+Park+Kunming"
+                      data-baidu="https://map.baidu.com/search/翠湖公园+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%B7%A8%ED%98%B8%EA%B3%B5%EC%9B%90%20%E7%BF%A0%E6%B9%96%E5%85%AC%E5%9B%AD&udm=2"
+                      >취호공원(翠湖公园)</span
+                    >
+                    산책 — 도심 대표 공원, 여유로운 마지막 오후.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">6</div>
+                  <div>
+                    <strong>16:00–17:30</strong> 카페 타임 또는 기념품 구매 —
+                    취호 주변 또는
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/Nanping+Street+Kunming"
+                      data-baidu="https://map.baidu.com/search/南屏街+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EB%82%9C%ED%95%91%EC%A0%9C%20%E5%8D%97%E5%B1%8F%E8%A1%97&udm=2"
+                      >난핑제(南屏街)</span
+                    >.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">7</div>
+                  <div>
+                    <strong>17:30–18:30</strong> 저녁 식사 — 쿤밍 마지막 식사,
+                    추천 3곳: ①
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/从水炉+普洱生态菜馆+昆明"
+                      data-baidu="https://map.baidu.com/search/从水炉+普洱生态菜馆+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%B4%9D%EC%88%98%EB%A3%A8%20%E4%BB%8E%E6%B0%B4%E7%82%89%20%ED%91%B8%EC%96%BC%EC%83%9D%ED%83%9C%EC%B0%A8%EA%B4%80"
+                      >총수루(从水炉·普洱生态菜馆)</span
+                    >
+                    필吃榜 선정, 푸얼 생태 요리 전문. 1인 50–80위안 ②
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/云平风味园+护国路+昆明"
+                      data-baidu="https://map.baidu.com/search/云平风味园+护国路+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%9C%88%ED%95%91%ED%8E%91%EC%9B%A8%EC%9D%B4%EC%9C%84%EC%95%88%20%E4%BA%91%E5%B9%B3%E9%A3%8E%E5%91%B3%E5%9B%AD"
+                      >윈핑펑웨이위안(云平风味园)</span
+                    >
+                    필吃榜 선정, 기화계·볶음요리. 1인 50–80위안 ③
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/李记+河口老字号越南小卷粉+昆明"
+                      data-baidu="https://map.baidu.com/search/李记+河口老字号越南小卷粉+昆明"
+                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EB%A6%AC%EA%B8%B0%20%EB%B2%A0%ED%8A%B8%EB%82%A8%EC%86%8C%EA%B6%8C%EB%B6%84%20%E6%9D%8E%E8%AE%B0%E8%B6%8A%E5%8D%97%E5%B0%8F%E5%8D%B7%E7%B2%89"
+                      >리기 베트남소권분(李记·河口老字号越南小卷粉)</span
+                    >
+                    필吃榜 선정, 베트남식 쌀쿠레이프. 1인 20–35위안.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">8</div>
+                  <div>
+                    <strong>19:00–19:30</strong> 쿤밍역 짐 보관소에서 짐 회수 후
+                    공항으로 이동 (택시, 약 40분).
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">9</div>
+                  <div>
+                    <strong>19:30–22:25</strong> 쿤밍 창수이공항 도착, 체크인 및
+                    출국 준비.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">10</div>
+                  <div>
+                    <strong>22:25</strong> 출발 — 쿤밍(KMG) → 난징(NKG) 01:25
+                    도착 (MU2766).
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">11</div>
+                  <div>
+                    <strong>5/10 08:15</strong> 난징 → 인천(ICN) 11:15 도착
+                    (MU579).
+                  </div>
+                </div>
+              </div>
+              <div class="tip">
+                항공편 3시간 전 공항 도착 권장. 난징 대기 약 6시간 50분 — B
+                카운터 뒤편이 누워서 대기하기 좋음.
+              </div>
+            </section>
+            <aside class="card">
+              <h4>귀국편 정보</h4>
+              <div class="meta">
+                <div>
+                  <strong>열차</strong> <a href="#train-schedule" class="train-link">리장→쿤밍 08:40–12:52</a> (~40,782원)
+                </div>
+                <div><strong>짐 보관</strong> 쿤밍역 짐 보관소 이용</div>
+                <div><strong>1구간</strong> KMG 22:25 → NKG 01:25 (MU2766)</div>
+                <div><strong>대기</strong> 난징공항 약 6시간 50분</div>
+                <div><strong>2구간</strong> NKG 08:15 → ICN 11:15 (MU579)</div>
+                <div><strong>5/10(토)</strong> 인천 11:15 도착</div>
+              </div>
+            </aside>
+          </div>
+        </article>
+      </section>
+
+      <!-- ==================== 고속열차 시간표 ==================== -->
+      <section class="info-section train-section" id="train-schedule">
+        <h3>🚄 고속열차 시간표</h3>
+        <p
+          style="color: var(--color-text-muted); margin-bottom: var(--space-6)"
+        >
+          아래 시간표는 참고용이며, 실제 운행 시간은 예매 시 확인하세요.
+        </p>
+
+        <h4
+          style="
+            font-family: var(--font-display);
+            margin-bottom: var(--space-3);
+          "
+        >
+          쿤밍 → 따리
+        </h4>
+        <div class="train-table-wrap">
+          <table class="train-table">
+            <thead>
+              <tr>
+                <th>출발</th>
+                <th>도착</th>
+                <th>소요시간</th>
+                <th>가격(약)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>06:00</td>
+                <td>08:31</td>
+                <td>2시간 30분</td>
+                <td>32,700원</td>
+              </tr>
+              <tr>
+                <td>07:02</td>
+                <td>09:33</td>
+                <td>2시간 31분</td>
+                <td>32,700원</td>
+              </tr>
+              <tr>
+                <td>08:23</td>
+                <td>10:51</td>
+                <td>2시간 28분</td>
+                <td>34,000원</td>
+              </tr>
+              <tr>
+                <td>09:01</td>
+                <td>11:29</td>
+                <td>2시간 28분</td>
+                <td>34,000원</td>
+              </tr>
+              <tr>
+                <td>10:36</td>
+                <td>13:07</td>
+                <td>2시간 31분</td>
+                <td>34,000원</td>
+              </tr>
+              <tr class="highlight">
+                <td>11:44</td>
+                <td>14:12</td>
+                <td>2시간 28분</td>
+                <td>32,700원</td>
+              </tr>
+              <tr>
+                <td>13:51</td>
+                <td>16:18</td>
+                <td>2시간 27분</td>
+                <td>34,000원</td>
+              </tr>
+              <tr>
+                <td>15:53</td>
+                <td>18:20</td>
+                <td>2시간 27분</td>
+                <td>32,700원</td>
+              </tr>
+              <tr>
+                <td>17:48</td>
+                <td>20:16</td>
+                <td>2시간 28분</td>
+                <td>35,000원</td>
+              </tr>
+              <tr>
+                <td>18:49</td>
+                <td>21:17</td>
+                <td>2시간 28분</td>
+                <td>35,000원</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size: var(--text-sm); color: var(--color-text-muted)">
+          <strong style="color: var(--color-primary)"
+            >★ 11:44 출발 = Day 3 이용 예정 시간</strong
+          >
+        </p>
+        <p style="margin-top: var(--space-3)">
+          <a
+            href="https://kr.trip.com/trains/china/list?departureStationName=%EC%BF%A4%EB%B0%8D&arrivalStationName=%EB%8B%A4%EB%A6%AC%EC%8B%9C&departureCityId=34&arrivalCityId=669326&departureCountryCode=CN&arrivalCountryCode=CN&departDate=2026-01-31&departureStationCode=CN530100&arrivalStationCode=CN532901"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="
+              display: inline-flex;
+              align-items: center;
+              gap: 8px;
+              padding: 10px 20px;
+              background: var(--color-primary);
+              color: #fff;
+              border-radius: var(--radius-xl);
+              font-weight: 600;
+              font-size: var(--text-sm);
+              text-decoration: none;
+              transition: background 0.2s;
+            "
+            onmouseover="this.style.background='var(--color-primary-hover)'"
+            onmouseout="this.style.background='var(--color-primary)'"
+            >🔗 트립닷컴에서 예매하기 (쿤밍→따리)</a
+          >
+        </p>
+
+        <h4
+          style="
+            font-family: var(--font-display);
+            margin: var(--space-8) 0 var(--space-3);
+          "
+        >
+          리장 → 쿤밍
+        </h4>
+        <p
+          style="
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-3);
+            font-size: var(--text-sm);
+          "
+        >
+          평균 소요시간: 3.5~4.5시간
+        </p>
+        <div class="train-table-wrap">
+          <table class="train-table">
+            <thead>
+              <tr>
+                <th>출발</th>
+                <th>도착</th>
+                <th>소요시간</th>
+                <th>가격(약)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>08:10</td>
+                <td>12:02</td>
+                <td>3시간 52분</td>
+                <td>40,782원</td>
+              </tr>
+              <tr class="highlight">
+                <td>08:40</td>
+                <td>12:52</td>
+                <td>4시간 12분</td>
+                <td>40,782원</td>
+              </tr>
+              <tr>
+                <td>09:10</td>
+                <td>13:44</td>
+                <td>4시간 34분</td>
+                <td>40,782원</td>
+              </tr>
+              <tr>
+                <td>11:33</td>
+                <td>16:04</td>
+                <td>4시간 31분</td>
+                <td>40,782원</td>
+              </tr>
+              <tr>
+                <td>13:01</td>
+                <td>17:01</td>
+                <td>4시간</td>
+                <td>40,782원</td>
+              </tr>
+              <tr>
+                <td>17:07</td>
+                <td>21:01</td>
+                <td>3시간 54분</td>
+                <td>40,782원</td>
+              </tr>
+              <tr>
+                <td>18:41</td>
+                <td>22:03</td>
+                <td>3시간 22분</td>
+                <td>40,782원</td>
+              </tr>
+              <tr>
+                <td>19:08</td>
+                <td>23:11</td>
+                <td>4시간 3분</td>
+                <td>40,782원</td>
+              </tr>
+              <tr>
+                <td>19:35</td>
+                <td>23:47</td>
+                <td>4시간 12분</td>
+                <td>39,065원</td>
+              </tr>
+              <tr>
+                <td>20:10</td>
+                <td>23:57</td>
+                <td>3시간 47분</td>
+                <td>37,348원</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size: var(--text-sm); color: var(--color-text-muted)">
+          <strong style="color: var(--color-primary)"
+            >★ 08:40 출발 추천 = Day 8 이용 시 쿤밍 12:52 도착</strong
+          >
+        </p>
+        <p style="margin-top: var(--space-3)">
+          <a
+            href="https://kr.trip.com/trains/china/list?departureStationName=%EB%A6%AC%EC%9E%A5&arrivalStationName=%EC%BF%A4%EB%B0%8D&departureCountryCode=CN&arrivalCountryCode=CN&departDate=2026-04-24&returnDate=2026-04-24&departureStationCode=CN001LHM&arrivalStationCode=CN001KMM"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="
+              display: inline-flex;
+              align-items: center;
+              gap: 8px;
+              padding: 10px 20px;
+              background: var(--color-primary);
+              color: #fff;
+              border-radius: var(--radius-xl);
+              font-weight: 600;
+              font-size: var(--text-sm);
+              text-decoration: none;
+              transition: background 0.2s;
+            "
+            onmouseover="this.style.background='var(--color-primary-hover)'"
+            onmouseout="this.style.background='var(--color-primary)'"
+            >🔗 트립닷컴에서 예매하기 (리장→쿤밍)</a
+          >
+        </p>
+
+        <div class="train-notice">
+          ⚠️ 기차표는 출발 약 <strong>2주 전 15:00</strong>부터 판매 시작됩니다.
+          날짜에 맞춰 미리 예매하세요.
+        </div>
+      </section>
+
+      <!-- ==================== 준비사항 체크리스트 ==================== -->
+      <section class="info-section" id="checklist">
+        <h3>✅ 준비사항 체크리스트</h3>
+        <div class="info-grid">
+          <div>
+            <h4 style="margin-bottom: var(--space-3); font-weight: 700">
+              필수 서류
+            </h4>
+            <ul class="checklist">
+              <li>여권 (유효기간 6개월 이상)</li>
+              <li>여행자 보험</li>
+              <li>항공권 e-티켓 출력 또는 저장</li>
+              <li>숙소 예약 확인서</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="margin-bottom: var(--space-3); font-weight: 700">
+              짐 챙기기
+            </h4>
+            <ul class="checklist">
+              <li>편한 운동화 (트레킹용)</li>
+              <li>방한 겉옷 (고산·일교차 대비)</li>
+              <li>선크림 (고산지역 자외선 강함)</li>
+              <li>선글라스</li>
+              <li>상비약</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="margin-bottom: var(--space-3); font-weight: 700">
+              교통
+            </h4>
+            <ul class="checklist">
+              <li>쿤밍 창수이 국제공항 입국</li>
+              <li>도시 간 이동: 기차/버스</li>
+              <li>현지 교통: 택시, DiDi 앱 설치</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 필독사항 ==================== -->
+      <section class="info-section" id="must-read">
+        <h3>⚠️ 필독사항</h3>
+        <ul
+          class="info-section"
+          style="border: none; padding: 0; box-shadow: none; margin: 0"
+        >
+          <li>
+            <strong>여권 항상 소지</strong> — 주요 명소 입장 및 기차 탑승 시
+            여권 검사 필수
+          </li>
+          <li>
+            <strong>중국 기차역/지하철 보안 검사</strong> — 짐 검사가 엄격하니
+            여유 시간 확보
+          </li>
+          <li>
+            <strong>고산병 주의</strong> — 리장(2,400m), 옥룡설산(4,500m+).
+            무리하지 말고 천천히 적응
+          </li>
+          <li>
+            참고:
+            <a
+              href="https://blog.naver.com/books4973/223726958069"
+              target="_blank"
+              rel="noopener noreferrer"
+              >윈난성 여행 후기 블로그</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <!-- ==================== 기타 여행 정보 ==================== -->
+      <section class="info-section" id="travel-info">
+        <h3>ℹ️ 기타 여행 정보</h3>
+        <div class="info-grid">
+          <div>
+            <ul style="list-style: none; display: grid; gap: 0.7rem">
+              <li><strong>언어</strong> — 중국어 (소수민족 언어 병행)</li>
+              <li><strong>화폐</strong> — 위안화(CNY)</li>
+              <li><strong>시차</strong> — 한국보다 1시간 느림</li>
+              <li><strong>고도</strong> — 쿤밍 1,890m / 리장 2,400m</li>
+            </ul>
+          </div>
+          <div>
+            <ul style="list-style: none; display: grid; gap: 0.7rem">
+              <li>
+                <strong>추천 음식</strong> — 과교미선, 기화계(汽锅鸡),
+                라파이구(말린갈비 훠궈), 얼쿠아이(饵块), 바이족 전통 음식,
+                푸얼차
+              </li>
+              <li>
+                <strong>여행 팁</strong> — 고산병 대비, 일교차 큼, 현금 준비
+              </li>
+              <li>
+                <strong>짐 보관소</strong> —
+                <a
+                  href="https://blog.naver.com/jjj125/224003866909"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >짐 보관 정보 블로그</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 남경 공항 대기 팁 ==================== -->
+      <section class="info-section" id="nanjing-airport">
+        <h3>🛫 남경(난징) 공항 대기 팁</h3>
+        <p>귀국편 경유 시 난징공항에서 약 6시간 50분 대기합니다.</p>
+        <ul
+          style="
+            list-style: none;
+            display: grid;
+            gap: 0.5rem;
+            margin-top: var(--space-4);
+          "
+        >
+          <li>
+            • <strong>B 카운터 뒤편 추천</strong> — 의자 많음,
+            화장실·식수대·콘센트 접근성 좋음, 누워서 수면 가능
+          </li>
+          <li>• 공항 내 커피 체인(디코스 등) 이용 가능</li>
+          <li>
+            • 라운지는 새벽 시간 운영 제한 가능성 있음 → 공항 대기 전략이 현실적
+          </li>
+          <li>
+            • 참고:
+            <a
+              href="https://blog.naver.com/pnu_simsea/220870048394"
+              target="_blank"
+              rel="noopener noreferrer"
+              >난징공항 대기 후기</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <!-- ==================== 참고 블로그 링크 ==================== -->
+      <section class="info-section" id="blog-links">
+        <h3>📚 참고 블로그 링크</h3>
+        <ul class="blog-links">
+          <li>
+            <a
+              href="https://m.blog.naver.com/aksgek7/223906729120"
+              target="_blank"
+              rel="noopener noreferrer"
+              >운남 여행 종합 가이드</a
+            ><span>m.blog.naver.com/aksgek7</span>
+          </li>
+          <li>
+            <a
+              href="https://naver.me/x4GKFGrV"
+              target="_blank"
+              rel="noopener noreferrer"
+              >운남 여행 정보 ①</a
+            ><span>naver.me</span>
+          </li>
+          <li>
+            <a
+              href="https://naver.me/GWise1Qx"
+              target="_blank"
+              rel="noopener noreferrer"
+              >운남 여행 정보 ②</a
+            ><span>naver.me</span>
+          </li>
+          <li>
+            <a
+              href="https://naver.me/5DD4DIb3"
+              target="_blank"
+              rel="noopener noreferrer"
+              >운남 여행 정보 ③</a
+            ><span>naver.me</span>
+          </li>
+          <li>
+            <a
+              href="https://naver.me/xJGZGZSF"
+              target="_blank"
+              rel="noopener noreferrer"
+              >운남 여행 정보 ④</a
+            ><span>naver.me</span>
+          </li>
+          <li>
+            <a
+              href="https://blog.naver.com/nihaosubin/223845645975"
+              target="_blank"
+              rel="noopener noreferrer"
+              >샹그릴라·백수대 후기</a
+            ><span>blog.naver.com/nihaosubin</span>
+          </li>
+          <li>
+            <a
+              href="https://blog.naver.com/newyoonbb/224033588438"
+              target="_blank"
+              rel="noopener noreferrer"
+              >쿤밍 마사지 추천</a
+            ><span>blog.naver.com/newyoonbb</span>
+          </li>
+          <li>
+            <a
+              href="https://blog.naver.com/giguin79/223609483748"
+              target="_blank"
+              rel="noopener noreferrer"
+              >쿤밍 가볼만한 곳</a
+            ><span>blog.naver.com/giguin79</span>
+          </li>
+          <li>
+            <a
+              href="https://blog.naver.com/beautyune/223002502102"
+              target="_blank"
+              rel="noopener noreferrer"
+              >샤시고진 맛집 및 카페</a
+            ><span>blog.naver.com/beautyune</span>
+          </li>
+          <li>
+            <a
+              href="https://blog.naver.com/vcolor98/223750230341"
+              target="_blank"
+              rel="noopener noreferrer"
+              >샤시→리장 이동 방법</a
+            ><span>blog.naver.com/vcolor98</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="note">
+        <p>
+          <strong>메모</strong> 장소명을 클릭하면 구글 맵 / 바이두 맵 링크를
+          선택할 수 있습니다. 일부 식당과 마사지숍은 개별 상호가 자주 바뀌므로,
+          숙소와 핵심 관광지 위주로 지도 링크를 넣었습니다.
+        </p>
+      </section>
+
+      <footer class="footer">
+        최종 업데이트: 2026년 3월 · 노션 일정 반영 · 중국동방항공 ICN↔KMG · 쿤밍
+        2박 + 샤시 2박 + 리장 3박 · MU-2004 ICN 07:45→KMG 11:15
+      </footer>
+    </main>
+
+    <a
+      class="backtop"
+      href="#top"
+      onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"
+      aria-label="맨 위로"
+      >↑</a
+    >
+
+    <script>
+      // Dark mode toggle
+      (function () {
+        const btn = document.querySelector("[data-theme-toggle]");
+        const root = document.documentElement;
+        let mode = window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+        root.setAttribute("data-theme", mode);
+        function render() {
+          btn.innerHTML =
+            mode === "dark"
+              ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+              : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+        }
+        render();
+        btn.addEventListener("click", () => {
+          mode = mode === "dark" ? "light" : "dark";
+          root.setAttribute("data-theme", mode);
+          render();
+        });
+      })();
+
+      // Sidebar toggle
+      (function () {
+        var btn = document.getElementById("hamburger-btn");
+        var sidebar = document.getElementById("sidebar");
+        var overlay = document.getElementById("sidebar-overlay");
+        var closeBtn = document.getElementById("sidebar-close");
+        function openSidebar() {
+          sidebar.classList.add("open");
+          overlay.classList.add("open");
+          document.body.style.overflow = "hidden";
+        }
+        function closeSidebar() {
+          sidebar.classList.remove("open");
+          overlay.classList.remove("open");
+          document.body.style.overflow = "";
+        }
+        btn.addEventListener("click", openSidebar);
+        overlay.addEventListener("click", closeSidebar);
+        closeBtn.addEventListener("click", closeSidebar);
+        sidebar.querySelectorAll("a").forEach(function (a) {
+          a.addEventListener("click", function () {
+            closeSidebar();
+          });
+        });
+      })();
+
+      // Smooth scroll for train links and sidebar nav
+      (function () {
+        document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+          a.addEventListener("click", function (e) {
+            var target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              e.preventDefault();
+              var offset = 60;
+              var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+              window.scrollTo({ top: top, behavior: "smooth" });
             }
+          });
+        });
+      })();
+
+      // Place tooltip functionality
+      (function () {
+        let activeTooltip = null;
+
+        document.querySelectorAll(".place").forEach(function (el) {
+          el.addEventListener("click", function (e) {
+            e.stopPropagation();
+
+            // Close any existing tooltip
+            if (activeTooltip) {
+              activeTooltip.remove();
+              if (activeTooltip._owner === el) {
+                activeTooltip = null;
+                return;
+              }
+              activeTooltip = null;
+            }
+
+            const googleUrl = el.getAttribute("data-google");
+            const baiduUrl = el.getAttribute("data-baidu");
+            if (!googleUrl && !baiduUrl && !el.getAttribute("data-search"))
+              return;
+
+            const tooltip = document.createElement("div");
+            tooltip.className = "place-tooltip active";
+            tooltip._owner = el;
+
+            const searchUrl = el.getAttribute("data-search");
+            let html = "";
+            if (googleUrl) {
+              html +=
+                '<a href="' +
+                googleUrl +
+                '" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>';
+            }
+            if (baiduUrl) {
+              html +=
+                '<a href="' +
+                baiduUrl +
+                '" target="_blank" rel="noopener noreferrer">📍 百度地图</a>';
+            }
+            if (searchUrl) {
+              html +=
+                '<a href="' +
+                searchUrl +
+                '" target="_blank" rel="noopener noreferrer">🔍 Google 검색</a>';
+            }
+            tooltip.innerHTML = html;
+
+            el.style.position = "relative";
+            el.appendChild(tooltip);
+            activeTooltip = tooltip;
+
+            // Adjust if tooltip goes off-screen
+            const rect = tooltip.getBoundingClientRect();
+            if (rect.right > window.innerWidth) {
+              tooltip.style.left = "auto";
+              tooltip.style.right = "0";
+              tooltip.style.transform = "none";
+            }
+            if (rect.left < 0) {
+              tooltip.style.left = "0";
+              tooltip.style.transform = "none";
+            }
+          });
+        });
+
+        document.addEventListener("click", function () {
+          if (activeTooltip) {
+            activeTooltip.remove();
             activeTooltip = null;
           }
-
-          const googleUrl = el.getAttribute('data-google');
-          const baiduUrl = el.getAttribute('data-baidu');
-          if(!googleUrl && !baiduUrl && !el.getAttribute('data-search')) return;
-
-          const tooltip = document.createElement('div');
-          tooltip.className = 'place-tooltip active';
-          tooltip._owner = el;
-
-          const searchUrl = el.getAttribute('data-search');
-          let html = '';
-          if(googleUrl){
-            html += '<a href="'+googleUrl+'" target="_blank" rel="noopener noreferrer">📍 Google Maps</a>';
+        });
+      })();
+    </script>
+    <script data-pplx-inline-edit>
+      (function () {
+        if (window === window.top) return;
+        function inlineAll(orig, clone) {
+          if (orig.nodeType !== 1) return;
+          try {
+            var cs = getComputedStyle(orig);
+            var t = "";
+            for (var i = 0; i < cs.length; i++) {
+              t += cs[i] + ":" + cs.getPropertyValue(cs[i]) + ";";
+            }
+            clone.style.cssText = t;
+          } catch (e) {}
+          var oc = orig.children,
+            cc = clone.children;
+          for (var j = 0; j < oc.length && j < cc.length; j++) {
+            inlineAll(oc[j], cc[j]);
           }
-          if(baiduUrl){
-            html += '<a href="'+baiduUrl+'" target="_blank" rel="noopener noreferrer">📍 百度地图</a>';
+        }
+        function stripExternal(clone) {
+          var imgs = clone.querySelectorAll("img");
+          for (var i = 0; i < imgs.length; i++) {
+            var s = imgs[i].getAttribute("src");
+            if (s && !s.startsWith("data:")) imgs[i].removeAttribute("src");
           }
-          if(searchUrl){
-            html += '<a href="'+searchUrl+'" target="_blank" rel="noopener noreferrer">🔍 Google 검색</a>';
+          var all = clone.querySelectorAll("*");
+          for (var i = 0; i < all.length; i++) {
+            var st = all[i].style.cssText;
+            if (st && st.indexOf("url(") >= 0) {
+              all[i].style.cssText = st.replace(
+                /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+                "none"
+              );
+            }
           }
-          tooltip.innerHTML = html;
-
-          el.style.position = 'relative';
-          el.appendChild(tooltip);
-          activeTooltip = tooltip;
-
-          // Adjust if tooltip goes off-screen
-          const rect = tooltip.getBoundingClientRect();
-          if(rect.right > window.innerWidth){
-            tooltip.style.left = 'auto';
-            tooltip.style.right = '0';
-            tooltip.style.transform = 'none';
-          }
-          if(rect.left < 0){
-            tooltip.style.left = '0';
-            tooltip.style.transform = 'none';
+        }
+        window.addEventListener("message", function (e) {
+          if (!e.data || e.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+          var scrollX = window.scrollX || window.pageXOffset || 0;
+          var scrollY = window.scrollY || window.pageYOffset || 0;
+          var w = window.innerWidth,
+            h = window.innerHeight;
+          try {
+            var clone = document.documentElement.cloneNode(true);
+            var rm = clone.querySelectorAll(
+              'script,link[rel="stylesheet"],style'
+            );
+            for (var i = 0; i < rm.length; i++) {
+              rm[i].remove();
+            }
+            inlineAll(document.documentElement, clone);
+            stripExternal(clone);
+            var html = new XMLSerializer().serializeToString(clone);
+            var svg =
+              '<svg xmlns="http://www.w3.org/2000/svg" width="' +
+              w +
+              '" height="' +
+              h +
+              '">' +
+              '<foreignObject width="100%" height="100%">' +
+              '<div xmlns="http://www.w3.org/1999/xhtml" style="width:' +
+              w +
+              "px;height:" +
+              h +
+              'px;overflow:hidden">' +
+              '<div style="transform:translate(-' +
+              scrollX +
+              "px,-" +
+              scrollY +
+              'px);transform-origin:top left">' +
+              html +
+              "</div></div></foreignObject></svg>";
+            var svgUrl =
+              "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+            var img = new Image();
+            img.onload = function () {
+              var c = document.createElement("canvas");
+              c.width = w;
+              c.height = h;
+              c.getContext("2d").drawImage(img, 0, 0);
+              window.parent.postMessage(
+                {
+                  type: "INLINE_EDIT_SCREENSHOT_RESULT",
+                  dataUrl: c.toDataURL("image/png"),
+                  scrollX: scrollX,
+                  scrollY: scrollY,
+                },
+                "*"
+              );
+            };
+            img.onerror = function () {
+              window.parent.postMessage(
+                {
+                  type: "INLINE_EDIT_SCREENSHOT_RESULT",
+                  dataUrl: null,
+                  scrollX: scrollX,
+                  scrollY: scrollY,
+                },
+                "*"
+              );
+            };
+            img.src = svgUrl;
+          } catch (err) {
+            window.parent.postMessage(
+              {
+                type: "INLINE_EDIT_SCREENSHOT_RESULT",
+                dataUrl: null,
+                scrollX: scrollX,
+                scrollY: scrollY,
+              },
+              "*"
+            );
           }
         });
-      });
-
-      document.addEventListener('click', function(){
-        if(activeTooltip){
-          activeTooltip.remove();
-          activeTooltip = null;
-        }
-      });
-    })();
-  </script>
-<script data-pplx-inline-edit>
-(function(){
-  if(window===window.top)return;
-  function inlineAll(orig,clone){
-    if(orig.nodeType!==1)return;
-    try{
-      var cs=getComputedStyle(orig);
-      var t='';
-      for(var i=0;i<cs.length;i++){t+=cs[i]+':'+cs.getPropertyValue(cs[i])+';';}
-      clone.style.cssText=t;
-    }catch(e){}
-    var oc=orig.children,cc=clone.children;
-    for(var j=0;j<oc.length&&j<cc.length;j++){inlineAll(oc[j],cc[j]);}
-  }
-  function stripExternal(clone){
-    var imgs=clone.querySelectorAll('img');
-    for(var i=0;i<imgs.length;i++){
-      var s=imgs[i].getAttribute('src');
-      if(s&&!s.startsWith('data:'))imgs[i].removeAttribute('src');
-    }
-    var all=clone.querySelectorAll('*');
-    for(var i=0;i<all.length;i++){
-      var st=all[i].style.cssText;
-      if(st&&st.indexOf('url(')>=0){
-        all[i].style.cssText=st.replace(/url\(["']?(?!data:)[^)"']*["']?\)/gi,'none');
-      }
-    }
-  }
-  window.addEventListener('message',function(e){
-    if(!e.data||e.data.type!=='INLINE_EDIT_CAPTURE_REQUEST')return;
-    var scrollX=window.scrollX||window.pageXOffset||0;
-    var scrollY=window.scrollY||window.pageYOffset||0;
-    var w=window.innerWidth,h=window.innerHeight;
-    try{
-      var clone=document.documentElement.cloneNode(true);
-      var rm=clone.querySelectorAll('script,link[rel="stylesheet"],style');
-      for(var i=0;i<rm.length;i++){rm[i].remove();}
-      inlineAll(document.documentElement,clone);
-      stripExternal(clone);
-      var html=new XMLSerializer().serializeToString(clone);
-      var svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'">'
-        +'<foreignObject width="100%" height="100%">'
-        +'<div xmlns="http://www.w3.org/1999/xhtml" style="width:'+w+'px;height:'+h+'px;overflow:hidden">'
-        +'<div style="transform:translate(-'+scrollX+'px,-'+scrollY+'px);transform-origin:top left">'
-        +html+'</div></div></foreignObject></svg>';
-      var svgUrl='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
-      var img=new Image();
-      img.onload=function(){
-        var c=document.createElement('canvas');c.width=w;c.height=h;
-        c.getContext('2d').drawImage(img,0,0);
-        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:c.toDataURL('image/png'),scrollX:scrollX,scrollY:scrollY},'*');
-      };
-      img.onerror=function(){
-        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
-      };
-      img.src=svgUrl;
-    }catch(err){
-      window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
-    }
-  });
-})();
-</script></body>
+      })();
+    </script>
+  </body>
 </html>
