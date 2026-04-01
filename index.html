@@ -567,10 +567,6 @@
       .place:hover {
         color: var(--color-primary);
       }
-      .place .han-paren-inner,
-      .place-popover .han-paren-inner {
-        white-space: nowrap;
-      }
       .place .han-copy-btn,
       .place-popover .han-copy-btn {
         display: inline-flex;
@@ -1148,6 +1144,68 @@
           transform: none;
         }
       }
+
+      /* ─── Day summary strip ─── */
+      .day-summary {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 12px var(--space-6);
+        background: var(--color-surface-2);
+        border-bottom: 1px solid var(--color-border-light);
+      }
+      .summary-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 4px 10px;
+        border-radius: var(--radius-full);
+        font-size: var(--text-xs);
+        font-weight: 500;
+        line-height: 1.4;
+      }
+      .chip-budget  { background: #e6f4ea; color: #137333; }
+      .chip-weather { background: #fef7e0; color: #7a4f00; }
+      .chip-place   { background: #f3e8fd; color: #6a1b9a; }
+      .chip-food    { background: #e8f0fe; color: #1557b0; }
+      [data-theme="dark"] .chip-budget  { background: #1b3a2a; color: #81c995; }
+      [data-theme="dark"] .chip-weather { background: #3c3520; color: #e8d5a0; }
+      [data-theme="dark"] .chip-place   { background: #2e1f3e; color: #c58af9; }
+      [data-theme="dark"] .chip-food    { background: #1a2d4a; color: #8ab4f8; }
+
+      /* ─── Description tags ─── */
+      .desc-tag {
+        display: inline-block;
+        margin-top: 3px;
+        font-size: var(--text-xs);
+        padding: 2px 8px;
+        border-radius: 4px;
+        line-height: 1.5;
+        font-weight: 400;
+      }
+      .desc-tag.food {
+        background: var(--color-primary-container);
+        color: var(--color-primary-on-container);
+      }
+      .desc-tag.place {
+        background: #f3e8fd;
+        color: #6a1b9a;
+      }
+      [data-theme="dark"] .desc-tag.food {
+        background: #1a2d4a;
+        color: #8ab4f8;
+      }
+      [data-theme="dark"] .desc-tag.place {
+        background: #2e1f3e;
+        color: #c58af9;
+      }
+
+      @media (max-width: 768px) {
+        .day-summary {
+          padding: 10px var(--space-4);
+          gap: 6px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1227,7 +1285,7 @@
         </li>
         <li>
           <a href="#day2"
-            ><span class="nav-day">Day 2</span> <span>5/3 · 쿤밍 시내</span></a
+            ><span class="nav-day">Day 2</span> <span>5/3 · 쿤밍 석림</span></a
           >
         </li>
         <li>
@@ -1358,7 +1416,7 @@
         <h2 id="toc-title" class="section-title">목차</h2>
         <div class="toc-grid">
           <a href="#day1">Day 1<small>5/2 · 쿤밍 도착</small></a>
-          <a href="#day2">Day 2<small>5/3 · 쿤밍 시내</small></a>
+          <a href="#day2">Day 2<small>5/3 · 석림</small></a>
           <a href="#day3">Day 3<small>5/4 · 쿤밍 → 샤시</small></a>
           <a href="#day4">Day 4<small>5/5 · 샤시고진</small></a>
           <a href="#day5">Day 5<small>5/6 · 샤시 → 리장</small></a>
@@ -1387,23 +1445,20 @@
               <div class="steps">
                 <div class="step">
                   <div class="num">1</div>
-                  <div>
-                    <strong>07:45</strong> 인천공항 출발 (중국동방항공 MU-2004,
-                    직항).
-                  </div>
+                  <div><strong>07:45</strong> 인천공항 출발</div>
                 </div>
                 <div class="step">
                   <div class="num">2</div>
                   <div>
                     <strong>11:15</strong> 쿤밍 창수이 국제공항 도착. 입국심사
-                    및 수화물 수령 (약 30~40분).
+                    및 수화물 수령 (약 30~40분)
                   </div>
                 </div>
                 <div class="step">
                   <div class="num">3</div>
                   <div>
-                    <strong>11:55</strong> 공항 픽업 서비스 탑승. 시내까지 약
-                    40~50분 소요.
+                    <strong>11:55</strong> 공항 픽업 서비스 탑승 시내까지 약
+                    40~50분 소요
                   </div>
                 </div>
                 <div class="step">
@@ -1412,16 +1467,15 @@
                     <strong>12:40–13:00</strong> 숙소(<a
                       href="https://www.trip.com/hotels/kunming-hotel-detail-746347/kunming-upland-international-youth-hostel/"
                       target="_blank"
-                      rel="noopener"
-                      >Kunming Upland YH</a
-                    >) 도착 — 체크인 및 짐 정리.
+                      rel="noopener noreferrer"
+                      >Kunming Upland 유스호스텔</a
+                    >) 도착 — 체크인 및 짐 정리
                   </div>
                 </div>
                 <div class="step">
                   <div class="num">5</div>
                   <div>
-                    <strong>13:00–14:00</strong> 점심 식사 — 숙소 인근 추천 3곳
-                    (따종디엔핑 기준): 후보①
+                    <strong>13:00–14:00</strong> 점심 —
                     <span
                       class="place-popover"
                       role="button"
@@ -1429,38 +1483,21 @@
                       aria-haspopup="menu"
                       aria-expanded="false"
                       aria-label="지도·가이드·검색 바로가기"
-                      data-popover-google="https://www.google.com/maps/search/彩食边境小吃+翠湖+昆明"
-                      data-popover-baidu="https://map.baidu.com/search/彩食边境小吃+翠湖+昆明"
-                      data-popover-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%B1%84%EC%8B%9D%EB%B3%80%EA%B2%BD%EC%86%8C%EC%B9%98%20%E5%BD%A9%E9%A3%9F%E8%BE%B9%E5%A2%83%E5%B0%8F%E5%90%83"
-                      >채식변경소치(彩食边境小吃, 취호점)</span
+                      data-popover-trip="https://kr.trip.com/travel-guide/restaurant/kunming-29-restaurantdetail/city-30926731.html?locale=ko-KR&amp;curr=KRW"
+                      data-popover-google="https://www.google.com/maps/search/新世界云牵一线+昆明"
+                      data-popover-baidu="https://map.baidu.com/search/新世界云牵一线+昆明"
+                      data-popover-search="https://www.google.com/search?q=NEW+WORLD+YUN+QIAN+YI+XIAN+%E6%96%B0%E4%B8%96%E7%95%8C%E4%BA%91%E7%89%B5%E4%B8%80%E7%BA%BF+%E6%98%86%E6%98%8E"
+                      >NEW WORLD YUN QIAN YI
+                      XIAN(新世界云牵一线·云南小吃集合店)</span
                     >
-                    소수민족 간식 모음. 15–30위안 <br />후보②
-                    <span
-                      class="place-popover"
-                      role="button"
-                      tabindex="0"
-                      aria-haspopup="menu"
-                      aria-expanded="false"
-                      aria-label="지도·가이드·검색 바로가기"
-                      data-popover-google="https://www.google.com/maps/search/半坡小锅米线+昆明"
-                      data-popover-baidu="https://map.baidu.com/search/半坡小锅米线+昆明"
-                      data-popover-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EB%B0%98%ED%8C%8C%EC%86%8C%EA%B6%88%EB%AF%B8%EC%84%A0%20%E5%8D%8A%E5%9D%A1%E5%B0%8F%E9%94%85%E7%B1%B3%E7%BA%BF"
-                      >반포소궈미선(半坡小锅米线)</span
+                    윈난 쌀국수. 원퉁제 인근·취호 권
+                    <a
+                      href="https://kr.trip.com/review/new-world-yun-qian-yi-xian-30926731-213123171?locale=ko-KR&amp;curr=KRW"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >방문자 후기 모음</a
                     >
-                    쿤밍 대표 소궈미선 전문점. 15–25위안 <br />후보③
-                    <span
-                      class="place-popover"
-                      role="button"
-                      tabindex="0"
-                      aria-haspopup="menu"
-                      aria-expanded="false"
-                      aria-label="지도·가이드·검색 바로가기"
-                      data-popover-google="https://www.google.com/maps/search/晨曦豆花米线+翠湖+昆明"
-                      data-popover-baidu="https://map.baidu.com/search/晨曦豆花米线+翠湖+昆明"
-                      data-popover-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%B2%9C%EC%8B%9C%EB%8D%94%EC%9A%B0%ED%99%94%EB%AF%B8%EC%84%A0%20%E6%99%A8%E6%9B%A6%E8%B1%86%E8%8A%B1%E7%B1%B3%E7%BA%BF"
-                      >천시더우화미선(晨曦豆花米线, 취호점)</span
-                    >
-                    두부+쌀국수 조합. 15–30위안.
+                    참고. 가격대는 메뉴에 따라 다름
                   </div>
                 </div>
                 <div class="step">
@@ -1607,12 +1644,12 @@
         <article class="day" id="day2">
           <div class="day-head">
             <div>
-              <div class="day-title">Day 2 · 5월 3일 일요일 · 쿤밍</div>
+              <div class="day-title">Day 2 · 5월 3일 일요일 · 쿤밍 석림</div>
               <div class="day-sub">
-                추이호 공원 · 윈난대학 · 원통사 · 쿤밍 노가 · 금마벽계방
+                동차 당일 · 석림서역 · 풍경구(大·小石林) — 저녁 시내 복귀
               </div>
             </div>
-            <div class="pill">도보 + 택시 혼합</div>
+            <div class="pill">기차 + 셔틀</div>
           </div>
           <div class="grid">
             <section class="card">
@@ -1621,149 +1658,146 @@
                 <div class="step">
                   <div class="num">1</div>
                   <div>
-                    <strong>08:30–09:30</strong> 숙소 조식 또는 근처 카페에서
-                    아침 (미선 또는 얼쿠아이바바 추천, 15–30위안).
+                    <strong>07:00–08:00</strong> 아침 — 숙소 조식 또는 골목
+                    <strong>리어카(수레 노점)</strong>에서 만두·미선·두유(豆漿)
+                    등 간단히. 후기상 저렴하지만 입맛은 호불호.
                   </div>
                 </div>
                 <div class="step">
                   <div class="num">2</div>
                   <div>
-                    <strong>09:30–11:00</strong>
+                    <strong>08:00–08:40</strong>
                     <span
-                      class="place"
-                      data-trip="https://kr.trip.com/travel-guide/attraction/kunming/the-green-lake-park-78617/?locale=ko-KR&amp;curr=KRW"
-                      data-baidu="https://map.baidu.com/search/翠湖公园+昆明"
-                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%B7%A8%ED%98%B8%EA%B3%B5%EC%9B%90%20%E7%BF%A0%E6%B9%96%E5%85%AC%E5%9B%AD&udm=2"
-                      data-place-gallery="cuihu"
-                      >추이호 공원(翠湖公园)</span
+                      class="place-popover"
+                      role="button"
+                      tabindex="0"
+                      aria-haspopup="menu"
+                      aria-expanded="false"
+                      aria-label="지도·가이드·검색 바로가기"
+                      data-popover-google="https://www.google.com/maps/search/Kunming+Railway+Station"
+                      data-popover-baidu="https://map.baidu.com/search/昆明站"
+                      data-popover-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%EC%97%AD%20%E6%98%86%E6%98%8E%E7%AB%99&udm=2"
+                      >쿤밍역(昆明站)</span
                     >
-                    도보 이동 (숙소에서 약 15분) — 호수 한 바퀴 산책 (약 40분).
-                    사진 포인트: 연꽃 연못.
+                    이동(택시/DiDi). 동차 표(전자표)·여권 지참. 출발 시각은
+                    <a href="#train-schedule" class="train-link"
+                      >아래 쿤밍↔석림 안내</a
+                    >·12306·트립 등에서 예매일 기준으로 확인.
                   </div>
                 </div>
                 <div class="step">
                   <div class="num">3</div>
                   <div>
-                    <strong>11:00–12:30</strong>
+                    <strong>동차 약 1시간</strong>
                     <span
                       class="place-popover"
                       role="button"
                       tabindex="0"
                       aria-haspopup="menu"
                       aria-expanded="false"
-                      aria-label="윈난대학 — 지도·검색 바로가기"
-                      data-popover-google="https://www.google.com/maps/search/Yunnan+University+Kunming"
-                      data-popover-baidu="https://map.baidu.com/search/云南大学+昆明"
-                      data-popover-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%9C%88%EB%82%9C%EB%8C%80%ED%95%99%20%E4%BA%91%E5%8D%97%E5%A4%A7%E5%AD%A6&udm=2"
-                      >윈난대학(云南大学)</span
+                      aria-label="지도·가이드·검색 바로가기"
+                      data-popover-google="https://www.google.com/maps/search/Shilin+West+Railway+Station+China"
+                      data-popover-baidu="https://map.baidu.com/search/石林西站"
+                      data-popover-search="https://www.google.com/search?q=%EC%84%9D%EB%A6%BC%EC%84%9C%EC%97%AD%20%E7%9F%B3%E6%9E%97%E8%A5%BF%E7%AB%99%20%E5%88%97%E8%BD%A6&udm=2"
+                      >석림서역(石林西站)</span
                     >
-                    본캠퍼스 산책 — 은행나무 길을 걸으며 역사적 건물 감상. 교내
-                    카페에서 커피 한 잔.
+                    하차.
+                    <strong>石林站과 혼동 주의</strong> — 지도상 가깝게 보여도
+                    풍경구 셔틀·후기 동선은 <strong>석림서역</strong> 기준이
+                    많음.
                   </div>
                 </div>
                 <div class="step">
                   <div class="num">4</div>
                   <div>
-                    <strong>12:30–14:00</strong> 점심: 후보①
-                    <span
-                      class="place-popover"
-                      data-popover-google="https://www.google.com/maps/search/文山荷鲜居+翠湖+昆明"
-                      data-popover-baidu="https://map.baidu.com/search/文山荷鲜居+翠湖+昆明"
-                      data-popover-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EB%AC%B8%EC%82%B0%ED%97%88%EC%84%A0%EC%A5%90%20%E6%96%87%E5%B1%B1%E8%8D%B7%E9%B2%9C%E5%B1%85"
-                      >문산허셴쥐(文山荷鲜居, 취호점)</span
-                    >
-                    문산(文山) 지역 특색 요리. 1인 40–60위안
-                    <br />후보②
-                    <span
-                      class="place-popover"
-                      role="button"
-                      tabindex="0"
-                      aria-haspopup="menu"
-                      aria-expanded="false"
-                      aria-label="지도·가이드·검색 바로가기"
-                      data-popover-google="https://www.google.com/maps/search/小吉坡8号+文林街+昆明"
-                      data-popover-baidu="https://map.baidu.com/search/小吉坡8号+文林街+昆明"
-                      data-popover-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%86%8C%EA%B8%B8%ED%8C%8C8%ED%98%B8%20%E5%B0%8F%E5%90%89%E5%9D%A18%E5%8F%B7"
-                      >소길파8호(小吉坡8号, 원린제점)</span
-                    >
-                    윈난 소수민족 풍미 캐주얼 식당. 1인 30–50위안
-                    <br />후보③
-                    <span
-                      class="place-popover"
-                      role="button"
-                      tabindex="0"
-                      aria-haspopup="menu"
-                      aria-expanded="false"
-                      aria-label="지도·가이드·검색 바로가기"
-                      data-popover-google="https://www.google.com/maps/search/刀敬小锅米线+永善路+昆明"
-                      data-popover-baidu="https://map.baidu.com/search/刀敬小锅米线+永善路+昆明"
-                      data-popover-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EB%8F%84%EA%B2%BD%EC%86%8C%EA%B6%88%EB%AF%B8%EC%84%A0%20%E5%88%80%E6%95%AC%E5%B0%8F%E9%94%85%E7%B1%B3%E7%BA%BF"
-                      >도경소궈미선(刀敬小锅米线, 융산루점)</span
-                    >
-                    정통 소궈미선. 15–25위안.
+                    <strong>개찰</strong>
+                    <br />
+                    중국인 무인 개찰기와 달리
+                    <strong>외국인은 직원 창구</strong>로 가서 여권 제시(후기상
+                    여권만으로 처리되는 경우도).
                   </div>
                 </div>
                 <div class="step">
                   <div class="num">5</div>
                   <div>
-                    <strong>14:00–15:30</strong>
-                    <span
-                      class="place"
-                      data-google="https://www.google.com/maps/search/Yuantong+Temple+Kunming"
-                      data-baidu="https://map.baidu.com/search/圆通寺+昆明"
-                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EC%9B%90%ED%86%B5%EC%82%AC%20%E5%9C%86%E9%80%9A%E5%AF%BA&udm=2"
-                      data-place-gallery="yuantong"
-                      >원통사(圆通寺)</span
-                    >
-                    방문 — 쿤밍에서 가장 오래된 불교 사찰, 입장료 6위안. 독특한
-                    '아래로 내려가는' 구조 (약 1시간).
+                    <strong>역 앞 셔틀</strong>
+                    <br />
+                    <strong>99번(또는 石林风景区行)</strong>이
+                    <strong>석림풍경구</strong> 방향.
+                    <strong>66번 등은 시내 쪽</strong>으로 잘못 타기 쉬움 —
+                    기사에게 「石林风景区」인지 확인. 위챗·알리 등으로 약
+                    <strong>10위안</strong>·약 <strong>30분</strong>
+                    후기 참고.
                   </div>
                 </div>
                 <div class="step">
                   <div class="num">6</div>
                   <div>
-                    <strong>15:30–17:30</strong>
-                    <span
-                      class="place"
-                      data-google="https://www.google.com/maps/search/Kunming+Old+Street"
-                      data-baidu="https://map.baidu.com/search/昆明老街"
-                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EB%85%B8%EA%B0%80%20%E6%98%86%E6%98%8E%E8%80%81%E8%A1%97&udm=2"
-                      data-place-gallery="golden-horse"
-                      >쿤밍 노가(昆明老街)</span
-                    >
-                    &
-                    <span
-                      class="place"
-                      data-google="https://www.google.com/maps/search/Golden+Horse+Jade+Rooster+Kunming"
-                      data-baidu="https://map.baidu.com/search/金马碧鸡坊+昆明"
-                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EA%B8%88%EB%A7%88%EB%B2%BD%EA%B3%84%EB%B0%A9%20%E9%87%91%E9%A9%AC%E7%A2%A7%E9%B8%A1%E5%9D%8A&udm=2"
-                      data-place-gallery="golden-horse"
-                      >금마벽계방(金马碧鸡坊)</span
-                    >
-                    산책 — 전통 공예품 구경, 난창미식가에서 간식 (로즈떡,
-                    얼쿠아이 등).
+                    <strong>도착 후</strong> 관광객센터·<strong>짐보관</strong>
+                    이용 가능. <strong>매표소</strong>까지 후기상 길·상가 구역이
+                    헷갈리니 표지판을 꼼꼼히. 셔틀 배차는 약 30분 간격·막차
+                    시각은 당일 확인.
                   </div>
                 </div>
                 <div class="step">
                   <div class="num">7</div>
                   <div>
-                    <strong>17:30–18:00</strong>
-                    <span
-                      class="place"
-                      data-google="https://www.google.com/maps/search/Golden+Horse+Jade+Rooster+Kunming"
-                      data-baidu="https://map.baidu.com/search/金马碧鸡坊+昆明"
-                      data-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EA%B8%88%EB%A7%88%EB%B2%BD%EA%B3%84%EB%B0%A9%20%E9%87%91%E9%A9%AC%E7%A2%A7%E9%B8%A1%E5%9D%8A&udm=2"
-                      data-place-gallery="golden-horse"
-                      >금마벽계방</span
-                    >
-                    도착 — 해질 무렵 조명이 켜지기 시작하는 시간대가 사진
-                    포인트.
+                    <strong>입장권</strong> — 입장 + 구내 전동차(관광차) 등
+                    패키지는 <strong>시기별로 변동</strong>(후기 약
+                    <strong>130–155위안</strong>대). 현장·앱 요금 확인.
                   </div>
                 </div>
                 <div class="step">
                   <div class="num">8</div>
                   <div>
-                    <strong>18:00–19:30</strong> 저녁 식사: 후보①
+                    <strong>점심</strong> — 풍경구 안은 식당이 적다는 후기가
+                    많아, <strong>매표·경구 밖 근처에서 먹고 들어가기</strong>를
+                    권장.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">9</div>
+                  <div>
+                    <strong>오후 관광</strong>
+                    <span
+                      class="place-popover"
+                      role="button"
+                      tabindex="0"
+                      aria-haspopup="menu"
+                      aria-expanded="false"
+                      aria-label="지도·가이드·검색 바로가기"
+                      data-popover-trip="https://kr.trip.com/travel-guide/attraction/shilin/stone-forest-scenic-area-10558474/?locale=ko-KR&amp;curr=KRW"
+                      data-popover-google="https://www.google.com/maps/search/Shilin+Stone+Forest+Scenic+Area"
+                      data-popover-baidu="https://map.baidu.com/search/石林风景区"
+                      data-popover-search="https://www.google.com/search?q=%EC%84%9D%EB%A6%BC%20%E7%9F%B3%E6%9E%97%E9%A3%8E%E6%99%AF%E5%8C%BA&udm=2"
+                      >석림풍경구(石林风景区)</span
+                    >
+                    <br />
+                    <strong>관광차</strong>: 승차장·하차장이 다른 경우
+                    있음(한쪽은 페이크 하차 지점이라는 후기). 표지판 따라
+                    <strong>승차 정류장</strong> 확인.
+                    <br />
+                    <strong>대석림</strong>이 대표 전망, 시간이 빠듯하면 우선.
+                    소석림·호수 등 순환. 햇빛·계단 많음 —
+                    물·<strong>선글라스</strong>· 여름철
+                    <strong>두꺼운 대여 패딩보다 얇은 겹쳐 입기</strong>(낮 더울
+                    때 들고 다니기 부담) 등 후기 팁 참고.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">10</div>
+                  <div>
+                    <strong>복귀</strong> —
+                    <strong>막차·기차 시간에 맞춰 여유 있게</strong> 풍경구를
+                    나와 셔틀 탑승 지점 확인(후기: 같은 곳을 빙빙 돌며 찾은
+                    사례). 석림서역 → 쿤밍역 동차(편도 시각은 예매분 기준).
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">11</div>
+                  <div>
+                    <strong>저녁</strong> — 시내 복귀 후 숙소 인근 간단 식사
+                    또는
                     <span
                       class="place-popover"
                       role="button"
@@ -1776,64 +1810,54 @@
                       data-popover-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%ED%91%B8%EC%A0%80%EB%A3%A8%EA%B8%B0%ED%99%94%EA%B3%84%20%E7%A6%8F%E7%85%A7%E6%A5%BC%E6%B1%BD%E9%94%85%E9%B8%A1"
                       >푸저루 기화계(福照楼汽锅鸡)</span
                     >
-                    따종디엔핑 4.7점, 쿤밍 대표 기화계(蒸気鍋鶏) 명가. 1인
-                    60–90위안 <br />후보②
-                    <span
-                      class="place-popover"
-                      role="button"
-                      tabindex="0"
-                      aria-haspopup="menu"
-                      aria-expanded="false"
-                      aria-label="지도·가이드·검색 바로가기"
-                      data-popover-google="https://www.google.com/maps/search/滇食记+云南家常菜+昆明"
-                      data-popover-baidu="https://map.baidu.com/search/滇食记+云南家常菜+昆明"
-                      data-popover-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%EB%94%94%EC%97%94%EC%8B%9D%EA%B8%B0%20%E6%BB%87%E9%A3%9F%E8%AE%B0"
-                      >디엔식기(滇食记·云南家常菜)</span
-                    >
-                    윈난 가정식 전문. 1인 40–60위안 <br />후보③
-                    <span
-                      class="place-popover"
-                      role="button"
-                      tabindex="0"
-                      aria-haspopup="menu"
-                      aria-expanded="false"
-                      aria-label="지도·가이드·검색 바로가기"
-                      data-popover-google="https://www.google.com/maps/search/甜竹林思茅野菜馆+昆明"
-                      data-popover-baidu="https://map.baidu.com/search/甜竹林思茅野菜馆+昆明"
-                      data-popover-search="https://www.google.com/search?q=%EC%BF%A4%EB%B0%8D%20%ED%8B%B0%EC%97%94%EC%A3%BC%EB%A6%B0%20%E7%94%9C%E7%AB%B9%E6%9E%97%E6%80%9D%E8%8C%85%E9%87%8E%E8%8F%9C%E9%A6%86"
-                      >티엔주린(甜竹林思茅野菜馆)</span
-                    >
-                    쓰마오 야채 요리 전문. 1인 40–60위안.
-                  </div>
-                </div>
-                <div class="step">
-                  <div class="num">9</div>
-                  <div>
-                    <strong>20:00–21:00</strong> 발마사지 1시간 — 시내 체인형
-                    족욕/마사지숍 (80–120위안).
+                    등 Day 2 이전에 쓰던 시내 맛집 후보 활용.
                   </div>
                 </div>
               </div>
+              <div class="tip">
+                구향동굴+석림 <strong>타오바오 패키지</strong>는 입장·차량
+                포함으로 가성비 좋다는 정보도 많음. 동굴은 다른 지역과 유사해
+                생략하고 <strong>석림만 느긋히</strong> 가려면 이번처럼 개별
+                동선도 가능.
+              </div>
+              <div class="tip">
+                이날은 <strong>취호·윈난대·원통사·노가</strong> 일정을 넣지
+                않음. <strong>취호</strong>는 귀국 전 <strong>Day 8</strong>에
+                배치해 두었음.
+              </div>
             </section>
             <aside class="card">
+              <div class="meta" style="margin-bottom: var(--space-4)">
+                <div>
+                  <strong>참고 블로그</strong> — 동차·셔틀 99/66·매표소·관광차
+                  승차장·복귀 막차 등 <strong>현장 꿀팁·실수 방지</strong> 위주.
+                  <a
+                    href="https://blog.naver.com/second0229/223917222573"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >[2025 운남] 쿤밍 석림 (second0229)</a
+                  >
+                </div>
+              </div>
               <h4>예상 비용</h4>
               <ul class="clean">
                 <li>
-                  <span class="price">조식 15–30위안</span> · 숙소 또는 카페
+                  <span class="price">아침 10–25위안</span> · 리어카·간단 식사
                 </li>
                 <li>
-                  <span class="price">점심 15–30위안</span> · 천시더우화미선
-                </li>
-                <li><span class="price">원통사 6위안</span></li>
-                <li>
-                  <span class="price">저녁 50–80위안</span> · 기화계, 윈난
-                  가정식
+                  <span class="price">쿤밍↔석림서 동차</span> · 편도 시세 예매
+                  시 확인(대략 수십 위안대~)
                 </li>
                 <li>
-                  <span class="price">마사지 80–120위안</span> · 발마사지 60분
+                  <span class="price">셔틀 왕복 약 20위안</span> · 10위안×2 전후
                 </li>
                 <li>
-                  <span class="price">시내 교통 10–30위안</span> · 대부분 도보
+                  <span class="price">석림 입장+관광차</span> · 시기별(후기
+                  130–155위안대 참고)
+                </li>
+                <li><span class="price">점심 25–50위안</span> · 경구 밖</li>
+                <li>
+                  <span class="price">저녁·택시</span> · 복귀 후 시내 이동
                 </li>
               </ul>
             </aside>
@@ -3449,6 +3473,36 @@
           >
         </p>
 
+        <h4
+          style="
+            font-family: var(--font-display);
+            margin: var(--space-8) 0 var(--space-3);
+          "
+        >
+          쿤밍 ↔ 석림 (동차)
+        </h4>
+        <p
+          style="
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-4);
+            font-size: var(--text-sm);
+            line-height: 1.65;
+          "
+        >
+          <strong>Day 2</strong> 석림 당일치기용. 고속철이 아닌
+          <strong>일반 동차(动车/城际)</strong> 편이 많고, 소요는 약
+          <strong>1시간 전후</strong> · 하차역은
+          <strong>石林西站</strong>(석림서역). 출발·도착 시각·요금은
+          <strong>12306</strong> 또는
+          <a
+            href="https://kr.trip.com/trains/china/list?departureStationName=%E6%98%86%E6%98%8E&arrivalStationName=%E7%9F%B3%E6%9E%97%E8%A5%BF&departureCountryCode=CN&arrivalCountryCode=CN&departDate=2026-05-03"
+            target="_blank"
+            rel="noopener noreferrer"
+            >트립닷컴 열차 검색 (昆明→石林西)</a
+          >
+          에서 예매일 기준으로 확인하세요.
+        </p>
+
         <div class="train-notice">
           ⚠️ 기차표는 출발 약 <strong>2주 전 15:00</strong>부터 판매 시작됩니다.
           날짜에 맞춰 미리 예매하세요.
@@ -3643,6 +3697,14 @@
           </li>
           <li>
             <a
+              href="https://blog.naver.com/second0229/223917222573"
+              target="_blank"
+              rel="noopener noreferrer"
+              >쿤밍 석림 동차·셔틀 99번·매표소 찾기 등 현장 후기</a
+            ><span>blog.naver.com/second0229</span>
+          </li>
+          <li>
+            <a
               href="https://blog.naver.com/nihaosubin/223845645975"
               target="_blank"
               rel="noopener noreferrer"
@@ -3680,6 +3742,14 @@
               rel="noopener noreferrer"
               >샤시→리장 이동 방법</a
             ><span>blog.naver.com/vcolor98</span>
+          </li>
+          <li>
+            <a
+              href="https://blog.naver.com/bluebluetoto/223773238480"
+              target="_blank"
+              rel="noopener noreferrer"
+              >운남 여행 후기 (bluebluetoto)</a
+            ><span>blog.naver.com/bluebluetoto</span>
           </li>
         </ul>
       </section>
@@ -3973,23 +4043,26 @@
             .querySelectorAll(".place, .place-popover")
             .forEach(function (el) {
               var raw = (el.textContent || "").replace(/\s+/g, " ").trim();
-              el.dataset.placeTitle = raw;
               var m = raw.match(/^(.+?)\(([^)]+)\)\s*$/);
-              if (!m) return;
+              if (!m) {
+                el.dataset.placeTitle = raw;
+                return;
+              }
               var before = m[1].trim();
               var inner = m[2].trim();
               var copyStr = hanStringFromInner(inner);
-              if (!copyStr) return;
+              if (!copyStr) {
+                el.dataset.placeTitle = raw;
+                return;
+              }
+
+              el.dataset.placeTitle = before + "(" + inner + ")";
+              el.dataset.placeTitleKo = before;
 
               el.textContent = "";
-              el.appendChild(document.createTextNode(before + "("));
-              var innerSpan = document.createElement("span");
-              innerSpan.className = "han-paren-inner";
-              innerSpan.textContent = inner;
-              el.appendChild(innerSpan);
+              el.appendChild(document.createTextNode(before));
               el.appendChild(document.createTextNode(" "));
               el.appendChild(makeHanCopyButton(copyStr));
-              el.appendChild(document.createTextNode(")"));
             });
         }
 
