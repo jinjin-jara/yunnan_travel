@@ -1,0 +1,14 @@
+{"type":"server-started","port":62280,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:62280","screen_dir":"/Users/finger/Documents/yunnan/.superpowers/brainstorm/35523-1775024551/content","state_dir":"/Users/finger/Documents/yunnan/.superpowers/brainstorm/35523-1775024551/state"}
+{"type":"screen-added","file":"/Users/finger/Documents/yunnan/.superpowers/brainstorm/35523-1775024551/content/food-description-options.html"}
+{"source":"user-event","type":"click","text":"A\n    \n      항상 보이는 설명 태그\n      음식 이름 바로 아래 작은 한 줄 설명이 항상 표시됩니다. 호버 없이 바로 읽을 수 있어 모바일에서도 편리합니다.\n      \n        점심 —\n        기화계(汽锅鸡)\n        🍲 증기로 천천히 쪄낸 통닭 요리 · 윈난 대표 보양식","choice":"a","id":null,"timestamp":1775024711956}
+{"type":"screen-added","file":"/Users/finger/Documents/yunnan/.superpowers/brainstorm/35523-1775024551/content/pain-points.html"}
+{"source":"user-event","type":"click","text":"A\n    \n      장소 이름이 낯설다\n      다관공원, 사등가, 옥진교 등 — 어떤 곳인지 한 줄 설명이 있으면 좋겠다. 음식처럼 장소도 간단한 소개가 필요하다.","choice":"a","id":null,"timestamp":1775024795767}
+{"source":"user-event","type":"click","text":"B\n    \n      하루 예산을 한눈에 보기 어렵다\n      각 비용이 카드 하단에 흩어져 있어 \"오늘 얼마 쓸까?\"를 빠르게 파악하기 어렵다.","choice":"b","id":null,"timestamp":1775024799987}
+{"source":"user-event","type":"click","text":"C\n    \n      중국어·한자가 너무 많다\n      한국어 중심으로 읽히길 원하는데 한자·중국어 표기가 본문을 어렵게 만든다. 한자는 보조 표기로 줄이고 싶다.","choice":"c","id":null,"timestamp":1775024801700}
+{"source":"user-event","type":"click","text":"D\n    \n      일정 흐름이 한눈에 안 들어온다\n      시간대별 번호 목록이 길어서 \"지금 몇 번째 일정이지?\"를 빠르게 파악하기 어렵다. 타임라인 시각화나 요약이 있으면 좋겠다.","choice":"d","id":null,"timestamp":1775024802407}
+{"source":"user-event","type":"click","text":"E\n    \n      실용 정보(날씨·복장·팁)가 부족하다\n      리장 해발 2400m, 석림 햇빛 강함 등 여행자에게 꼭 필요한 날씨·준비물 정보가 흩어져 있거나 없다.","choice":"e","id":null,"timestamp":1775024807090}
+{"type":"screen-added","file":"/Users/finger/Documents/yunnan/.superpowers/brainstorm/35523-1775024551/content/approaches.html"}
+{"source":"user-event","type":"click","text":"B\n    \n      카드 상단 요약 스트립 추가 ⭐ 추천\n      각 Day 카드 상단에 핵심 정보를 한 줄로 압축한 요약 스트립을 추가합니다. 예산·날씨·주요 활동이 한눈에 보이고, 세부 내용은 아래에 유지합니다.\n      \n        \n          Day 1 · 5월 2일 · 쿤밍 도착\n          직항 4시간 30분\n        \n        \n          💰 예산 120–180위안\n          ⛅ 낮 23°C · 자외선 강함\n          🏞 다관공원 · 디엔치호수\n          🍜 윈난 쌀국수\n        \n        ▸ 세부 일정은 아래에 그대로 유지 (음식·장소 설명 태그 포함)\n      \n      ✅ 정보 계층화 · 스캔하기 쉬움 · 모바일 최적⚠️ 날씨·예산 정보 사전 작성 필요","choice":"b","id":null,"timestamp":1775024917226}
+{"type":"screen-added","file":"/Users/finger/Documents/yunnan/.superpowers/brainstorm/35523-1775024551/content/design-mockup.html"}
+{"type":"screen-added","file":"/Users/finger/Documents/yunnan/.superpowers/brainstorm/35523-1775024551/content/waiting.html"}
+{"type":"server-stopped","reason":"idle timeout"}

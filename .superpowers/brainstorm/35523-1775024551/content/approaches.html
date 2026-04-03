@@ -1,0 +1,71 @@
+<h2>어떤 방향으로 개선할까요?</h2>
+<p class="subtitle">선택하신 5가지 개선사항을 어떻게 묶을지 골라주세요</p>
+
+<div class="options">
+
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>인라인 보강 (현재 구조 유지)</h3>
+      <p>지금 레이아웃을 그대로 두고 설명 태그·예산 뱃지·실용 팁만 추가합니다. 변화가 적어 안전하고 구현이 빠릅니다.</p>
+      <div style="margin-top:10px;padding:12px;background:#f8f9fa;border-radius:8px;font-size:12px;line-height:1.8">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <strong>Day 1 · 5월 2일 · 쿤밍 도착</strong>
+          <span style="font-size:11px;background:#d2e3fc;color:#174ea6;padding:2px 8px;border-radius:12px">예산 120–180위안</span>
+        </div>
+        <div style="font-size:11px;color:#5f6368;margin-bottom:8px">⛅ 해발 1,890m · 낮 23°C · 자외선 강함 · 얇은 겉옷 추천</div>
+        <hr style="border:none;border-top:1px solid #e8eaed;margin:6px 0">
+        <div>① <strong>13:00</strong> 점심 — <span style="border-bottom:1px dashed #1a73e8">기화계(汽锅鸡)</span></div>
+        <div style="margin-left:12px;margin-top:2px;font-size:11px;color:#5f6368;background:#e8f0fe;padding:2px 8px;border-radius:4px;display:inline-block">🍲 증기로 쪄낸 통닭 요리 · 윈난 대표 보양식</div>
+      </div>
+      <div style="margin-top:8px;font-size:12px;color:#5f6368">✅ 빠른 구현 · 기존 UX 유지<br>⚠️ 카드가 더 길어질 수 있음</div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>카드 상단 요약 스트립 추가 ⭐ 추천</h3>
+      <p>각 Day 카드 상단에 핵심 정보를 한 줄로 압축한 요약 스트립을 추가합니다. 예산·날씨·주요 활동이 한눈에 보이고, 세부 내용은 아래에 유지합니다.</p>
+      <div style="margin-top:10px;padding:12px;background:#f8f9fa;border-radius:8px;font-size:12px;line-height:1.8">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <strong>Day 1 · 5월 2일 · 쿤밍 도착</strong>
+          <span style="font-size:11px;background:#d2e3fc;color:#174ea6;padding:2px 8px;border-radius:12px">직항 4시간 30분</span>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;padding:8px;background:#fff;border:1px solid #e8eaed;border-radius:8px;margin-bottom:8px">
+          <span style="font-size:11px;background:#e8f5e9;color:#1e7e34;padding:3px 8px;border-radius:12px">💰 예산 120–180위안</span>
+          <span style="font-size:11px;background:#fff3e0;color:#e65100;padding:3px 8px;border-radius:12px">⛅ 낮 23°C · 자외선 강함</span>
+          <span style="font-size:11px;background:#f3e5f5;color:#6a1b9a;padding:3px 8px;border-radius:12px">🏞 다관공원 · 디엔치호수</span>
+          <span style="font-size:11px;background:#e3f2fd;color:#0d47a1;padding:3px 8px;border-radius:12px">🍜 윈난 쌀국수</span>
+        </div>
+        <div style="font-size:11px;color:#5f6368">▸ 세부 일정은 아래에 그대로 유지 (음식·장소 설명 태그 포함)</div>
+      </div>
+      <div style="margin-top:8px;font-size:12px;color:#5f6368">✅ 정보 계층화 · 스캔하기 쉬움 · 모바일 최적<br>⚠️ 날씨·예산 정보 사전 작성 필요</div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>요약/상세 토글 뷰</h3>
+      <p>각 Day 카드에 "요약 보기 / 전체 보기" 버튼을 추가합니다. 요약 뷰는 핵심 장소·식사·예산만 보여주고, 전체 뷰는 현재처럼 상세 일정을 표시합니다.</p>
+      <div style="margin-top:10px;padding:12px;background:#f8f9fa;border-radius:8px;font-size:12px;line-height:1.8">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <strong>Day 1 · 5월 2일</strong>
+          <div style="display:flex;gap:4px">
+            <span style="padding:3px 10px;background:#1a73e8;color:#fff;border-radius:12px;font-size:11px">요약</span>
+            <span style="padding:3px 10px;background:#e8eaed;color:#3c4043;border-radius:12px;font-size:11px">전체</span>
+          </div>
+        </div>
+        <div style="padding:8px;background:#fff;border:1px solid #e8eaed;border-radius:8px">
+          <div>🛬 공항 도착 → 픽업 → 숙소 체크인</div>
+          <div>🏞 다관공원 · 디엔치 호수 산책</div>
+          <div>🍜 저녁: 윈난 가정식 (50–80위안)</div>
+          <div style="color:#1a73e8;margin-top:4px">예산 합계: 120–180위안</div>
+        </div>
+      </div>
+      <div style="margin-top:8px;font-size:12px;color:#5f6368">✅ 가장 깔끔한 뷰 · 첫 방문자에게 최적<br>⚠️ 구현 복잡 · JavaScript 상태 관리 필요</div>
+    </div>
+  </div>
+
+</div>

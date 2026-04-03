@@ -1,0 +1,125 @@
+<h2>리장 일정 — Day별 장소 배치 제안</h2>
+<p class="subtitle">9개 장소를 지리·동선 기준으로 3일에 나눴습니다. 조정이 필요하면 터미널에서 알려주세요.</p>
+
+<style>
+.day-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 8px; }
+.day-col { background: #f8f9fa; border-radius: 12px; padding: 14px; }
+.day-label { font-weight: 700; font-size: 13px; color: #1a73e8; margin-bottom: 10px; border-bottom: 2px solid #d2e3fc; padding-bottom: 6px; }
+.place-card { background: #fff; border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+.place-name { font-weight: 700; font-size: 13px; color: #121316; margin-bottom: 3px; }
+.place-tag { display: inline-block; font-size: 10px; padding: 2px 7px; border-radius: 99px; margin-right: 3px; margin-top: 2px; }
+.tag-nature { background: #e6f4ea; color: #137333; }
+.tag-culture { background: #fce8e6; color: #c5221f; }
+.tag-show { background: #e8f0fe; color: #1557b0; }
+.tag-shop { background: #fef7e0; color: #b06000; }
+.tag-history { background: #f3e8fd; color: #6200ea; }
+.place-note { font-size: 11px; color: #5f6368; margin-top: 4px; line-height: 1.5; }
+.distance-note { font-size: 11px; color: #e37400; font-weight: 600; margin-top: 6px; }
+.warning { background: #fef7e0; border-left: 3px solid #e37400; padding: 8px 10px; border-radius: 4px; font-size: 12px; margin-top: 12px; color: #5f2400; }
+@media(max-width:700px){ .day-cols { grid-template-columns: 1fr; } }
+</style>
+
+<div class="day-cols">
+
+  <!-- Day 5 -->
+  <div class="day-col">
+    <div class="day-label">Day 5 · 샤시→리장 도착일<br><span style="font-weight:400;font-size:11px;color:#5f6368">오후~저녁 · 도보권 위주</span></div>
+
+    <div class="place-card">
+      <div class="place-name">🏘 리장고성(丽江古城)</div>
+      <span class="place-tag tag-history">세계문화유산</span>
+      <span class="place-tag tag-history">나시족</span>
+      <div class="place-note">도착 후 체크인 → 저녁 식사 → 야경 산책.<br>입장 무료(관리비 80위안)</div>
+    </div>
+
+    <div class="place-card">
+      <div class="place-name">🛍 충의시장(忠义市场)</div>
+      <span class="place-tag tag-shop">시장</span>
+      <span class="place-tag tag-shop">쇼핑</span>
+      <div class="place-note">리장고성 내 현지 전통시장.<br>저녁 시간대 활기차고 입장료 무료.</div>
+    </div>
+
+    <div class="distance-note">📍 고성 내 도보권 — 이동 부담 없음</div>
+    <div class="warning">⚑ 이동일이므로 오후 늦게 도착 예정. 가볍게 고성 야경·시장 위주.</div>
+  </div>
+
+  <!-- Day 6 -->
+  <div class="day-col">
+    <div class="day-label">Day 6 · 옥룡설산 데이<br><span style="font-weight:400;font-size:11px;color:#5f6368">조기 출발 필수 · 종일 외곽</span></div>
+
+    <div class="place-card">
+      <div class="place-name">🏔 옥룡설산(玉龙雪山)</div>
+      <span class="place-tag tag-nature">해발 5,596m</span>
+      <span class="place-tag tag-nature">빙하</span>
+      <div class="place-note">입장료 약 100위안. 케이블카 별도.</div>
+    </div>
+
+    <div class="place-card">
+      <div class="place-name">🚡 옥룡설산 케이블카</div>
+      <span class="place-tag tag-nature">대형 케이블카</span>
+      <div class="place-note">해발 4,506m 도달. 약 120위안.<br>사전예약 필수.</div>
+    </div>
+
+    <div class="place-card">
+      <div class="place-name">💎 람월곡(蓝月谷)</div>
+      <span class="place-tag tag-nature">에메랄드 호수</span>
+      <div class="place-note">옥룡설산 기슭. 빙하수 에메랄드빛 연못.<br>리장 최고 포토스팟.</div>
+    </div>
+
+    <div class="place-card">
+      <div class="place-name">🎭 인상리장쇼(印象丽江)</div>
+      <span class="place-tag tag-show">야외 공연</span>
+      <span class="place-tag tag-show">장이모우 감독</span>
+      <div class="place-note">감해자 야외극장. 2회차 14:50 추천.<br>약 190–280위안.</div>
+    </div>
+
+    <div class="distance-note">📍 리장→설산 약 30km · 차량 필수</div>
+    <div class="warning">⚑ 고산병 주의(해발 4,500m). 방한복·산소통 준비 필수.</div>
+  </div>
+
+  <!-- Day 7 -->
+  <div class="day-col">
+    <div class="day-label">Day 7 · 외곽 명소 데이<br><span style="font-weight:400;font-size:11px;color:#5f6368">반나절 차량 + 도보 혼합</span></div>
+
+    <div class="place-card">
+      <div class="place-name">🌸 팅화구·리장백화원<br>(听花谷)</div>
+      <span class="place-tag tag-nature">꽃 정원</span>
+      <span class="place-tag tag-nature">계곡</span>
+      <div class="place-note">옥룡설산 기슭 꽃 계곡.<br>5월 초 개화 시기 방문 최적.</div>
+    </div>
+
+    <div class="place-card">
+      <div class="place-name">🐴 라스하이 차마고도<br>(拉市海茶马古道)</div>
+      <span class="place-tag tag-history">차마고도</span>
+      <span class="place-tag tag-nature">호수</span>
+      <div class="place-note">고대 차·말 교역로. 호수변 승마·조각배 체험 가능.<br>리장 서쪽 약 10km.</div>
+    </div>
+
+    <div class="place-card">
+      <div class="place-name">🎨 백사고진(白沙古镇)</div>
+      <span class="place-tag tag-history">나시족 벽화</span>
+      <span class="place-tag tag-history">고진</span>
+      <div class="place-note">나시족 전통 벽화 마을. 옥룡설산 조망.<br>리장 북쪽 10km.</div>
+    </div>
+
+    <div class="place-card">
+      <div class="place-name">🏘 리장고성 마무리 산책</div>
+      <span class="place-tag tag-culture">야경</span>
+      <div class="place-note">저녁 고성 복귀 후 남은 골목 탐방.</div>
+    </div>
+
+    <div class="distance-note">📍 팅화구·라스하이·백사 → 包车(대절차) 반나절 추천</div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top:20px; padding:14px; background:#f1f3f4; border-radius:10px;">
+  <h3 style="font-size:14px; margin:0 0 8px;">⚠️ 현재 일정과 달라지는 점</h3>
+  <ul style="font-size:12px; line-height:1.9; margin:0; padding-left:18px; color:#3c4043;">
+    <li><strong>수허고성</strong>은 리장고성 바로 옆 — Day 5 저녁 or Day 7 오전에 자연스럽게 포함 가능 (목록엔 없지만 기존 일정에 있음)</li>
+    <li><strong>팅화구(백화원)</strong>와 <strong>라스하이</strong>는 옥룡설산 권역이라 Day 6에 묶는 것도 가능하지만, Day 6가 이미 꽉 차서 Day 7 배치 추천</li>
+    <li><strong>인상리장쇼</strong>는 Day 6 설산 이후 오후에 연결 — 현재 일정과 동일</li>
+  </ul>
+</div>
+
+<p class="subtitle" style="margin-top:16px;">이 배치로 진행할까요? 바꾸고 싶은 부분 터미널에서 알려주세요.</p>

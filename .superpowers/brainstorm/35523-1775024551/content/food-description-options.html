@@ -1,0 +1,66 @@
+<h2>음식 설명 표시 방식 — 어떤 게 좋으세요?</h2>
+<p class="subtitle">현재 일정표에는 기화계(汽锅鸡), 미선(米线) 같은 낯선 음식 이름만 있습니다. 설명을 어떻게 추가할지 골라주세요.</p>
+
+<div class="options">
+
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>항상 보이는 설명 태그</h3>
+      <p>음식 이름 바로 아래 작은 한 줄 설명이 항상 표시됩니다. 호버 없이 바로 읽을 수 있어 모바일에서도 편리합니다.</p>
+      <div style="margin-top:10px;padding:12px;background:#f8f9fa;border-radius:8px;font-size:13px;line-height:1.7">
+        <strong>점심</strong> —
+        <span style="border-bottom:1.5px dashed #1a73e8;color:#333">기화계(汽锅鸡)</span>
+        <span style="display:block;margin-top:3px;margin-left:4px;font-size:11px;color:#5f6368;background:#e8f0fe;padding:2px 8px;border-radius:4px;display:inline-block">🍲 증기로 천천히 쪄낸 통닭 요리 · 윈난 대표 보양식</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>기존 팝오버에 설명 추가</h3>
+      <p>현재 지도·검색 링크가 뜨는 말풍선 안에 음식 설명을 함께 넣습니다. 클릭 한 번으로 설명과 링크를 한꺼번에 볼 수 있습니다.</p>
+      <div style="margin-top:10px;padding:12px;background:#f8f9fa;border-radius:8px;font-size:13px;line-height:1.7">
+        <span style="border-bottom:1.5px dashed #1a73e8;color:#1a73e8;cursor:pointer">기화계(汽锅鸡) ▾</span>
+        <div style="margin-top:6px;padding:10px;background:#fff;border:1px solid #dadce0;border-radius:8px;font-size:12px">
+          🍲 <em>증기로 천천히 쪄낸 통닭 요리. 맑은 국물이 특징인 윈난 대표 보양식.</em><br>
+          <span style="color:#1a73e8">🗺 구글지도 · 바이두지도 · 검색</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>클릭 시 인라인 펼침</h3>
+      <p>음식 이름을 클릭하면 바로 아래 설명이 부드럽게 펼쳐집니다. 보고 싶을 때만 열어볼 수 있어 글이 복잡해 보이지 않습니다.</p>
+      <div style="margin-top:10px;padding:12px;background:#f8f9fa;border-radius:8px;font-size:13px;line-height:1.7">
+        <span style="border-bottom:1.5px dashed #1a73e8;color:#1a73e8;cursor:pointer">기화계(汽锅鸡) ℹ️</span>
+        <div style="margin-top:6px;padding:10px;background:#e8f0fe;border-left:3px solid #1a73e8;border-radius:0 6px 6px 0;font-size:12px;color:#174ea6">
+          🍲 증기압으로 천천히 쪄낸 통닭 요리. 맑고 진한 국물이 특징이며, 윈난성을 대표하는 보양 음식입니다. 주로 한약재를 함께 넣어 끓입니다.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="d" onclick="toggleSelect(this)">
+    <div class="letter">D</div>
+    <div class="content">
+      <h3>음식 전용 카드 (식사 항목만)</h3>
+      <p>식사 항목에만 별도 음식 카드를 사용합니다. 사진·설명·링크를 한 카드에 담아 여행 가이드북처럼 보입니다. 가장 시각적이지만 구현이 복잡합니다.</p>
+      <div style="margin-top:10px;padding:12px;background:#f8f9fa;border-radius:8px;font-size:13px;line-height:1.7">
+        <div style="display:flex;gap:8px;align-items:flex-start">
+          <div style="width:52px;height:52px;background:#d2e3fc;border-radius:8px;display:grid;place-items:center;font-size:24px;flex-shrink:0">🍲</div>
+          <div>
+            <strong style="color:#174ea6">기화계(汽锅鸡)</strong>
+            <div style="font-size:11px;color:#5f6368;margin-top:2px">윈난 대표 보양 요리 · 증기 통닭</div>
+            <div style="font-size:11px;color:#3c4043;margin-top:4px">증기압으로 닭을 천천히 쪄낸 맑은 국물 요리. 한약재를 함께 넣기도 함.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

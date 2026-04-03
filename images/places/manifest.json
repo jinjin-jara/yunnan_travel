@@ -34,6 +34,15 @@
     "images/places/lijiang-old/2.jpg",
     "images/places/lijiang-old/3.jpg"
   ],
+  "nanqiang": [
+    "images/places/nanqiang/1.png",
+    "images/places/nanqiang/2.png",
+    "images/places/nanqiang/3.png",
+    "images/places/nanqiang/4.png",
+    "images/places/nanqiang/5.png",
+    "images/places/nanqiang/6.png",
+    "images/places/nanqiang/7.png"
+  ],
   "shaxi": [
     "images/places/shaxi/1.jpg",
     "images/places/shaxi/2.jpg",
@@ -58,5 +67,30 @@
     "images/places/yulong/1.jpg",
     "images/places/yulong/2.jpg",
     "images/places/yulong/3.jpg"
+  ],
+  "impressions": [
+    "images/places/impressions/1.webp",
+    "images/places/impressions/2.webp",
+    "images/places/impressions/3.webp"
+  ],
+  "ropeway": [
+    "images/places/ropeway/1.webp",
+    "images/places/ropeway/2.webp",
+    "images/places/ropeway/3.webp"
+  ],
+  "lashihai": [
+    "images/places/lashihai/1.webp",
+    "images/places/lashihai/2.webp",
+    "images/places/lashihai/3.webp"
+  ],
+  "tinghua": [
+    "images/places/tinghua/1.webp",
+    "images/places/tinghua/2.webp",
+    "images/places/tinghua/3.webp"
+  ],
+  "zhongyi": [
+    "images/places/zhongyi/1.webp",
+    "images/places/zhongyi/2.webp",
+    "images/places/zhongyi/3.webp"
   ]
 }
