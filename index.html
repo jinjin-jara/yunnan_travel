@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko" data-theme="light">
   <head>
     <meta charset="utf-8" />
@@ -67,14 +67,12 @@
         --color-warning: #e37400;
         --color-on-primary: #fff;
 
-        --shadow-1:
-          0 1px 2px 0 rgba(60, 64, 67, 0.3),
+        --shadow-1: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
           0 1px 3px 1px rgba(60, 64, 67, 0.15);
-        --shadow-2:
-          0 1px 2px 0 rgba(60, 64, 67, 0.3),
+        --shadow-2: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
           0 2px 6px 2px rgba(60, 64, 67, 0.15);
-        --shadow-3:
-          0 4px 8px 3px rgba(60, 64, 67, 0.15), 0 1px 3px rgba(60, 64, 67, 0.3);
+        --shadow-3: 0 4px 8px 3px rgba(60, 64, 67, 0.15),
+          0 1px 3px rgba(60, 64, 67, 0.3);
 
         --radius-sm: 8px;
         --radius-md: 12px;
@@ -82,9 +80,8 @@
         --radius-xl: 28px;
         --radius-full: 9999px;
 
-        --font-family:
-          "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
-          system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+        --font-family: "Pretendard Variable", Pretendard, -apple-system,
+          BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
           "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
       }
 
@@ -103,12 +100,12 @@
         --color-primary-container: #394457;
         --color-primary-on-container: #8ab4f8;
         --color-on-primary: #202124;
-        --shadow-1:
-          0 1px 3px 1px rgba(0, 0, 0, 0.5), 0 1px 2px 0 rgba(0, 0, 0, 0.6);
-        --shadow-2:
-          0 2px 6px 2px rgba(0, 0, 0, 0.5), 0 1px 2px 0 rgba(0, 0, 0, 0.6);
-        --shadow-3:
-          0 4px 8px 3px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.5);
+        --shadow-1: 0 1px 3px 1px rgba(0, 0, 0, 0.5),
+          0 1px 2px 0 rgba(0, 0, 0, 0.6);
+        --shadow-2: 0 2px 6px 2px rgba(0, 0, 0, 0.5),
+          0 1px 2px 0 rgba(0, 0, 0, 0.6);
+        --shadow-3: 0 4px 8px 3px rgba(0, 0, 0, 0.4),
+          0 1px 3px rgba(0, 0, 0, 0.5);
       }
 
       * {
@@ -322,9 +319,7 @@
         font-weight: 600;
         font-size: var(--text-sm);
         color: var(--color-text);
-        transition:
-          background 0.15s,
-          box-shadow 0.15s;
+        transition: background 0.15s, box-shadow 0.15s;
       }
       .toc a:hover {
         background: var(--color-primary-container);
@@ -580,9 +575,7 @@
         display: grid;
         place-items: center;
         box-shadow: var(--shadow-3);
-        transition:
-          transform 0.15s,
-          box-shadow 0.15s;
+        transition: transform 0.15s, box-shadow 0.15s;
         font-size: 1.2rem;
       }
       .backtop:hover {
@@ -641,10 +634,7 @@
         vertical-align: middle;
         line-height: 0;
         opacity: 0.55;
-        transition:
-          opacity 0.12s,
-          color 0.12s,
-          background 0.12s;
+        transition: opacity 0.12s, color 0.12s, background 0.12s;
       }
       .place .han-copy-btn:hover,
       .place-popover .han-copy-btn:hover {
@@ -736,9 +726,7 @@
         padding: var(--space-4);
         visibility: hidden;
         opacity: 0;
-        transition:
-          opacity 0.2s ease,
-          visibility 0.2s;
+        transition: opacity 0.2s ease, visibility 0.2s;
       }
       .place-modal.open {
         visibility: visible;
@@ -833,10 +821,7 @@
         line-height: 1.25;
         text-decoration: none;
         text-align: center;
-        transition:
-          background 0.12s,
-          border-color 0.12s,
-          box-shadow 0.12s;
+        transition: background 0.12s, border-color 0.12s, box-shadow 0.12s;
       }
       .place-modal-go:hover {
         border-color: var(--color-primary);
@@ -1020,9 +1005,7 @@
         text-decoration: none;
         border-bottom: 1.5px dashed var(--color-primary);
         padding-bottom: 1px;
-        transition:
-          color 0.15s,
-          border-color 0.15s;
+        transition: color 0.15s, border-color 0.15s;
         cursor: pointer;
       }
       .train-link:hover {
@@ -1297,10 +1280,7 @@
         text-decoration: none;
         line-height: 1.45;
         border: 1px solid var(--color-border-light);
-        transition:
-          background 0.15s,
-          color 0.15s,
-          border-color 0.15s;
+        transition: background 0.15s, color 0.15s, border-color 0.15s;
       }
       .cite-pill:hover,
       .cite-pill:focus-visible {
@@ -1333,9 +1313,7 @@
         visibility: hidden;
         pointer-events: none;
         transform: translateY(6px);
-        transition:
-          opacity 0.18s ease,
-          visibility 0.18s ease,
+        transition: opacity 0.18s ease, visibility 0.18s ease,
           transform 0.18s ease;
       }
       .cite-wrap:hover .cite-preview,
@@ -1385,7 +1363,9 @@
         border-bottom: 1px solid var(--color-border-light);
       }
       @media (max-width: 600px) {
-        .day-map { height: 200px; }
+        .day-map {
+          height: 200px;
+        }
       }
       .map-pin {
         width: 28px;
@@ -1395,7 +1375,7 @@
         border-radius: 50% 50% 50% 0;
         transform: rotate(-45deg);
         border: 2px solid #fff;
-        box-shadow: 0 2px 6px rgba(0,0,0,.35);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1538,7 +1518,7 @@
           <a href="#kunming-orientation">🗺️ 쿤밍 위치·동선</a>
         </li>
         <li class="nav-section">
-          <a href="#nanjing-airport">🛫 난징 공항 대기 팁</a>
+          <a href="#nanjing-airport">🛫 난징 경유 대기·호텔</a>
         </li>
         <li class="nav-section">
           <a href="#budget-summary">💰 전체 예산표</a>
@@ -1679,7 +1659,8 @@
             <div>
               <div class="day-title">Day 1 · 5월 2일 토요일 · 쿤밍 도착</div>
               <div class="day-sub">
-                ICN 07:45 출발 → KMG 11:15 도착 → 자카란다테마공원 · 운남대학교 · 취호공원 · 라오지에 · M60 → 난창 거리 야시장
+                ICN 07:45 출발 → KMG 11:15 도착 → 자카란다테마공원 · 운남대학교
+                · 취호공원 · 라오지에 · M60 → 난창 거리 야시장
                 <span class="day-sub-hint"> · 우화구 권역 도보 동선</span>
               </div>
             </div>
@@ -1780,7 +1761,8 @@
                       >자카란다테마공원(蓝花楹主题公园)</span
                     >
                     <br /><span class="desc-tag place"
-                      >🌸 5월 초 개화 절정 · 우화구 교장중로 226 · 숙소 인근</span
+                      >🌸 5월 초 개화 절정 · 우화구 교장중로 226 · 숙소
+                      인근</span
                     >
                     — 쿤밍 자카란다(蓝花楹) 명소. 보라빛 꽃터널 감상.
                   </div>
@@ -1802,7 +1784,8 @@
                       >운남대학교(云南大学)</span
                     >
                     <br /><span class="desc-tag place"
-                      >🎓 1922년 설립 · 캠퍼스 내 자카란다 가로수 · 취호공원 도보권</span
+                      >🎓 1922년 설립 · 캠퍼스 내 자카란다 가로수 · 취호공원
+                      도보권</span
                     >
                     — 캠퍼스 내 고풍스러운 건축과 자카란다 가로수 감상.
                     자카란다공원에서 도보 약 10분.
@@ -1821,7 +1804,8 @@
                       >취호공원(翠湖公园)</span
                     >
                     <br /><span class="desc-tag place"
-                      >🦢 도심 속 호수 공원 · 운남대 바로 옆 · 산책로 · 입장 무료</span
+                      >🦢 도심 속 호수 공원 · 운남대 바로 옆 · 산책로 · 입장
+                      무료</span
                     >
                     — 운남대에서 도보 5분. 호수 둘레길 한 바퀴.
                   </div>
@@ -1865,7 +1849,8 @@
                       >M60 문화예술복합공간</span
                     >
                     <br /><span class="desc-tag place"
-                      >🎨 폐공장 리모델링 예술복합공간 · 갤러리·카페·바 · 저녁 시간대 분위기 좋음</span
+                      >🎨 폐공장 리모델링 예술복합공간 · 갤러리·카페·바 · 저녁
+                      시간대 분위기 좋음</span
                     >
                     — 저녁 전 카페·갤러리 탐방. 식사도 가능.
                   </div>
@@ -1971,7 +1956,10 @@
                 </div>
               </div>
               <div class="tip">
-                첫날이므로 해발 1,890m 적응을 위해 페이스 조절. 우화구 권역(자카란다공원→운남대→취호→라오지에→M60)은 대부분 도보권이라 이동 부담이 적음. 체력에 따라 M60 또는 야시장 중 하나를 생략해도 됨.
+                첫날이므로 해발 1,890m 적응을 위해 페이스 조절. 우화구
+                권역(자카란다공원→운남대→취호→라오지에→M60)은 대부분 도보권이라
+                이동 부담이 적음. 체력에 따라 M60 또는 야시장 중 하나를 생략해도
+                됨.
               </div>
             </section>
             <aside class="card">
@@ -2341,17 +2329,18 @@
                 <div class="step">
                   <div class="num">4</div>
                   <div>
-                    <strong>11:44–14:12</strong>
+                    <strong>11:56–13:52</strong>
                     <a href="#train-schedule" class="train-link"
-                      >🚄 고속열차: 쿤밍→따리</a
+                      >🚄 고속열차 G2840: 쿤밍→따리</a
                     >
-                    (약 2시간 28분). 열차 내 간식 준비 추천.
+                    (약 1시간 56분) · 9호차 6D·6F · 개찰구 7B (쿤밍역
+                    베이징로드)
                   </div>
                 </div>
                 <div class="step">
                   <div class="num">5</div>
                   <div>
-                    <strong>14:12–</strong> 따리역 도착 →
+                    <strong>13:52–</strong> 따리역 도착 →
                     <span
                       class="place"
                       data-google="https://www.google.com/maps/search/Sideng+Square+Shaxi"
@@ -2359,9 +2348,6 @@
                       data-search="https://www.google.com/search?q=%EC%83%A4%EC%8B%9C%EA%B3%A0%EC%A7%84%20%E6%B2%99%E6%BA%AA%E5%8F%A4%E9%95%87&udm=2"
                       data-place-gallery="shaxi"
                       >샤시고진</span
-                    ><br /><span class="desc-tag place"
-                      >🏘 당·송 시대 차마고도 교역 마을 · 대부분 옛 건물 보존 ·
-                      조용하고 아늑한 분위기</span
                     >까지 셔틀버스 혹은 DiDi 이동.
                   </div>
                 </div>
@@ -2480,9 +2466,9 @@
                 <div>
                   <strong>열차</strong>
                   <a href="#train-schedule" class="train-link"
-                    >쿤밍→따리 11:44–14:12</a
+                    >G2840 쿤밍→따리 11:56–13:52</a
                   >
-                  (약 32,700원)
+                  · 9호차 6D·6F · 개찰구 7B (쿤밍역 베이징로드) · 약 32,700원
                 </div>
                 <div><strong>따리→샤시</strong> 셔틀버스 또는 DiDi</div>
                 <div>
@@ -2594,8 +2580,7 @@
                       >흑혜강(黑惠江)</span
                     >
                     <br /><span class="desc-tag place"
-                      >🏞 샤시 마을을 흐르는 강 · 강변 산책로 · 한적한
-                      풍경</span
+                      >🏞 샤시 마을을 흐르는 강 · 강변 산책로 · 한적한 풍경</span
                     >
                     강변 산책, 차마고도 옛길 일부 구간 걷기. (선택)
                     <span
@@ -2988,8 +2973,8 @@
                       >충의시장(忠义市场)</span
                     >
                     <br /><span class="desc-tag place"
-                      >🛍 리장고성 내 현지 전통시장 · 나시족 먹거리·기념품 ·
-                      저녁 시간 활기 · 입장 무료</span
+                      >🛍 리장고성 내 현지 전통시장 · 나시족 먹거리·기념품 · 저녁
+                      시간 활기 · 입장 무료</span
                     >
                     저녁 식사 + 시장 구경 — 현지 간식·과일·기념품 쇼핑.
                   </div>
@@ -3281,8 +3266,7 @@
                 Day 7 · 5월 8일 금요일 · 팅화구 · 라스하이 · 백사고진
               </div>
               <div class="day-sub">
-                팅화구(꽃 계곡) → 라스하이 차마고도 → 백사고진 →
-                리장고성 저녁
+                팅화구(꽃 계곡) → 라스하이 차마고도 → 백사고진 → 리장고성 저녁
               </div>
             </div>
             <div class="pill">리장 마지막 밤</div>
@@ -3324,8 +3308,8 @@
                       >팅화구·리장백화원(听花谷)</span
                     >
                     <br /><span class="desc-tag place"
-                      >🌸 옥룡설산 기슭 꽃 계곡 · 5월 개화 시기 최적 · 라벤더·유채꽃
-                      군락 · 사진 명소</span
+                      >🌸 옥룡설산 기슭 꽃 계곡 · 5월 개화 시기 최적 ·
+                      라벤더·유채꽃 군락 · 사진 명소</span
                     >
                     꽃 계곡 산책 — 옥룡설산을 배경으로 형형색색 꽃밭이 펼쳐지는
                     5월 최고의 포토스팟.
@@ -3344,11 +3328,11 @@
                       >라스하이 차마고도(拉市海茶马古道)</span
                     >
                     <br /><span class="desc-tag place"
-                      >🐴 고대 차·말 교역로 · 호수변 승마·조각배 체험 · 리장 서쪽
-                      10km · 철새 서식지</span
+                      >🐴 고대 차·말 교역로 · 호수변 승마·조각배 체험 · 리장
+                      서쪽 10km · 철새 서식지</span
                     >
-                    승마 또는 조각배 체험 후 점심 — 호수변 현지 식당에서
-                    나시족 가정식 (25–50위안).
+                    승마 또는 조각배 체험 후 점심 — 호수변 현지 식당에서 나시족
+                    가정식 (25–50위안).
                   </div>
                 </div>
                 <div class="step">
@@ -3415,8 +3399,8 @@
                       >리장고성(丽江古城)</span
                     >
                     <br /><span class="desc-tag place"
-                      >🏘 나시족 800년 전통 고성 · 유네스코 세계문화유산 ·
-                      돌바닥 골목 · 입장 무료(관리비 80위안)</span
+                      >🏘 나시족 800년 전통 고성 · 유네스코 세계문화유산 · 돌바닥
+                      골목 · 입장 무료(관리비 80위안)</span
                     >
                     마무리 산책 — 사방거(四方街) 광장,
                     <span
@@ -3520,7 +3504,9 @@
                 <li>
                   <span class="price">라스하이 승마/조각배 약 60–100위안</span>
                 </li>
-                <li><span class="price">점심 25–50위안</span> · 라스하이 주변</li>
+                <li>
+                  <span class="price">점심 25–50위안</span> · 라스하이 주변
+                </li>
                 <li><span class="price">카페 25–45위안</span> · 백사고진</li>
                 <li>
                   <span class="price">저녁 68–100위안</span> · 말린갈비 훠궈
@@ -3550,7 +3536,8 @@
                 Day 8 · 5월 9일 토요일 · 리장→쿤밍 → 귀국
               </div>
               <div class="day-sub">
-                오전 기차 이동 → 취호공원 · 디엔치 호수 → 저녁 식사 → 22:25 야간 출국
+                오전 기차 이동 → 취호공원 · 디엔치 호수 → 저녁 식사 → 22:25 야간
+                출국
               </div>
             </div>
             <div class="pill">이동 + 귀국</div>
@@ -3560,7 +3547,9 @@
             <span class="summary-chip chip-weather"
               >🚄 이동일 · 쿤밍 공항 22:25 출발</span
             >
-            <span class="summary-chip chip-place">🦢 취호공원 · 🌅 디엔치 호수</span>
+            <span class="summary-chip chip-place"
+              >🦢 취호공원 · 🌅 디엔치 호수</span
+            >
             <span class="summary-chip chip-food"
               >🍜 쿤밍 쌀국수 · 마지막 윈난식</span
             >
@@ -3714,8 +3703,14 @@
                       >디엔치 호수(滇池)</span
                     >
                     <br /><span class="desc-tag place"
-                      >🌅 쿤밍 최대 호수(298㎢) · 호수변 산책로 · 석양 포인트 · 전기자전거 대여 가능 ·
-                      <a href="https://blog.naver.com/giguin79/223852170873" target="_blank" rel="noopener noreferrer">자전거 후기</a></span
+                      >🌅 쿤밍 최대 호수(298㎢) · 호수변 산책로 · 석양 포인트 ·
+                      전기자전거 대여 가능 ·
+                      <a
+                        href="https://blog.naver.com/giguin79/223852170873"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >자전거 후기</a
+                      ></span
                     >
                     — 취호공원에서 택시/DiDi 약 30분. 호수변 산책로와 석양 감상.
                     귀국 전 마지막 여유.
@@ -3840,14 +3835,38 @@
                 <div class="step">
                   <div class="num">12</div>
                   <div>
+                    <strong>01:25 이후</strong> 난징 녹구공항 인근
+                    <span
+                      class="place"
+                      data-google="https://www.google.com/maps/search/Nanjing+Baixiang+Garden+Hotel+Lukou+Airport"
+                      data-baidu="https://map.baidu.com/search/南京佰翔花园酒店+禄口机场店"
+                      data-search="https://www.google.com/search?q=%E5%8D%97%E4%BA%AC%E4%BD%B0%E7%BF%94%E8%8A%B1%E5%9B%AD%E9%85%92%E5%BA%97+%E7%A6%84%E5%8F%A3%E6%9C%BA%E5%9C%BA%E5%BA%97&udm=2"
+                      >南京佰翔花园酒店 (난징 녹구공항점)</span
+                    ><br /><span class="desc-tag place"
+                      >🏨 NKG 공항 인근 호텔 · 경유 대기 중 체크인·휴식 ·
+                      No.1 Xiangying 3rd Road, 장닝구 211113</span
+                    >
+                    체크인 후 샤워·수면으로 휴식.
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">13</div>
+                  <div>
+                    <strong>5/10 새벽</strong> 체크아웃 후 난징 녹구공항 복귀
+                    (항공편 출발 3시간 전 권장).
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="num">14</div>
+                  <div>
                     <strong>5/10 08:15</strong> 난징 → 인천(ICN) 11:15 도착
                     (MU579).
                   </div>
                 </div>
               </div>
               <div class="tip">
-                항공편 3시간 전 공항 도착 권장. 난징 대기 약 6시간 50분 — B
-                카운터 뒤편이 누워서 대기하기 좋음.
+                난징 대기 약 6시간 50분 — 녹구공항 인근 호텔(南京佰翔花园酒店)
+                체크인하여 휴식. 공항 셔틀 여부·소요시간 체크인 시 확인 권장.
               </div>
             </section>
             <aside class="card">
@@ -3862,7 +3881,7 @@
                 </div>
                 <div><strong>짐 보관</strong> 쿤밍역 짐 보관소 이용</div>
                 <div><strong>1구간</strong> KMG 22:25 → NKG 01:25 (MU2766)</div>
-                <div><strong>대기</strong> 난징공항 약 6시간 50분</div>
+                <div><strong>대기 숙소</strong> 南京佰翔花园酒店 (난징 녹구공항점) · No.1 Xiangying 3rd Road, 장닝구 211113</div>
                 <div><strong>2구간</strong> NKG 08:15 → ICN 11:15 (MU579)</div>
                 <div><strong>5/10(토)</strong> 인천 11:15 도착</div>
               </div>
@@ -3929,10 +3948,16 @@
                 <td>2시간 31분</td>
                 <td>34,000원</td>
               </tr>
-              <tr class="highlight">
+              <tr>
                 <td>11:44</td>
                 <td>14:12</td>
                 <td>2시간 28분</td>
+                <td>32,700원</td>
+              </tr>
+              <tr class="highlight">
+                <td>11:56</td>
+                <td>13:52</td>
+                <td>1시간 56분</td>
                 <td>32,700원</td>
               </tr>
               <tr>
@@ -3964,7 +3989,8 @@
         </div>
         <p style="font-size: var(--text-sm); color: var(--color-text-muted)">
           <strong style="color: var(--color-primary)"
-            >★ 11:44 출발 = Day 3 이용 예정 시간</strong
+            >★ 예매 완료: G2840 · 11:56 출발 → 13:52 도착 · 9호차 6D·6F · 개찰구
+            7B (쿤밍역 베이징로드)</strong
           >
         </p>
         <p style="margin-top: var(--space-3)">
@@ -4296,8 +4322,12 @@
 
       <!-- ==================== 남경 공항 대기 팁 ==================== -->
       <section class="info-section" id="nanjing-airport">
-        <h3>🛫 남경(난징) 공항 대기 팁</h3>
-        <p>귀국편 경유 시 난징공항에서 약 6시간 50분 대기합니다.</p>
+        <h3>🛫 남경(난징) 공항 경유 대기</h3>
+        <p>
+          귀국편 경유 시 난징공항에서 약 6시간 50분 대기 — 공항 인근
+          <strong>南京佰翔花园酒店 (난징 녹구공항점)</strong>에서 체크인·휴식
+          예정.
+        </p>
         <ul
           style="
             list-style: none;
@@ -4307,13 +4337,27 @@
           "
         >
           <li>
-            • <strong>B 카운터 뒤편 추천</strong> — 의자 많음,
+            • <strong>호텔</strong> 南京佰翔花园酒店（南京禄口机场店）
+          </li>
+          <li>
+            • <strong>주소</strong> No.1 Xiangying 3rd Road, 장닝구, 211113 난징,
+            장쑤, 중국
+          </li>
+          <li>
+            • 01:25 NKG 도착 후 호텔 이동 → 샤워·수면 → 5/10 새벽 체크아웃 후
+            공항 복귀 (08:15 출발 3시간 전 권장)
+          </li>
+          <li>
+            • 공항 셔틀 운행 여부·시간·픽업 지점 체크인 시 재확인 권장
+          </li>
+          <li>
+            <strong>백업 플랜 (공항 대기 시)</strong>
+          </li>
+          <li>
+            • <strong>B 카운터 뒤편</strong> — 의자 많음,
             화장실·식수대·콘센트 접근성 좋음, 누워서 수면 가능
           </li>
           <li>• 공항 내 커피 체인(디코스 등) 이용 가능</li>
-          <li>
-            • 라운지는 새벽 시간 운영 제한 가능성 있음 → 공항 대기 전략이 현실적
-          </li>
           <li>
             • 참고:
             <a
@@ -5242,7 +5286,10 @@
         });
       })();
     </script>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      crossorigin=""
+    ></script>
     <script>
       (function () {
         /* ── 핀 아이콘 생성 ── */
@@ -5282,7 +5329,9 @@
           }).addTo(map);
           var bounds = [];
           pins.forEach(function (p) {
-            var m = L.marker([p.lat, p.lng], { icon: pinIcon(p.num) }).addTo(map);
+            var m = L.marker([p.lat, p.lng], { icon: pinIcon(p.num) }).addTo(
+              map
+            );
             m.bindPopup(popup(p.label, p.google));
             bounds.push([p.lat, p.lng]);
           });
@@ -5298,134 +5347,418 @@
 
         /* Day 1 · 쿤밍 도착 */
         initMap("map-day1", [
-          { num: 2, label: "쿤밍 창수이 국제공항", lat: 24.9922, lng: 102.7432,
-            google: "https://www.google.com/maps/search/Kunming+Changshui+Airport" },
-          { num: 4, label: "숙소 · Kunming Upland 유스호스텔", lat: 25.0390, lng: 102.6895,
-            google: "https://www.google.com/maps/search/Kunming+Upland+Youth+Hostel" },
-          { num: 5, label: "점심 · 新世界云牵一线(취호 인근)", lat: 25.0510, lng: 102.6970,
-            google: "https://www.google.com/maps/search/新世界云牵一线+昆明" },
-          { num: 6, label: "자카란다테마공원(蓝花楹主题公园)", lat: 25.0478, lng: 102.7015,
-            google: "https://www.google.com/maps/search/No+226+Jiaochang+Middle+Road+Wuhua+District+Kunming" },
-          { num: 7, label: "운남대학교(云南大学)", lat: 25.0582, lng: 102.7060,
-            google: "https://www.google.com/maps/search/Yunnan+University+Kunming" },
-          { num: 8, label: "취호공원(翠湖公园)", lat: 25.0565, lng: 102.6965,
-            google: "https://www.google.com/maps/search/Green+Lake+Park+Kunming" },
-          { num: 9, label: "라오지에 쇼핑거리(老街)", lat: 25.0530, lng: 102.7050,
-            google: "https://www.google.com/maps/search/Laojie+Shopping+Street+Kunming" },
-          { num: 10, label: "M60 문화예술복합공간", lat: 25.0550, lng: 102.7080,
-            google: "https://www.google.com/maps/search/M60+Kunming+creative+park" },
-          { num: 11, label: "난창 거리(南强街巷) 야시장", lat: 25.0476, lng: 102.7104,
-            google: "https://www.google.com/maps/search/%E5%8D%97%E5%BC%BA%E8%A1%97%E5%B7%B7+%E6%98%86%E6%98%8E" },
+          {
+            num: 2,
+            label: "쿤밍 창수이 국제공항",
+            lat: 24.9922,
+            lng: 102.7432,
+            google:
+              "https://www.google.com/maps/search/Kunming+Changshui+Airport",
+          },
+          {
+            num: 4,
+            label: "숙소 · Kunming Upland 유스호스텔",
+            lat: 25.039,
+            lng: 102.6895,
+            google:
+              "https://www.google.com/maps/search/Kunming+Upland+Youth+Hostel",
+          },
+          {
+            num: 5,
+            label: "점심 · 新世界云牵一线(취호 인근)",
+            lat: 25.051,
+            lng: 102.697,
+            google: "https://www.google.com/maps/search/新世界云牵一线+昆明",
+          },
+          {
+            num: 6,
+            label: "자카란다테마공원(蓝花楹主题公园)",
+            lat: 25.0478,
+            lng: 102.7015,
+            google:
+              "https://www.google.com/maps/search/No+226+Jiaochang+Middle+Road+Wuhua+District+Kunming",
+          },
+          {
+            num: 7,
+            label: "운남대학교(云南大学)",
+            lat: 25.0582,
+            lng: 102.706,
+            google:
+              "https://www.google.com/maps/search/Yunnan+University+Kunming",
+          },
+          {
+            num: 8,
+            label: "취호공원(翠湖公园)",
+            lat: 25.0565,
+            lng: 102.6965,
+            google:
+              "https://www.google.com/maps/search/Green+Lake+Park+Kunming",
+          },
+          {
+            num: 9,
+            label: "라오지에 쇼핑거리(老街)",
+            lat: 25.053,
+            lng: 102.705,
+            google:
+              "https://www.google.com/maps/search/Laojie+Shopping+Street+Kunming",
+          },
+          {
+            num: 10,
+            label: "M60 문화예술복합공간",
+            lat: 25.055,
+            lng: 102.708,
+            google:
+              "https://www.google.com/maps/search/M60+Kunming+creative+park",
+          },
+          {
+            num: 11,
+            label: "난창 거리(南强街巷) 야시장",
+            lat: 25.0476,
+            lng: 102.7104,
+            google:
+              "https://www.google.com/maps/search/%E5%8D%97%E5%BC%BA%E8%A1%97%E5%B7%B7+%E6%98%86%E6%98%8E",
+          },
         ]);
 
         /* Day 2 · 석림 */
         initMap("map-day2", [
-          { num: 2, label: "쿤밍 동부 버스터미널", lat: 25.0639, lng: 102.7800,
-            google: "https://www.google.com/maps/search/Kunming+East+Bus+Station" },
-          { num: 8, label: "석림풍경구(石林风景区)", lat: 24.7707, lng: 103.3417,
-            google: "https://www.google.com/maps/search/Shilin+Stone+Forest+Scenic+Area" },
-          { num: 10, label: "저녁 · 푸저루 기화계(福照楼汽锅鸡)", lat: 25.0440, lng: 102.7050,
-            google: "https://www.google.com/maps/search/福照楼汽锅鸡+昆明" },
+          {
+            num: 2,
+            label: "쿤밍 동부 버스터미널",
+            lat: 25.0639,
+            lng: 102.78,
+            google:
+              "https://www.google.com/maps/search/Kunming+East+Bus+Station",
+          },
+          {
+            num: 8,
+            label: "석림풍경구(石林风景区)",
+            lat: 24.7707,
+            lng: 103.3417,
+            google:
+              "https://www.google.com/maps/search/Shilin+Stone+Forest+Scenic+Area",
+          },
+          {
+            num: 10,
+            label: "저녁 · 푸저루 기화계(福照楼汽锅鸡)",
+            lat: 25.044,
+            lng: 102.705,
+            google: "https://www.google.com/maps/search/福照楼汽锅鸡+昆明",
+          },
         ]);
 
         /* Day 3 · 쿤밍→따리→샤시 */
         initMap("map-day3", [
-          { num: 4, label: "🚄 쿤밍역 (따리행 출발)", lat: 25.0361, lng: 102.6911,
-            google: "https://www.google.com/maps/search/Kunming+Railway+Station" },
-          { num: 5, label: "따리역 도착 → 샤시 이동", lat: 25.6027, lng: 100.1756,
-            google: "https://www.google.com/maps/search/Dali+Railway+Station" },
-          { num: 6, label: "숙소 · Liaoshe Garden Hotel (샤시)", lat: 26.4280, lng: 99.9062,
-            google: "https://www.google.com/maps/search/Liao+House+Shaxi" },
-          { num: 7, label: "사등가(四方街) 고성 산책", lat: 26.4285, lng: 99.9075,
-            google: "https://www.google.com/maps/search/Sideng+Square+Shaxi" },
-          { num: 8, label: "옥진교(玉津桥) 석양", lat: 26.4258, lng: 99.9048,
-            google: "https://www.google.com/maps/search/Yujin+Bridge+Shaxi" },
-          { num: 9, label: "저녁 · 치차취차(沙溪吃茶去茶)", lat: 26.4282, lng: 99.9068,
-            google: "https://www.google.com/maps/search/%E6%B2%99%E6%BA%AA%E5%90%83%E8%8C%B6%E5%8E%BB%E8%8C%B6+%E6%B2%99%E6%BA%AA" },
+          {
+            num: 4,
+            label: "🚄 쿤밍역 (따리행 출발)",
+            lat: 25.0361,
+            lng: 102.6911,
+            google:
+              "https://www.google.com/maps/search/Kunming+Railway+Station",
+          },
+          {
+            num: 5,
+            label: "따리역 도착 → 샤시 이동",
+            lat: 25.6027,
+            lng: 100.1756,
+            google: "https://www.google.com/maps/search/Dali+Railway+Station",
+          },
+          {
+            num: 6,
+            label: "숙소 · Liaoshe Garden Hotel (샤시)",
+            lat: 26.428,
+            lng: 99.9062,
+            google: "https://www.google.com/maps/search/Liao+House+Shaxi",
+          },
+          {
+            num: 7,
+            label: "사등가(四方街) 고성 산책",
+            lat: 26.4285,
+            lng: 99.9075,
+            google: "https://www.google.com/maps/search/Sideng+Square+Shaxi",
+          },
+          {
+            num: 8,
+            label: "옥진교(玉津桥) 석양",
+            lat: 26.4258,
+            lng: 99.9048,
+            google: "https://www.google.com/maps/search/Yujin+Bridge+Shaxi",
+          },
+          {
+            num: 9,
+            label: "저녁 · 치차취차(沙溪吃茶去茶)",
+            lat: 26.4282,
+            lng: 99.9068,
+            google:
+              "https://www.google.com/maps/search/%E6%B2%99%E6%BA%AA%E5%90%83%E8%8C%B6%E5%8E%BB%E8%8C%B6+%E6%B2%99%E6%BA%AA",
+          },
         ]);
 
         /* Day 4 · 샤시고진 */
         initMap("map-day4", [
-          { num: 1, label: "숙소 · Liaoshe Garden Hotel", lat: 26.4280, lng: 99.9062,
-            google: "https://www.google.com/maps/search/Liao+House+Shaxi" },
-          { num: 2, label: "사등가(四方街) & 고성 골목", lat: 26.4285, lng: 99.9075,
-            google: "https://www.google.com/maps/search/Sideng+Square+Shaxi" },
-          { num: 3, label: "옥진교(玉津桥) & 흑혜강(黑惠江)", lat: 26.4258, lng: 99.9045,
-            google: "https://www.google.com/maps/search/Yujin+Bridge+Shaxi" },
-          { num: 3, label: "백족 서점(白族书店)", lat: 26.4300, lng: 99.9110,
-            google: "https://www.google.com/maps/search/%E7%99%BD%E6%97%8F%E4%B9%A6%E5%BA%97+%E6%B2%99%E6%BA%AA" },
-          { num: 5, label: "반산 카페(半山咖啡)", lat: 26.4355, lng: 99.9180,
-            google: "https://www.google.com/maps/search/%E5%8D%8A%E5%B1%B1%E5%92%96%E5%95%A1+%E6%B2%99%E6%BA%AA" },
-          { num: 5, label: "우주빵집(宇宙面包)", lat: 26.4330, lng: 99.9145,
-            google: "https://www.google.com/maps/search/%E5%AE%87%E5%AE%99%E9%9D%A2%E5%8C%85+%E6%B2%99%E6%BA%AA" },
-          { num: 6, label: "오봉산(鳌峰山)", lat: 26.4400, lng: 99.9050,
-            google: "https://www.google.com/maps/search/Aofeng+Mountain+Shaxi" },
-          { num: 7, label: "저녁 · 치차취차(沙溪吃茶去茶)", lat: 26.4282, lng: 99.9068,
-            google: "https://www.google.com/maps/search/%E6%B2%99%E6%BA%AA%E5%90%83%E8%8C%B6%E5%8E%BB%E8%8C%B6+%E6%B2%99%E6%BA%AA" },
+          {
+            num: 1,
+            label: "숙소 · Liaoshe Garden Hotel",
+            lat: 26.428,
+            lng: 99.9062,
+            google: "https://www.google.com/maps/search/Liao+House+Shaxi",
+          },
+          {
+            num: 2,
+            label: "사등가(四方街) & 고성 골목",
+            lat: 26.4285,
+            lng: 99.9075,
+            google: "https://www.google.com/maps/search/Sideng+Square+Shaxi",
+          },
+          {
+            num: 3,
+            label: "옥진교(玉津桥) & 흑혜강(黑惠江)",
+            lat: 26.4258,
+            lng: 99.9045,
+            google: "https://www.google.com/maps/search/Yujin+Bridge+Shaxi",
+          },
+          {
+            num: 3,
+            label: "백족 서점(白族书店)",
+            lat: 26.43,
+            lng: 99.911,
+            google:
+              "https://www.google.com/maps/search/%E7%99%BD%E6%97%8F%E4%B9%A6%E5%BA%97+%E6%B2%99%E6%BA%AA",
+          },
+          {
+            num: 5,
+            label: "반산 카페(半山咖啡)",
+            lat: 26.4355,
+            lng: 99.918,
+            google:
+              "https://www.google.com/maps/search/%E5%8D%8A%E5%B1%B1%E5%92%96%E5%95%A1+%E6%B2%99%E6%BA%AA",
+          },
+          {
+            num: 5,
+            label: "우주빵집(宇宙面包)",
+            lat: 26.433,
+            lng: 99.9145,
+            google:
+              "https://www.google.com/maps/search/%E5%AE%87%E5%AE%99%E9%9D%A2%E5%8C%85+%E6%B2%99%E6%BA%AA",
+          },
+          {
+            num: 6,
+            label: "오봉산(鳌峰山)",
+            lat: 26.44,
+            lng: 99.905,
+            google: "https://www.google.com/maps/search/Aofeng+Mountain+Shaxi",
+          },
+          {
+            num: 7,
+            label: "저녁 · 치차취차(沙溪吃茶去茶)",
+            lat: 26.4282,
+            lng: 99.9068,
+            google:
+              "https://www.google.com/maps/search/%E6%B2%99%E6%BA%AA%E5%90%83%E8%8C%B6%E5%8E%BB%E8%8C%B6+%E6%B2%99%E6%BA%AA",
+          },
         ]);
 
         /* Day 5 · 샤시→리장 */
         initMap("map-day5", [
-          { num: 1, label: "사등가 아침 산책 (샤시 출발)", lat: 26.4285, lng: 99.9075,
-            google: "https://www.google.com/maps/search/Sideng+Square+Shaxi" },
-          { num: 3, label: "점심 · 식전주미(食全酒美, 리장 목부점)", lat: 26.8740, lng: 100.2382,
-            google: "https://www.google.com/maps/search/食全酒美+野生菌腊排骨+木府+丽江" },
-          { num: 4, label: "숙소 · Another Residence (리장)", lat: 26.9050, lng: 100.2340,
-            google: "https://www.google.com/maps/search/Another+Residence+Lijiang" },
-          { num: 5, label: "리장고성(丽江古城) 야경 산책", lat: 26.8768, lng: 100.2397,
-            google: "https://www.google.com/maps/search/Lijiang+Old+Town" },
-          { num: 6, label: "충의시장(忠义市场)", lat: 26.8760, lng: 100.2390,
-            google: "https://www.google.com/maps/search/Zhongyi+Market+Lijiang+Old+Town" },
+          {
+            num: 1,
+            label: "사등가 아침 산책 (샤시 출발)",
+            lat: 26.4285,
+            lng: 99.9075,
+            google: "https://www.google.com/maps/search/Sideng+Square+Shaxi",
+          },
+          {
+            num: 3,
+            label: "점심 · 식전주미(食全酒美, 리장 목부점)",
+            lat: 26.874,
+            lng: 100.2382,
+            google:
+              "https://www.google.com/maps/search/食全酒美+野生菌腊排骨+木府+丽江",
+          },
+          {
+            num: 4,
+            label: "숙소 · Another Residence (리장)",
+            lat: 26.905,
+            lng: 100.234,
+            google:
+              "https://www.google.com/maps/search/Another+Residence+Lijiang",
+          },
+          {
+            num: 5,
+            label: "리장고성(丽江古城) 야경 산책",
+            lat: 26.8768,
+            lng: 100.2397,
+            google: "https://www.google.com/maps/search/Lijiang+Old+Town",
+          },
+          {
+            num: 6,
+            label: "충의시장(忠义市场)",
+            lat: 26.876,
+            lng: 100.239,
+            google:
+              "https://www.google.com/maps/search/Zhongyi+Market+Lijiang+Old+Town",
+          },
         ]);
 
         /* Day 6 · 옥룡설산·인상여강 */
         initMap("map-day6", [
-          { num: 1, label: "옥룡설산(玉龙雪山)", lat: 27.1133, lng: 100.2256,
-            google: "https://www.google.com/maps/search/Jade+Dragon+Snow+Mountain" },
-          { num: 2, label: "대형 케이블카(大索道) 해발 4,506m", lat: 27.1050, lng: 100.2100,
-            google: "https://www.google.com/maps/search/Yulong+Snow+Mountain+Ropeway+Lijiang" },
-          { num: 4, label: "람월곡(蓝月谷, 블루문밸리)", lat: 27.0924, lng: 100.2047,
-            google: "https://www.google.com/maps/search/Blue+Moon+Valley+Lijiang" },
-          { num: 6, label: "인상여강쇼(印象丽江) 야외극장", lat: 27.0200, lng: 100.1920,
-            google: "https://www.google.com/maps/search/Impression+Lijiang+Show+Ganhaizi" },
-          { num: 7, label: "리장 복귀 · 숙소", lat: 26.9050, lng: 100.2340,
-            google: "https://www.google.com/maps/search/Another+Residence+Lijiang" },
-          { num: 8, label: "저녁 · 디엔시왕자(滇西王子)", lat: 26.8780, lng: 100.2410,
-            google: "https://www.google.com/maps/search/滇西王子+山风云南菜+丽江" },
+          {
+            num: 1,
+            label: "옥룡설산(玉龙雪山)",
+            lat: 27.1133,
+            lng: 100.2256,
+            google:
+              "https://www.google.com/maps/search/Jade+Dragon+Snow+Mountain",
+          },
+          {
+            num: 2,
+            label: "대형 케이블카(大索道) 해발 4,506m",
+            lat: 27.105,
+            lng: 100.21,
+            google:
+              "https://www.google.com/maps/search/Yulong+Snow+Mountain+Ropeway+Lijiang",
+          },
+          {
+            num: 4,
+            label: "람월곡(蓝月谷, 블루문밸리)",
+            lat: 27.0924,
+            lng: 100.2047,
+            google:
+              "https://www.google.com/maps/search/Blue+Moon+Valley+Lijiang",
+          },
+          {
+            num: 6,
+            label: "인상여강쇼(印象丽江) 야외극장",
+            lat: 27.02,
+            lng: 100.192,
+            google:
+              "https://www.google.com/maps/search/Impression+Lijiang+Show+Ganhaizi",
+          },
+          {
+            num: 7,
+            label: "리장 복귀 · 숙소",
+            lat: 26.905,
+            lng: 100.234,
+            google:
+              "https://www.google.com/maps/search/Another+Residence+Lijiang",
+          },
+          {
+            num: 8,
+            label: "저녁 · 디엔시왕자(滇西王子)",
+            lat: 26.878,
+            lng: 100.241,
+            google:
+              "https://www.google.com/maps/search/滇西王子+山风云南菜+丽江",
+          },
         ]);
 
         /* Day 7 · 팅화구·라스하이·백사 */
         initMap("map-day7", [
-          { num: 2, label: "팅화구·리장백화원(听花谷)", lat: 27.0700, lng: 100.1900,
-            google: "https://www.google.com/maps/search/Tinghua+Valley+Lijiang+Flowers+Garden" },
-          { num: 3, label: "라스하이 차마고도(拉市海茶马古道)", lat: 26.9600, lng: 100.1700,
-            google: "https://www.google.com/maps/search/Lashihai+Ancient+Tea+Horse+Route+Lijiang" },
-          { num: 4, label: "백사고진(白沙古镇)", lat: 26.9517, lng: 100.2217,
-            google: "https://www.google.com/maps/search/Baisha+Old+Town+Lijiang" },
-          { num: 5, label: "리장고성(丽江古城) & 목부(木府)", lat: 26.8768, lng: 100.2397,
-            google: "https://www.google.com/maps/search/Lijiang+Old+Town" },
-          { num: 6, label: "저녁 · 아포칭라파이구(阿婆情腊排骨火锅)", lat: 26.8760, lng: 100.2395,
-            google: "https://www.google.com/maps/search/阿婆情腊排骨火锅+丽江古城" },
-          { num: 7, label: "리장고성 야경 산책", lat: 26.8768, lng: 100.2397,
-            google: "https://www.google.com/maps/search/Lijiang+Old+Town" },
+          {
+            num: 2,
+            label: "팅화구·리장백화원(听花谷)",
+            lat: 27.07,
+            lng: 100.19,
+            google:
+              "https://www.google.com/maps/search/Tinghua+Valley+Lijiang+Flowers+Garden",
+          },
+          {
+            num: 3,
+            label: "라스하이 차마고도(拉市海茶马古道)",
+            lat: 26.96,
+            lng: 100.17,
+            google:
+              "https://www.google.com/maps/search/Lashihai+Ancient+Tea+Horse+Route+Lijiang",
+          },
+          {
+            num: 4,
+            label: "백사고진(白沙古镇)",
+            lat: 26.9517,
+            lng: 100.2217,
+            google:
+              "https://www.google.com/maps/search/Baisha+Old+Town+Lijiang",
+          },
+          {
+            num: 5,
+            label: "리장고성(丽江古城) & 목부(木府)",
+            lat: 26.8768,
+            lng: 100.2397,
+            google: "https://www.google.com/maps/search/Lijiang+Old+Town",
+          },
+          {
+            num: 6,
+            label: "저녁 · 아포칭라파이구(阿婆情腊排骨火锅)",
+            lat: 26.876,
+            lng: 100.2395,
+            google:
+              "https://www.google.com/maps/search/阿婆情腊排骨火锅+丽江古城",
+          },
+          {
+            num: 7,
+            label: "리장고성 야경 산책",
+            lat: 26.8768,
+            lng: 100.2397,
+            google: "https://www.google.com/maps/search/Lijiang+Old+Town",
+          },
         ]);
 
         /* Day 8 · 리장→쿤밍→귀국 */
         initMap("map-day8", [
-          { num: 2, label: "리장역(丽江站)", lat: 26.8244, lng: 100.3086,
-            google: "https://www.google.com/maps/search/Lijiang+Railway+Station" },
-          { num: 4, label: "쿤밍역(昆明站) 도착", lat: 25.0361, lng: 102.6911,
-            google: "https://www.google.com/maps/search/Kunming+Railway+Station" },
-          { num: 5, label: "취호공원(翠湖公园)", lat: 25.0565, lng: 102.6965,
-            google: "https://www.google.com/maps/search/Green+Lake+Park+Kunming" },
-          { num: 6, label: "디엔치 호수(滇池)", lat: 24.9945, lng: 102.6580,
-            google: "https://www.google.com/maps/search/Dianchi+Lake+Kunming" },
-          { num: 7, label: "난핑제(南屏街) 카페·기념품", lat: 25.0440, lng: 102.7124,
-            google: "https://www.google.com/maps/search/Nanping+Street+Kunming" },
-          { num: 8, label: "마지막 저녁 (쿤밍 시내)", lat: 25.0450, lng: 102.7100,
-            google: "https://www.google.com/maps/search/从水炉+普洱生态菜馆+昆明" },
-          { num: 10, label: "🛫 쿤밍 창수이 공항 (귀국)", lat: 24.9922, lng: 102.7432,
-            google: "https://www.google.com/maps/search/Kunming+Changshui+Airport" },
+          {
+            num: 2,
+            label: "리장역(丽江站)",
+            lat: 26.8244,
+            lng: 100.3086,
+            google:
+              "https://www.google.com/maps/search/Lijiang+Railway+Station",
+          },
+          {
+            num: 4,
+            label: "쿤밍역(昆明站) 도착",
+            lat: 25.0361,
+            lng: 102.6911,
+            google:
+              "https://www.google.com/maps/search/Kunming+Railway+Station",
+          },
+          {
+            num: 5,
+            label: "취호공원(翠湖公园)",
+            lat: 25.0565,
+            lng: 102.6965,
+            google:
+              "https://www.google.com/maps/search/Green+Lake+Park+Kunming",
+          },
+          {
+            num: 6,
+            label: "디엔치 호수(滇池)",
+            lat: 24.9945,
+            lng: 102.658,
+            google: "https://www.google.com/maps/search/Dianchi+Lake+Kunming",
+          },
+          {
+            num: 7,
+            label: "난핑제(南屏街) 카페·기념품",
+            lat: 25.044,
+            lng: 102.7124,
+            google: "https://www.google.com/maps/search/Nanping+Street+Kunming",
+          },
+          {
+            num: 8,
+            label: "마지막 저녁 (쿤밍 시내)",
+            lat: 25.045,
+            lng: 102.71,
+            google:
+              "https://www.google.com/maps/search/从水炉+普洱生态菜馆+昆明",
+          },
+          {
+            num: 10,
+            label: "🛫 쿤밍 창수이 공항 (귀국)",
+            lat: 24.9922,
+            lng: 102.7432,
+            google:
+              "https://www.google.com/maps/search/Kunming+Changshui+Airport",
+          },
         ]);
       })();
     </script>
@@ -5460,7 +5793,7 @@
             if (st && st.indexOf("url(") >= 0) {
               all[i].style.cssText = st.replace(
                 /url\(["']?(?!data:)[^)"']*["']?\)/gi,
-                "none",
+                "none"
               );
             }
           }
@@ -5474,7 +5807,7 @@
           try {
             var clone = document.documentElement.cloneNode(true);
             var rm = clone.querySelectorAll(
-              'script,link[rel="stylesheet"],style',
+              'script,link[rel="stylesheet"],style'
             );
             for (var i = 0; i < rm.length; i++) {
               rm[i].remove();
@@ -5516,7 +5849,7 @@
                   scrollX: scrollX,
                   scrollY: scrollY,
                 },
-                "*",
+                "*"
               );
             };
             img.onerror = function () {
@@ -5527,7 +5860,7 @@
                   scrollX: scrollX,
                   scrollY: scrollY,
                 },
-                "*",
+                "*"
               );
             };
             img.src = svgUrl;
@@ -5539,7 +5872,7 @@
                 scrollX: scrollX,
                 scrollY: scrollY,
               },
-              "*",
+              "*"
             );
           }
         });
